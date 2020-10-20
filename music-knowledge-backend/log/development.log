@@ -1439,3 +1439,2662 @@ Processing by GamesController#index as HTML
 Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.2ms | Allocations: 2241)
 
 
+  [1m[35m (256.7ms)[0m  [1m[35mCREATE DATABASE "music_knowledge_backend_development" ENCODING = 'unicode'[0m
+  [1m[35m (138.4ms)[0m  [1m[35mCREATE DATABASE "music_knowledge_backend_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "games" CASCADE[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE TABLE "games" ("id" bigserial primary key, "score" integer, "user_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "questions" CASCADE[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "questions" ("id" bigserial primary key, "game_id" integer, "correct" character varying, "fake1" character varying, "fake2" character varying, "fake3" character varying, "name" character varying, "artist" character varying, "genre" character varying, "filename" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20201020180235)[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20201020180058),
+(20201020180144);
+
+[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-10-20 21:59:05.110272"], ["updated_at", "2020-10-20 21:59:05.110272"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "8184359328c331b8ef3df99306dcfb62578d468d"], ["created_at", "2020-10-20 21:59:05.118698"], ["updated_at", "2020-10-20 21:59:05.118698"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "games" CASCADE[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "games" ("id" bigserial primary key, "score" integer, "user_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "questions" CASCADE[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "questions" ("id" bigserial primary key, "game_id" integer, "correct" character varying, "fake1" character varying, "fake2" character varying, "fake3" character varying, "name" character varying, "artist" character varying, "genre" character varying, "filename" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20201020180235)[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20201020180058),
+(20201020180144);
+
+[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-10-20 21:59:05.182299"], ["updated_at", "2020-10-20 21:59:05.182299"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-10-20 21:59:05.188583"], ["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "8184359328c331b8ef3df99306dcfb62578d468d"], ["created_at", "2020-10-20 21:59:05.193732"], ["updated_at", "2020-10-20 21:59:05.193732"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Mamadou"], ["created_at", "2020-10-20 21:59:05.247241"], ["updated_at", "2020-10-20 21:59:05.247241"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sean"], ["created_at", "2020-10-20 21:59:05.252452"], ["updated_at", "2020-10-20 21:59:05.252452"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Create (0.4ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 1], ["created_at", "2020-10-20 21:59:05.288768"], ["updated_at", "2020-10-20 21:59:05.288768"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 2], ["created_at", "2020-10-20 21:59:05.294058"], ["updated_at", "2020-10-20 21:59:05.294058"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.8ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "correct", "fake1", "fake2", "fake3", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["game_id", 1], ["correct", "Drake"], ["fake1", "Roddy Rich"], ["fake2", "Young Thug"], ["fake3", "Flava Flav"], ["filename", "assest/1.mp3"], ["created_at", "2020-10-20 21:59:05.314909"], ["updated_at", "2020-10-20 21:59:05.314909"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "correct", "fake1", "fake2", "fake3", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["game_id", 1], ["correct", "Drake"], ["fake1", "Roddy Rich"], ["fake2", "Young Thug"], ["fake3", "Flava Flav"], ["filename", "assest/2.mp3"], ["created_at", "2020-10-20 21:59:05.321037"], ["updated_at", "2020-10-20 21:59:05.321037"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.4ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "correct", "fake1", "fake2", "fake3", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["game_id", 1], ["correct", "Drake"], ["fake1", "Roddy Rich"], ["fake2", "Young Thug"], ["fake3", "Flava Flav"], ["filename", "assest/3.mp3"], ["created_at", "2020-10-20 21:59:05.327000"], ["updated_at", "2020-10-20 21:59:05.327000"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Mamadou"], ["created_at", "2020-10-20 21:59:20.738754"], ["updated_at", "2020-10-20 21:59:20.738754"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sean"], ["created_at", "2020-10-20 21:59:20.742676"], ["updated_at", "2020-10-20 21:59:20.742676"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 1], ["created_at", "2020-10-20 21:59:20.764421"], ["updated_at", "2020-10-20 21:59:20.764421"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 2], ["created_at", "2020-10-20 21:59:20.769861"], ["updated_at", "2020-10-20 21:59:20.769861"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "correct", "fake1", "fake2", "fake3", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["game_id", 1], ["correct", "Drake"], ["fake1", "Roddy Rich"], ["fake2", "Young Thug"], ["fake3", "Flava Flav"], ["filename", "assest/1.mp3"], ["created_at", "2020-10-20 21:59:20.788047"], ["updated_at", "2020-10-20 21:59:20.788047"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "correct", "fake1", "fake2", "fake3", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["game_id", 1], ["correct", "Drake"], ["fake1", "Roddy Rich"], ["fake2", "Young Thug"], ["fake3", "Flava Flav"], ["filename", "assest/2.mp3"], ["created_at", "2020-10-20 21:59:20.793576"], ["updated_at", "2020-10-20 21:59:20.793576"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "correct", "fake1", "fake2", "fake3", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["game_id", 1], ["correct", "Drake"], ["fake1", "Roddy Rich"], ["fake2", "Young Thug"], ["fake3", "Flava Flav"], ["filename", "assest/3.mp3"], ["created_at", "2020-10-20 21:59:20.806445"], ["updated_at", "2020-10-20 21:59:20.806445"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/questions" for ::1 at 2020-10-20 18:03:51 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (4.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 39ms (Views: 22.5ms | ActiveRecord: 12.3ms | Allocations: 9737)
+
+
+Started POST "/users" for ::1 at 2020-10-20 18:04:17 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"sean1", "user"=>{"name"=>"sean1"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "sean1"], ["created_at", "2020-10-20 22:04:17.173829"], ["updated_at", "2020-10-20 22:04:17.173829"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 4.7ms | Allocations: 4604)
+
+
+Started POST "/games" for ::1 at 2020-10-20 18:04:17 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>5, "game"=>{"score"=>0, "user_id"=>5}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.7ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 5], ["created_at", "2020-10-20 22:04:17.217845"], ["updated_at", "2020-10-20 22:04:17.217845"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+Completed 200 OK in 28510ms (Views: 0.4ms | ActiveRecord: 4.1ms | Allocations: 58977)
+
+
+Started POST "/users" for ::1 at 2020-10-20 18:04:45 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"sean1", "user"=>{"name"=>"sean1"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "sean1"], ["created_at", "2020-10-20 22:04:45.717447"], ["updated_at", "2020-10-20 22:04:45.717447"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 2499)
+
+
+Started POST "/games" for ::1 at 2020-10-20 18:04:45 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>6, "game"=>{"score"=>0, "user_id"=>6}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 6], ["created_at", "2020-10-20 22:04:45.732949"], ["updated_at", "2020-10-20 22:04:45.732949"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+Completed 500 Internal Server Error in 5043ms (ActiveRecord: 0.9ms | Allocations: 20615)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/games_controller.rb:10:in `create'
+Started GET "/questions" for ::1 at 2020-10-20 18:05:08 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 20ms (Views: 12.6ms | ActiveRecord: 4.6ms | Allocations: 9738)
+
+
+Started POST "/users" for ::1 at 2020-10-20 18:05:14 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"sean2", "user"=>{"name"=>"sean2"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "sean2"], ["created_at", "2020-10-20 22:05:14.898834"], ["updated_at", "2020-10-20 22:05:14.898834"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 3.2ms | Allocations: 4604)
+
+
+Started POST "/games" for ::1 at 2020-10-20 18:05:14 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>7, "game"=>{"score"=>0, "user_id"=>7}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 7], ["created_at", "2020-10-20 22:05:14.926761"], ["updated_at", "2020-10-20 22:05:14.926761"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 3.3ms | Allocations: 7818)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 18:07:14 -0400
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.8ms | Allocations: 1899)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 18:13:45 -0400
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (1.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 1.8ms | Allocations: 1988)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 18:15:40 -0400
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 17ms (Views: 12.8ms | ActiveRecord: 0.8ms | Allocations: 1899)
+
+
+Started POST "/users" for ::1 at 2020-10-20 18:15:47 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"suli2", "user"=>{"name"=>"suli2"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (2.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "suli2"], ["created_at", "2020-10-20 22:15:47.791743"], ["updated_at", "2020-10-20 22:15:47.791743"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 13ms (Views: 0.5ms | ActiveRecord: 3.5ms | Allocations: 2481)
+
+
+Started POST "/games" for ::1 at 2020-10-20 18:15:47 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>8, "game"=>{"score"=>0, "user_id"=>8}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (1.1ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 8], ["created_at", "2020-10-20 22:15:47.818410"], ["updated_at", "2020-10-20 22:15:47.818410"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+Completed 200 OK in 13ms (Views: 0.4ms | ActiveRecord: 2.6ms | Allocations: 3781)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 18:16:20 -0400
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 31ms (Views: 30.3ms | ActiveRecord: 0.4ms | Allocations: 1881)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 18:20:07 -0400
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.4ms | Allocations: 1880)
+
+
+Started POST "/users" for ::1 at 2020-10-20 18:20:16 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"a2", "user"=>{"name"=>"a2"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "a2"], ["created_at", "2020-10-20 22:20:16.412487"], ["updated_at", "2020-10-20 22:20:16.412487"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 1.2ms | Allocations: 2481)
+
+
+Started POST "/games" for ::1 at 2020-10-20 18:20:16 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>9, "game"=>{"score"=>0, "user_id"=>9}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.2ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 9], ["created_at", "2020-10-20 22:20:16.426625"], ["updated_at", "2020-10-20 22:20:16.426625"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 3753)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 18:21:54 -0400
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.4ms | Allocations: 1881)
+
+
+Started POST "/users" for ::1 at 2020-10-20 18:21:59 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"x2", "user"=>{"name"=>"x2"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "x2"], ["created_at", "2020-10-20 22:21:59.447155"], ["updated_at", "2020-10-20 22:21:59.447155"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 1.2ms | Allocations: 2477)
+
+
+Started POST "/games" for ::1 at 2020-10-20 18:21:59 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>10, "game"=>{"score"=>0, "user_id"=>10}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.4ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 10], ["created_at", "2020-10-20 22:21:59.461404"], ["updated_at", "2020-10-20 22:21:59.461404"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 1.1ms | Allocations: 3752)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 18:29:22 -0400
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (1.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 13ms (Views: 9.5ms | ActiveRecord: 1.4ms | Allocations: 1975)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 18:29:30 -0400
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.2ms | Allocations: 1880)
+
+
+Started GET "/login" for ::1 at 2020-10-20 18:29:47 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/favicon.ico" for ::1 at 2020-10-20 18:29:48 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/questions/1" for ::1 at 2020-10-20 18:29:57 -0400
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for QuestionsController):
+  
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:131:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/questions/1" for ::1 at 2020-10-20 18:30:45 -0400
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 34ms (Views: 0.6ms | ActiveRecord: 18.2ms | Allocations: 7992)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 18:31:04 -0400
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.4ms | Allocations: 1880)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 18:31:05 -0400
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.4ms | Allocations: 1880)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 18:31:06 -0400
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (1.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 1.5ms | Allocations: 1880)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-20 18:31:59 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 795)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-20 18:33:30 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 795)
+
+
+Started POST "/users" for ::1 at 2020-10-20 18:33:35 -0400
+Started GET "/questions/1" for ::1 at 2020-10-20 18:33:35 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"suli3", "user"=>{"name"=>"suli3"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "suli3"], ["created_at", "2020-10-20 22:33:35.457020"], ["updated_at", "2020-10-20 22:33:35.457020"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 14ms (Views: 0.4ms | ActiveRecord: 7.0ms | Allocations: 4582)
+
+
+Started POST "/games" for ::1 at 2020-10-20 18:33:35 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>11, "game"=>{"score"=>0, "user_id"=>11}}
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (5.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  ↳ app/controllers/games_controller.rb:8:in `create'
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 5.4ms | Allocations: 4671)
+
+
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (5.1ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 11], ["created_at", "2020-10-20 22:33:35.487478"], ["updated_at", "2020-10-20 22:33:35.487478"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+Completed 200 OK in 19ms (Views: 0.4ms | ActiveRecord: 8.7ms | Allocations: 7598)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-20 18:34:20 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (1.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 1.8ms | Allocations: 795)
+
+
+Started POST "/users" for ::1 at 2020-10-20 18:34:26 -0400
+Started GET "/questions/1" for ::1 at 2020-10-20 18:34:26 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"suli4", "user"=>{"name"=>"suli4"}}
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mQuestion Load (1.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "suli4"], ["created_at", "2020-10-20 22:34:26.367348"], ["updated_at", "2020-10-20 22:34:26.367348"]]
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 1.1ms | Allocations: 1620)
+
+
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 9ms (Views: 0.6ms | ActiveRecord: 1.3ms | Allocations: 3520)
+
+
+Started POST "/games" for ::1 at 2020-10-20 18:34:26 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>12, "game"=>{"score"=>0, "user_id"=>12}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.4ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 12], ["created_at", "2020-10-20 22:34:26.388155"], ["updated_at", "2020-10-20 22:34:26.388155"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 1.2ms | Allocations: 3752)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-20 18:45:06 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (1.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 9ms (Views: 1.9ms | ActiveRecord: 1.5ms | Allocations: 915)
+
+
+Started POST "/users" for ::1 at 2020-10-20 18:45:09 -0400
+Started GET "/questions/1" for ::1 at 2020-10-20 18:45:09 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"suli", "user"=>{"name"=>"suli"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "suli"], ["created_at", "2020-10-20 22:45:09.850951"], ["updated_at", "2020-10-20 22:45:09.850951"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 2.4ms | Allocations: 2957)
+
+
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+Started POST "/games" for ::1 at 2020-10-20 18:45:09 -0400
+Processing by GamesController#create as JSON
+  [1m[36mQuestion Load (1.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Parameters: {"score"=>0, "user_id"=>13, "game"=>{"score"=>0, "user_id"=>13}}
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 2.0ms | Allocations: 1875)
+
+
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (8.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (1.1ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 13], ["created_at", "2020-10-20 22:45:09.884701"], ["updated_at", "2020-10-20 22:45:09.884701"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+Completed 200 OK in 36ms (Views: 0.3ms | ActiveRecord: 11.4ms | Allocations: 4347)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-20 18:46:18 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.6ms | Allocations: 795)
+
+
+Started POST "/users" for ::1 at 2020-10-20 18:46:21 -0400
+Started GET "/questions/1" for ::1 at 2020-10-20 18:46:21 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"suli", "user"=>{"name"=>"suli"}}
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mQuestion Load (1.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "suli"], ["created_at", "2020-10-20 22:46:21.972114"], ["updated_at", "2020-10-20 22:46:21.972114"]]
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 1.4ms | Allocations: 1638)
+
+
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 2.0ms | Allocations: 3520)
+
+
+Started POST "/games" for ::1 at 2020-10-20 18:46:21 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>14, "game"=>{"score"=>0, "user_id"=>14}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 14], ["created_at", "2020-10-20 22:46:21.991518"], ["updated_at", "2020-10-20 22:46:21.991518"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 3752)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-20 18:47:22 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 796)
+
+
+Started POST "/users" for ::1 at 2020-10-20 18:47:25 -0400
+Started GET "/questions/1" for ::1 at 2020-10-20 18:47:25 -0400
+Processing by UsersController#create as JSON
+Processing by QuestionsController#show as */*
+  Parameters: {"name"=>"suli", "user"=>{"name"=>"suli"}}
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mQuestion Load (1.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "suli"], ["created_at", "2020-10-20 22:47:25.852209"], ["updated_at", "2020-10-20 22:47:25.852209"]]
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 1.1ms | Allocations: 1639)
+
+
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 7ms (Views: 0.6ms | ActiveRecord: 1.4ms | Allocations: 3504)
+
+
+Started POST "/games" for ::1 at 2020-10-20 18:47:25 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>15, "game"=>{"score"=>0, "user_id"=>15}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.2ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 15], ["created_at", "2020-10-20 22:47:25.870784"], ["updated_at", "2020-10-20 22:47:25.870784"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.8ms | Allocations: 3752)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-20 18:47:42 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 795)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-20 18:47:44 -0400
+Started POST "/users" for ::1 at 2020-10-20 18:47:44 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by UsersController#create as JSON
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  Parameters: {"name"=>"suli", "user"=>{"name"=>"suli"}}
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 1132)
+
+
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (5.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "suli"], ["created_at", "2020-10-20 22:47:44.770939"], ["updated_at", "2020-10-20 22:47:44.770939"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 13ms (Views: 0.4ms | ActiveRecord: 6.4ms | Allocations: 2670)
+
+
+Started POST "/games" for ::1 at 2020-10-20 18:47:44 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>16, "game"=>{"score"=>0, "user_id"=>16}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (1.2ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 16], ["created_at", "2020-10-20 22:47:44.797355"], ["updated_at", "2020-10-20 22:47:44.797355"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+Completed 200 OK in 13ms (Views: 0.4ms | ActiveRecord: 3.0ms | Allocations: 3755)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-20 18:47:58 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 795)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-20 18:48:01 -0400
+Started POST "/users" for ::1 at 2020-10-20 18:48:01 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"suli", "user"=>{"name"=>"suli"}}
+  [1m[36mQuestion Load (1.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 1.1ms | Allocations: 1900)
+
+
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "suli"], ["created_at", "2020-10-20 22:48:01.429028"], ["updated_at", "2020-10-20 22:48:01.429028"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (4.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 4.8ms | Allocations: 3436)
+
+
+Started POST "/games" for ::1 at 2020-10-20 18:48:01 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>17, "game"=>{"score"=>0, "user_id"=>17}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.4ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 17], ["created_at", "2020-10-20 22:48:01.448823"], ["updated_at", "2020-10-20 22:48:01.448823"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 3754)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-20 18:55:21 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (1.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 1.3ms | Allocations: 916)
+
+
+Started POST "/users" for ::1 at 2020-10-20 18:55:24 -0400
+Started GET "/questions/1" for ::1 at 2020-10-20 18:55:24 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"mbarry2377", "user"=>{"name"=>"mbarry2377"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "mbarry2377"], ["created_at", "2020-10-20 22:55:24.155402"], ["updated_at", "2020-10-20 22:55:24.155402"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 2.1ms | Allocations: 2609)
+
+
+Started POST "/games" for ::1 at 2020-10-20 18:55:24 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>18, "game"=>{"score"=>0, "user_id"=>18}}
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  ↳ app/controllers/games_controller.rb:8:in `create'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 1.8ms | Allocations: 2733)
+
+
+  [1m[36mGame Create (0.8ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 18], ["created_at", "2020-10-20 22:55:24.174762"], ["updated_at", "2020-10-20 22:55:24.174762"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 5.8ms | Allocations: 4914)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-20 18:59:51 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 795)
+
+
+Started GET "/questions/8" for ::1 at 2020-10-20 18:59:56 -0400
+Started POST "/users" for ::1 at 2020-10-20 18:59:56 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"8"}
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"suli", "user"=>{"name"=>"suli"}}
+  [1m[36mQuestion Load (1.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+Completed 404 Not Found in 5ms (ActiveRecord: 1.0ms | Allocations: 1206)
+
+
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=8):
+  
+app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mUser Create (33.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "suli"], ["created_at", "2020-10-20 22:59:56.853854"], ["updated_at", "2020-10-20 22:59:56.853854"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 47ms (Views: 0.5ms | ActiveRecord: 39.4ms | Allocations: 28191)
+
+
+Started POST "/games" for ::1 at 2020-10-20 18:59:56 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>19, "game"=>{"score"=>0, "user_id"=>19}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (1.1ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 19], ["created_at", "2020-10-20 22:59:56.914319"], ["updated_at", "2020-10-20 22:59:56.914319"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 2.6ms | Allocations: 3756)
+
+
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (4.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (36.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "music_knowledge_backend_development"[0m
+  [1m[35m (39.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "music_knowledge_backend_test"[0m
+  [1m[35m (206.7ms)[0m  [1m[35mCREATE DATABASE "music_knowledge_backend_development" ENCODING = 'unicode'[0m
+  [1m[35m (77.7ms)[0m  [1m[35mCREATE DATABASE "music_knowledge_backend_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "games" CASCADE[0m
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE TABLE "games" ("id" bigserial primary key, "score" integer, "user_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "questions" CASCADE[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "questions" ("id" bigserial primary key, "game_id" integer, "correct" character varying, "fake1" character varying, "fake2" character varying, "fake3" character varying, "name" character varying, "artist" character varying, "genre" character varying, "filename" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20201020180235)[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20201020180058),
+(20201020180144);
+
+[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-10-20 23:05:56.950813"], ["updated_at", "2020-10-20 23:05:56.950813"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "8184359328c331b8ef3df99306dcfb62578d468d"], ["created_at", "2020-10-20 23:05:56.961783"], ["updated_at", "2020-10-20 23:05:56.961783"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "games" CASCADE[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "games" ("id" bigserial primary key, "score" integer, "user_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "questions" CASCADE[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "questions" ("id" bigserial primary key, "game_id" integer, "correct" character varying, "fake1" character varying, "fake2" character varying, "fake3" character varying, "name" character varying, "artist" character varying, "genre" character varying, "filename" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20201020180235)[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20201020180058),
+(20201020180144);
+
+[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-10-20 23:05:57.025692"], ["updated_at", "2020-10-20 23:05:57.025692"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-10-20 23:05:57.031077"], ["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "8184359328c331b8ef3df99306dcfb62578d468d"], ["created_at", "2020-10-20 23:05:57.036475"], ["updated_at", "2020-10-20 23:05:57.036475"]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Mamadou"], ["created_at", "2020-10-20 23:05:57.083769"], ["updated_at", "2020-10-20 23:05:57.083769"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sean"], ["created_at", "2020-10-20 23:05:57.088566"], ["updated_at", "2020-10-20 23:05:57.088566"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Create (0.5ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 1], ["created_at", "2020-10-20 23:05:57.108174"], ["updated_at", "2020-10-20 23:05:57.108174"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGame Create (0.2ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 2], ["created_at", "2020-10-20 23:05:57.113878"], ["updated_at", "2020-10-20 23:05:57.113878"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.6ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "correct", "fake1", "fake2", "fake3", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["game_id", 1], ["correct", "Drake"], ["fake1", "Roddy Rich"], ["fake2", "Young Thug"], ["fake3", "Flava Flav"], ["filename", "assest/1.mp3"], ["created_at", "2020-10-20 23:05:57.131742"], ["updated_at", "2020-10-20 23:05:57.131742"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "correct", "fake1", "fake2", "fake3", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["game_id", 1], ["correct", "jayz"], ["fake1", "Roddy Rich"], ["fake2", "Young Thug"], ["fake3", "Flava Flav"], ["filename", "assest/2.mp3"], ["created_at", "2020-10-20 23:05:57.137111"], ["updated_at", "2020-10-20 23:05:57.137111"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "correct", "fake1", "fake2", "fake3", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["game_id", 1], ["correct", "minaj"], ["fake1", "Roddy Rich"], ["fake2", "Young Thug"], ["fake3", "Flava Flav"], ["filename", "assest/3.mp3"], ["created_at", "2020-10-20 23:05:57.142028"], ["updated_at", "2020-10-20 23:05:57.142028"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "correct", "fake1", "fake2", "fake3", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["game_id", 1], ["correct", "justin beiber"], ["fake1", "Roddy Rich"], ["fake2", "Young Thug"], ["fake3", "Flava Flav"], ["filename", "assest/3.mp3"], ["created_at", "2020-10-20 23:05:57.147113"], ["updated_at", "2020-10-20 23:05:57.147113"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.4ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "correct", "fake1", "fake2", "fake3", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["game_id", 1], ["correct", "eminem"], ["fake1", "Roddy Rich"], ["fake2", "Young Thug"], ["fake3", "Flava Flav"], ["filename", "assest/3.mp3"], ["created_at", "2020-10-20 23:05:57.155684"], ["updated_at", "2020-10-20 23:05:57.155684"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "correct", "fake1", "fake2", "fake3", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["game_id", 1], ["correct", "j cole"], ["fake1", "Roddy Rich"], ["fake2", "Young Thug"], ["fake3", "Flava Flav"], ["filename", "assest/3.mp3"], ["created_at", "2020-10-20 23:05:57.160467"], ["updated_at", "2020-10-20 23:05:57.160467"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "correct", "fake1", "fake2", "fake3", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["game_id", 1], ["correct", "lil wayne"], ["fake1", "Roddy Rich"], ["fake2", "Young Thug"], ["fake3", "Flava Flav"], ["filename", "assest/3.mp3"], ["created_at", "2020-10-20 23:05:57.165088"], ["updated_at", "2020-10-20 23:05:57.165088"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "correct", "fake1", "fake2", "fake3", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["game_id", 1], ["correct", "kendrick"], ["fake1", "Roddy Rich"], ["fake2", "Young Thug"], ["fake3", "Flava Flav"], ["filename", "assest/3.mp3"], ["created_at", "2020-10-20 23:05:57.169697"], ["updated_at", "2020-10-20 23:05:57.169697"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "correct", "fake1", "fake2", "fake3", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["game_id", 1], ["correct", "cardi b"], ["fake1", "Roddy Rich"], ["fake2", "Young Thug"], ["fake3", "Flava Flav"], ["filename", "assest/3.mp3"], ["created_at", "2020-10-20 23:05:57.174370"], ["updated_at", "2020-10-20 23:05:57.174370"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "correct", "fake1", "fake2", "fake3", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["game_id", 1], ["correct", "Pop Smoke"], ["fake1", "Roddy Rich"], ["fake2", "Young Thug"], ["fake3", "Flava Flav"], ["filename", "assest/3.mp3"], ["created_at", "2020-10-20 23:05:57.179111"], ["updated_at", "2020-10-20 23:05:57.179111"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "correct", "fake1", "fake2", "fake3", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["game_id", 1], ["correct", "P Diddy"], ["fake1", "Roddy Rich"], ["fake2", "Young Thug"], ["fake3", "Flava Flav"], ["filename", "assest/3.mp3"], ["created_at", "2020-10-20 23:05:57.184410"], ["updated_at", "2020-10-20 23:05:57.184410"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1262214483776396220)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1262214483776396220)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Mamadou"], ["created_at", "2020-10-20 23:06:38.039837"], ["updated_at", "2020-10-20 23:06:38.039837"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sean"], ["created_at", "2020-10-20 23:06:38.045625"], ["updated_at", "2020-10-20 23:06:38.045625"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Create (0.6ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 1], ["created_at", "2020-10-20 23:06:38.062621"], ["updated_at", "2020-10-20 23:06:38.062621"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGame Create (0.2ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 2], ["created_at", "2020-10-20 23:06:38.067571"], ["updated_at", "2020-10-20 23:06:38.067571"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.4ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "correct", "fake1", "fake2", "fake3", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["game_id", 1], ["correct", "Drake"], ["fake1", "Roddy Rich"], ["fake2", "Young Thug"], ["fake3", "Flava Flav"], ["filename", "assest/1.mp3"], ["created_at", "2020-10-20 23:06:38.084763"], ["updated_at", "2020-10-20 23:06:38.084763"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "correct", "fake1", "fake2", "fake3", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["game_id", 1], ["correct", "jayz"], ["fake1", "Roddy Rich"], ["fake2", "Young Thug"], ["fake3", "Flava Flav"], ["filename", "assest/2.mp3"], ["created_at", "2020-10-20 23:06:38.089549"], ["updated_at", "2020-10-20 23:06:38.089549"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "correct", "fake1", "fake2", "fake3", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["game_id", 1], ["correct", "minaj"], ["fake1", "Roddy Rich"], ["fake2", "Young Thug"], ["fake3", "Flava Flav"], ["filename", "assest/3.mp3"], ["created_at", "2020-10-20 23:06:38.100525"], ["updated_at", "2020-10-20 23:06:38.100525"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "correct", "fake1", "fake2", "fake3", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["game_id", 1], ["correct", "justin beiber"], ["fake1", "Roddy Rich"], ["fake2", "Young Thug"], ["fake3", "Flava Flav"], ["filename", "assest/3.mp3"], ["created_at", "2020-10-20 23:06:38.105848"], ["updated_at", "2020-10-20 23:06:38.105848"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.4ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "correct", "fake1", "fake2", "fake3", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["game_id", 1], ["correct", "eminem"], ["fake1", "Roddy Rich"], ["fake2", "Young Thug"], ["fake3", "Flava Flav"], ["filename", "assest/3.mp3"], ["created_at", "2020-10-20 23:06:38.110730"], ["updated_at", "2020-10-20 23:06:38.110730"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "correct", "fake1", "fake2", "fake3", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["game_id", 1], ["correct", "j cole"], ["fake1", "Roddy Rich"], ["fake2", "Young Thug"], ["fake3", "Flava Flav"], ["filename", "assest/3.mp3"], ["created_at", "2020-10-20 23:06:38.115543"], ["updated_at", "2020-10-20 23:06:38.115543"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "correct", "fake1", "fake2", "fake3", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["game_id", 1], ["correct", "lil wayne"], ["fake1", "Roddy Rich"], ["fake2", "Young Thug"], ["fake3", "Flava Flav"], ["filename", "assest/3.mp3"], ["created_at", "2020-10-20 23:06:38.120194"], ["updated_at", "2020-10-20 23:06:38.120194"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "correct", "fake1", "fake2", "fake3", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["game_id", 1], ["correct", "kendrick"], ["fake1", "Roddy Rich"], ["fake2", "Young Thug"], ["fake3", "Flava Flav"], ["filename", "assest/3.mp3"], ["created_at", "2020-10-20 23:06:38.125215"], ["updated_at", "2020-10-20 23:06:38.125215"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "correct", "fake1", "fake2", "fake3", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["game_id", 1], ["correct", "cardi b"], ["fake1", "Roddy Rich"], ["fake2", "Young Thug"], ["fake3", "Flava Flav"], ["filename", "assest/3.mp3"], ["created_at", "2020-10-20 23:06:38.129958"], ["updated_at", "2020-10-20 23:06:38.129958"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "correct", "fake1", "fake2", "fake3", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["game_id", 1], ["correct", "Pop Smoke"], ["fake1", "Roddy Rich"], ["fake2", "Young Thug"], ["fake3", "Flava Flav"], ["filename", "assest/3.mp3"], ["created_at", "2020-10-20 23:06:38.134450"], ["updated_at", "2020-10-20 23:06:38.134450"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "correct", "fake1", "fake2", "fake3", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["game_id", 1], ["correct", "P Diddy"], ["fake1", "Roddy Rich"], ["fake2", "Young Thug"], ["fake3", "Flava Flav"], ["filename", "assest/3.mp3"], ["created_at", "2020-10-20 23:06:38.139999"], ["updated_at", "2020-10-20 23:06:38.139999"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/questions/1" for ::1 at 2020-10-20 19:06:54 -0400
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (3.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 28ms (Views: 0.5ms | ActiveRecord: 10.2ms | Allocations: 9061)
+
+
+Started POST "/users" for ::1 at 2020-10-20 19:07:11 -0400
+Started GET "/questions/1" for ::1 at 2020-10-20 19:07:11 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"suli", "user"=>{"name"=>"suli"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "suli"], ["created_at", "2020-10-20 23:07:11.802141"], ["updated_at", "2020-10-20 23:07:11.802141"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 4.9ms | Allocations: 4989)
+
+
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Started POST "/games" for ::1 at 2020-10-20 19:07:11 -0400
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.8ms | Allocations: 1295)
+
+
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>5, "game"=>{"score"=>0, "user_id"=>5}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.6ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 5], ["created_at", "2020-10-20 23:07:11.835217"], ["updated_at", "2020-10-20 23:07:11.835217"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+Completed 200 OK in 18ms (Views: 0.3ms | ActiveRecord: 5.9ms | Allocations: 7540)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-20 19:07:54 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (1.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 1.4ms | Allocations: 812)
+
+
+Started POST "/users" for ::1 at 2020-10-20 19:07:56 -0400
+Started GET "/questions/1" for ::1 at 2020-10-20 19:07:56 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"suli", "user"=>{"name"=>"suli"}}
+Processing by QuestionsController#show as */*
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  Parameters: {"id"=>"1"}
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "suli"], ["created_at", "2020-10-20 23:07:56.815097"], ["updated_at", "2020-10-20 23:07:56.815097"]]
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 876)
+
+
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 3539)
+
+
+Started POST "/games" for ::1 at 2020-10-20 19:07:56 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>6, "game"=>{"score"=>0, "user_id"=>6}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.2ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 6], ["created_at", "2020-10-20 23:07:56.832523"], ["updated_at", "2020-10-20 23:07:56.832523"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.8ms | Allocations: 3752)
+
+
+Started GET "/questions/2" for ::1 at 2020-10-20 19:07:58 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 795)
+
+
+Started GET "/questions/3" for ::1 at 2020-10-20 19:08:00 -0400
+Started GET "/questions/4" for ::1 at 2020-10-20 19:08:00 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"3"}
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 1335)
+
+
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1564)
+
+
+Started GET "/questions/5" for ::1 at 2020-10-20 19:08:02 -0400
+Started GET "/questions/6" for ::1 at 2020-10-20 19:08:02 -0400
+Started GET "/questions/7" for ::1 at 2020-10-20 19:08:02 -0400
+Started GET "/questions/8" for ::1 at 2020-10-20 19:08:02 -0400
+Processing by QuestionsController#show as */*
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"5"}
+  Parameters: {"id"=>"6"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 894)
+
+
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 1718)
+
+
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"7"}
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"8"}
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 1.3ms | Allocations: 1487)
+
+
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 1800)
+
+
+Started GET "/questions/9" for ::1 at 2020-10-20 19:08:08 -0400
+Started GET "/questions/11" for ::1 at 2020-10-20 19:08:08 -0400
+Started GET "/questions/12" for ::1 at 2020-10-20 19:08:08 -0400
+Started GET "/questions/10" for ::1 at 2020-10-20 19:08:08 -0400
+Started GET "/questions/13" for ::1 at 2020-10-20 19:08:08 -0400
+Processing by QuestionsController#show as */*
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"9"}
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"12"}
+Processing by QuestionsController#show as */*
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Parameters: {"id"=>"11"}
+  Parameters: {"id"=>"10"}
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mQuestion Load (0.9ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 1257)
+
+
+  [1m[36mQuestion Load (1.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mQuestion Load (1.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 1.7ms | Allocations: 2172)
+
+
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 3393)
+
+
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 3085)
+
+
+Started GET "/questions/15" for ::1 at 2020-10-20 19:08:08 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"15"}
+Started GET "/questions/16" for ::1 at 2020-10-20 19:08:08 -0400
+  [1m[36mQuestion Load (1.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 1.1ms | Allocations: 999)
+
+
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"16"}
+  [1m[36mQuestion Load (1.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 1.2ms | Allocations: 841)
+
+
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 915)
+
+
+Started GET "/questions/14" for ::1 at 2020-10-20 19:08:08 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"14"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 795)
+
+
+Started GET "/questions/17" for ::1 at 2020-10-20 19:08:09 -0400
+Started GET "/questions/19" for ::1 at 2020-10-20 19:08:09 -0400
+Started GET "/questions/18" for ::1 at 2020-10-20 19:08:09 -0400
+Started GET "/questions/20" for ::1 at 2020-10-20 19:08:09 -0400
+Started GET "/questions/22" for ::1 at 2020-10-20 19:08:09 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"17"}
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"18"}
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"19"}
+Processing by QuestionsController#show as */*
+  [1m[36mQuestion Load (1.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"22"}
+  Parameters: {"id"=>"20"}
+  [1m[36mQuestion Load (2.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 1877)
+
+
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 2.3ms | Allocations: 3663)
+
+
+  [1m[36mQuestion Load (1.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mQuestion Load (1.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 2710)
+
+
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 1.6ms | Allocations: 2981)
+
+
+Started GET "/questions/23" for ::1 at 2020-10-20 19:08:09 -0400
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Started GET "/questions/24" for ::1 at 2020-10-20 19:08:09 -0400
+Started GET "/questions/25" for ::1 at 2020-10-20 19:08:09 -0400
+Completed 200 OK in 13ms (Views: 1.5ms | ActiveRecord: 1.5ms | Allocations: 4461)
+
+
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"24"}
+Started GET "/questions/26" for ::1 at 2020-10-20 19:08:09 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"23"}
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"25"}
+Started GET "/questions/27" for ::1 at 2020-10-20 19:08:09 -0400
+  [1m[36mQuestion Load (2.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+Processing by QuestionsController#show as */*
+  [1m[36mQuestion Load (1.9ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+Completed 404 Not Found in 4ms (ActiveRecord: 2.6ms | Allocations: 1391)
+
+
+  Parameters: {"id"=>"26"}
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Processing by QuestionsController#show as */*
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=23):
+  
+app/controllers/questions_controller.rb:8:in `show'
+Completed 404 Not Found in 8ms (ActiveRecord: 0.8ms | Allocations: 3744)
+
+
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 404 Not Found in 27ms (ActiveRecord: 0.5ms | Allocations: 26018)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=26):
+  
+app/controllers/questions_controller.rb:8:in `show'
+  Parameters: {"id"=>"27"}
+Completed 404 Not Found in 5ms (ActiveRecord: 1.9ms | Allocations: 2851)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=24):
+  
+app/controllers/questions_controller.rb:8:in `show'
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=25):
+  
+app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mQuestion Load (20.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 404 Not Found in 43ms (ActiveRecord: 20.7ms | Allocations: 50637)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=27):
+  
+app/controllers/questions_controller.rb:8:in `show'
+Started GET "/questions/29" for ::1 at 2020-10-20 19:08:09 -0400
+Started GET "/questions/30" for ::1 at 2020-10-20 19:08:09 -0400
+Started GET "/questions/28" for ::1 at 2020-10-20 19:08:09 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"30"}
+Started GET "/questions/31" for ::1 at 2020-10-20 19:08:09 -0400
+Started GET "/questions/32" for ::1 at 2020-10-20 19:08:09 -0400
+  [1m[36mQuestion Load (1.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+Processing by QuestionsController#show as */*
+Processing by QuestionsController#show as */*
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"29"}
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 404 Not Found in 6ms (ActiveRecord: 1.2ms | Allocations: 2068)
+
+
+  Parameters: {"id"=>"31"}
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  Parameters: {"id"=>"28"}
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mQuestion Load (0.9ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+Processing by QuestionsController#show as */*
+Completed 404 Not Found in 2ms (ActiveRecord: 0.7ms | Allocations: 1134)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=30):
+  
+app/controllers/questions_controller.rb:8:in `show'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.7ms | Allocations: 1991)
+
+
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 404 Not Found in 22ms (ActiveRecord: 0.9ms | Allocations: 26962)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=31):
+  
+app/controllers/questions_controller.rb:8:in `show'
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=28):
+  
+app/controllers/questions_controller.rb:8:in `show'
+  Parameters: {"id"=>"32"}
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=29):
+  
+app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mQuestion Load (17.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 404 Not Found in 20ms (ActiveRecord: 17.8ms | Allocations: 25328)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=32):
+  
+app/controllers/questions_controller.rb:8:in `show'
+Started GET "/questions/21" for ::1 at 2020-10-20 19:08:09 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"21"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 794)
+
+
+Started GET "/questions/33" for ::1 at 2020-10-20 19:08:24 -0400
+Started GET "/questions/35" for ::1 at 2020-10-20 19:08:24 -0400
+Started GET "/questions/34" for ::1 at 2020-10-20 19:08:24 -0400
+Started GET "/questions/37" for ::1 at 2020-10-20 19:08:24 -0400
+Started GET "/questions/36" for ::1 at 2020-10-20 19:08:24 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"33"}
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"37"}
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"36"}
+Processing by QuestionsController#show as */*
+  [1m[36mQuestion Load (3.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  [1m[36mQuestion Load (1.9ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  Parameters: {"id"=>"34"}
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mQuestion Load (2.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+Processing by QuestionsController#show as */*
+  [1m[36mQuestion Load (1.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+Completed 404 Not Found in 7ms (ActiveRecord: 3.7ms | Allocations: 2265)
+
+
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 404 Not Found in 10ms (ActiveRecord: 2.3ms | Allocations: 3929)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=33):
+  
+app/controllers/questions_controller.rb:8:in `show'
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=37):
+  
+app/controllers/questions_controller.rb:8:in `show'
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  Parameters: {"id"=>"35"}
+Completed 404 Not Found in 55ms (ActiveRecord: 1.9ms | Allocations: 53481)
+
+
+Completed 404 Not Found in 27ms (ActiveRecord: 1.1ms | Allocations: 26935)
+
+
+Started GET "/questions/40" for ::1 at 2020-10-20 19:08:24 -0400
+  [1m[36mQuestion Load (2.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+Started GET "/questions/39" for ::1 at 2020-10-20 19:08:24 -0400
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=36):
+  
+app/controllers/questions_controller.rb:8:in `show'
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 404 Not Found in 24ms (ActiveRecord: 2.2ms | Allocations: 26448)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=35):
+  
+app/controllers/questions_controller.rb:8:in `show'
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=34):
+  
+app/controllers/questions_controller.rb:8:in `show'
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"39"}
+Started GET "/questions/42" for ::1 at 2020-10-20 19:08:24 -0400
+Started GET "/questions/41" for ::1 at 2020-10-20 19:08:24 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"40"}
+Started GET "/questions/43" for ::1 at 2020-10-20 19:08:24 -0400
+  [1m[36mQuestion Load (3.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 404 Not Found in 6ms (ActiveRecord: 3.4ms | Allocations: 1830)
+
+
+Processing by QuestionsController#show as */*
+Processing by QuestionsController#show as */*
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=39):
+  
+app/controllers/questions_controller.rb:8:in `show'
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"42"}
+  [1m[36mQuestion Load (1.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 40], ["LIMIT", 1]]
+  Parameters: {"id"=>"41"}
+  [1m[36mQuestion Load (3.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 404 Not Found in 5ms (ActiveRecord: 3.3ms | Allocations: 1249)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=42):
+  
+app/controllers/questions_controller.rb:8:in `show'
+  Parameters: {"id"=>"43"}
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Started GET "/questions/44" for ::1 at 2020-10-20 19:08:24 -0400
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 43], ["LIMIT", 1]]
+Completed 404 Not Found in 44ms (ActiveRecord: 1.0ms | Allocations: 53633)
+
+
+  [1m[36mQuestion Load (1.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=40):
+  
+app/controllers/questions_controller.rb:8:in `show'
+Started GET "/questions/45" for ::1 at 2020-10-20 19:08:24 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"44"}
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 404 Not Found in 50ms (ActiveRecord: 1.8ms | Allocations: 53601)
+
+
+Started GET "/questions/46" for ::1 at 2020-10-20 19:08:24 -0400
+Completed 404 Not Found in 28ms (ActiveRecord: 0.4ms | Allocations: 26996)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=43):
+  
+app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mQuestion Load (1.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=41):
+  
+app/controllers/questions_controller.rb:8:in `show'
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"45"}
+Completed 404 Not Found in 45ms (ActiveRecord: 1.3ms | Allocations: 51972)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=44):
+  
+app/controllers/questions_controller.rb:8:in `show'
+Started GET "/questions/47" for ::1 at 2020-10-20 19:08:24 -0400
+Processing by QuestionsController#show as */*
+  [1m[36mQuestion Load (22.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+Started GET "/questions/48" for ::1 at 2020-10-20 19:08:24 -0400
+  Parameters: {"id"=>"46"}
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 404 Not Found in 27ms (ActiveRecord: 22.7ms | Allocations: 26896)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=45):
+  
+app/controllers/questions_controller.rb:8:in `show'
+Processing by QuestionsController#show as */*
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"48"}
+Started GET "/questions/49" for ::1 at 2020-10-20 19:08:24 -0400
+  [1m[36mQuestion Load (25.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 404 Not Found in 28ms (ActiveRecord: 25.4ms | Allocations: 26844)
+
+
+  Parameters: {"id"=>"47"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=46):
+  
+app/controllers/questions_controller.rb:8:in `show'
+Started GET "/questions/50" for ::1 at 2020-10-20 19:08:24 -0400
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 404 Not Found in 23ms (ActiveRecord: 0.4ms | Allocations: 27079)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=48):
+  
+app/controllers/questions_controller.rb:8:in `show'
+Processing by QuestionsController#show as */*
+Started GET "/questions/51" for ::1 at 2020-10-20 19:08:24 -0400
+  [1m[36mQuestion Load (18.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 47], ["LIMIT", 1]]
+  Parameters: {"id"=>"49"}
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Processing by QuestionsController#show as */*
+Completed 404 Not Found in 45ms (ActiveRecord: 18.8ms | Allocations: 52187)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=47):
+  
+app/controllers/questions_controller.rb:8:in `show'
+  Parameters: {"id"=>"50"}
+Started GET "/questions/52" for ::1 at 2020-10-20 19:08:24 -0400
+Processing by QuestionsController#show as */*
+  [1m[36mQuestion Load (2.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  Parameters: {"id"=>"51"}
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mQuestion Load (1.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+Completed 404 Not Found in 24ms (ActiveRecord: 2.5ms | Allocations: 26832)
+
+
+Processing by QuestionsController#show as */*
+Started GET "/questions/53" for ::1 at 2020-10-20 19:08:24 -0400
+  Parameters: {"id"=>"52"}
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=49):
+  
+app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mQuestion Load (1.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 404 Not Found in 24ms (ActiveRecord: 1.0ms | Allocations: 27000)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=51):
+  
+app/controllers/questions_controller.rb:8:in `show'
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 404 Not Found in 61ms (ActiveRecord: 1.8ms | Allocations: 53122)
+
+
+Processing by QuestionsController#show as */*
+  [1m[36mQuestion Load (57.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 52], ["LIMIT", 1]]
+Started GET "/questions/54" for ::1 at 2020-10-20 19:08:24 -0400
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Started GET "/questions/55" for ::1 at 2020-10-20 19:08:24 -0400
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=50):
+  
+app/controllers/questions_controller.rb:8:in `show'
+  Parameters: {"id"=>"53"}
+Completed 404 Not Found in 62ms (ActiveRecord: 57.0ms | Allocations: 52530)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=52):
+  
+app/controllers/questions_controller.rb:8:in `show'
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"54"}
+Processing by QuestionsController#show as */*
+  [1m[36mQuestion Load (2.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 53], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mQuestion Load (2.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 54], ["LIMIT", 1]]
+  Parameters: {"id"=>"55"}
+Completed 404 Not Found in 26ms (ActiveRecord: 2.5ms | Allocations: 26934)
+
+
+Started GET "/questions/57" for ::1 at 2020-10-20 19:08:25 -0400
+Started GET "/questions/56" for ::1 at 2020-10-20 19:08:25 -0400
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=53):
+  
+app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 55], ["LIMIT", 1]]
+Completed 404 Not Found in 5ms (ActiveRecord: 2.0ms | Allocations: 2255)
+
+
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=54):
+  
+app/controllers/questions_controller.rb:8:in `show'
+Started GET "/questions/58" for ::1 at 2020-10-20 19:08:25 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"57"}
+Completed 404 Not Found in 24ms (ActiveRecord: 0.6ms | Allocations: 27073)
+
+
+Processing by QuestionsController#show as */*
+Started GET "/questions/59" for ::1 at 2020-10-20 19:08:25 -0400
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=55):
+  
+app/controllers/questions_controller.rb:8:in `show'
+  Parameters: {"id"=>"56"}
+  [1m[36mQuestion Load (20.9ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 57], ["LIMIT", 1]]
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"58"}
+Processing by QuestionsController#show as */*
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 58], ["LIMIT", 1]]
+  Parameters: {"id"=>"59"}
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Started GET "/questions/60" for ::1 at 2020-10-20 19:08:25 -0400
+  [1m[36mQuestion Load (4.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 56], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 59], ["LIMIT", 1]]
+Completed 404 Not Found in 28ms (ActiveRecord: 20.9ms | Allocations: 27788)
+
+
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.2ms | Allocations: 1649)
+
+
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=57):
+  
+app/controllers/questions_controller.rb:8:in `show'
+Completed 404 Not Found in 8ms (ActiveRecord: 4.5ms | Allocations: 3860)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=56):
+  
+app/controllers/questions_controller.rb:8:in `show'
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=58):
+  
+app/controllers/questions_controller.rb:8:in `show'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.8ms | Allocations: 2881)
+
+
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"60"}
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=59):
+  
+app/controllers/questions_controller.rb:8:in `show'
+Started GET "/questions/61" for ::1 at 2020-10-20 19:08:25 -0400
+  [1m[36mQuestion Load (17.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 60], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 404 Not Found in 20ms (ActiveRecord: 17.0ms | Allocations: 25932)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=60):
+  
+app/controllers/questions_controller.rb:8:in `show'
+Started GET "/questions/62" for ::1 at 2020-10-20 19:08:25 -0400
+Started GET "/questions/63" for ::1 at 2020-10-20 19:08:25 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"61"}
+Started GET "/questions/64" for ::1 at 2020-10-20 19:08:25 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"63"}
+  [1m[36mQuestion Load (1.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+Processing by QuestionsController#show as */*
+  [1m[36mQuestion Load (0.9ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"62"}
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.9ms | Allocations: 1711)
+
+
+  Parameters: {"id"=>"64"}
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=63):
+  
+app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mQuestion Load (0.9ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 62], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 404 Not Found in 5ms (ActiveRecord: 1.5ms | Allocations: 2359)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=61):
+  
+app/controllers/questions_controller.rb:8:in `show'
+Completed 404 Not Found in 23ms (ActiveRecord: 0.9ms | Allocations: 26775)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=62):
+  
+app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mQuestion Load (24.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 404 Not Found in 63ms (ActiveRecord: 24.2ms | Allocations: 76189)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=64):
+  
+app/controllers/questions_controller.rb:8:in `show'
+Started GET "/questions/38" for ::1 at 2020-10-20 19:08:25 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"38"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms | Allocations: 636)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=38):
+  
+app/controllers/questions_controller.rb:8:in `show'
+Started GET "/questions/1" for ::1 at 2020-10-20 19:08:31 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 794)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-20 19:11:42 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 795)
+
+
+Started POST "/users" for ::1 at 2020-10-20 19:11:48 -0400
+Started GET "/questions/1" for ::1 at 2020-10-20 19:11:48 -0400
+Processing by UsersController#create as JSON
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  Parameters: {"name"=>"suli", "user"=>{"name"=>"suli"}}
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 1889)
+
+
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "suli"], ["created_at", "2020-10-20 23:11:48.961212"], ["updated_at", "2020-10-20 23:11:48.961212"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 7.1ms | Allocations: 3442)
+
+
+Started POST "/games" for ::1 at 2020-10-20 19:11:48 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>7, "game"=>{"score"=>0, "user_id"=>7}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.4ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 7], ["created_at", "2020-10-20 23:11:48.985149"], ["updated_at", "2020-10-20 23:11:48.985149"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 3.6ms | Allocations: 3756)
+
+
+Started GET "/questions/2" for ::1 at 2020-10-20 19:11:51 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 795)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-20 19:12:39 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 795)
+
+
+Started POST "/users" for ::1 at 2020-10-20 19:12:42 -0400
+Started GET "/questions/1" for ::1 at 2020-10-20 19:12:42 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"suli", "user"=>{"name"=>"suli"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "suli"], ["created_at", "2020-10-20 23:12:42.222131"], ["updated_at", "2020-10-20 23:12:42.222131"]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 1550)
+
+
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 3823)
+
+
+Started POST "/games" for ::1 at 2020-10-20 19:12:42 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>8, "game"=>{"score"=>0, "user_id"=>8}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.4ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 8], ["created_at", "2020-10-20 23:12:42.239489"], ["updated_at", "2020-10-20 23:12:42.239489"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 3752)
+
+
+Started GET "/questions/2" for ::1 at 2020-10-20 19:12:46 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 795)
+
+
+Started GET "/questions/3" for ::1 at 2020-10-20 19:12:50 -0400
+Started GET "/questions/4" for ::1 at 2020-10-20 19:12:50 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"3"}
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.8ms | Allocations: 1337)
+
+
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 1563)
+
+
+Started GET "/questions/5" for ::1 at 2020-10-20 19:12:55 -0400
+Started GET "/questions/6" for ::1 at 2020-10-20 19:12:55 -0400
+Started GET "/questions/7" for ::1 at 2020-10-20 19:12:55 -0400
+Started GET "/questions/8" for ::1 at 2020-10-20 19:12:55 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"5"}
+Processing by QuestionsController#show as */*
+Processing by QuestionsController#show as */*
+  [1m[36mQuestion Load (1.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  Parameters: {"id"=>"7"}
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"6"}
+  Parameters: {"id"=>"8"}
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 1.3ms | Allocations: 1415)
+
+
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mQuestion Load (1.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mQuestion Load (1.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 1215)
+
+
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 1.5ms | Allocations: 2490)
+
+
+Completed 200 OK in 8ms (Views: 0.6ms | ActiveRecord: 1.3ms | Allocations: 2694)
+
+
+Started GET "/questions/9" for ::1 at 2020-10-20 19:12:59 -0400
+Started GET "/questions/10" for ::1 at 2020-10-20 19:12:59 -0400
+Started GET "/questions/13" for ::1 at 2020-10-20 19:12:59 -0400
+Started GET "/questions/11" for ::1 at 2020-10-20 19:12:59 -0400
+Started GET "/questions/12" for ::1 at 2020-10-20 19:12:59 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"9"}
+Processing by QuestionsController#show as */*
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"13"}
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"12"}
+  Parameters: {"id"=>"10"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Processing by QuestionsController#show as */*
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 1675)
+
+
+  [1m[36mQuestion Load (1.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Parameters: {"id"=>"11"}
+Started GET "/questions/15" for ::1 at 2020-10-20 19:12:59 -0400
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 964)
+
+
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 11ms (Views: 0.5ms | ActiveRecord: 0.5ms | Allocations: 4240)
+
+
+Processing by QuestionsController#show as */*
+  [1m[36mQuestion Load (6.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 1.5ms | Allocations: 4116)
+
+
+Started GET "/questions/16" for ::1 at 2020-10-20 19:12:59 -0400
+  Parameters: {"id"=>"15"}
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+Completed 200 OK in 12ms (Views: 0.5ms | ActiveRecord: 6.1ms | Allocations: 3466)
+
+
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Processing by QuestionsController#show as */*
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 1645)
+
+
+  Parameters: {"id"=>"16"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 795)
+
+
+Started GET "/questions/14" for ::1 at 2020-10-20 19:13:00 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"14"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 795)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-20 19:14:17 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 795)
+
+
+Started POST "/users" for ::1 at 2020-10-20 19:14:19 -0400
+Started GET "/questions/1" for ::1 at 2020-10-20 19:14:19 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"suli", "user"=>{"name"=>"suli"}}
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 1599)
+
+
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "suli"], ["created_at", "2020-10-20 23:14:19.774684"], ["updated_at", "2020-10-20 23:14:19.774684"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 5.7ms | Allocations: 3521)
+
+
+Started POST "/games" for ::1 at 2020-10-20 19:14:19 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>9, "game"=>{"score"=>0, "user_id"=>9}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.6ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 9], ["created_at", "2020-10-20 23:14:19.793854"], ["updated_at", "2020-10-20 23:14:19.793854"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 1.4ms | Allocations: 3756)
+
+
+Started GET "/questions/2" for ::1 at 2020-10-20 19:14:22 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 795)
+
+
+Started GET "/questions/3" for ::1 at 2020-10-20 19:14:24 -0400
+Started GET "/questions/4" for ::1 at 2020-10-20 19:14:24 -0400
+Processing by QuestionsController#show as */*
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"3"}
+  Parameters: {"id"=>"4"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 897)
+
+
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 1755)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-20 19:14:57 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 795)
+
+
+Started POST "/users" for ::1 at 2020-10-20 19:14:59 -0400
+Started GET "/questions/1" for ::1 at 2020-10-20 19:14:59 -0400
+Processing by UsersController#create as JSON
+Processing by QuestionsController#show as */*
+  Parameters: {"name"=>"suli", "user"=>{"name"=>"suli"}}
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mQuestion Load (1.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 1600)
+
+
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "suli"], ["created_at", "2020-10-20 23:14:59.819998"], ["updated_at", "2020-10-20 23:14:59.819998"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 6.6ms | Allocations: 3507)
+
+
+Started POST "/games" for ::1 at 2020-10-20 19:14:59 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>10, "game"=>{"score"=>0, "user_id"=>10}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.5ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 10], ["created_at", "2020-10-20 23:14:59.839138"], ["updated_at", "2020-10-20 23:14:59.839138"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 3755)
+
+
+Started GET "/questions/2" for ::1 at 2020-10-20 19:15:01 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 795)
+
+
+Started GET "/questions/3" for ::1 at 2020-10-20 19:15:04 -0400
+Started GET "/questions/4" for ::1 at 2020-10-20 19:15:04 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"3"}
+Processing by QuestionsController#show as */*
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Parameters: {"id"=>"4"}
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 1182)
+
+
+  [1m[36mQuestion Load (0.9ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.9ms | Allocations: 1295)
+
+
+Started GET "/questions/5" for ::1 at 2020-10-20 19:15:06 -0400
+Started GET "/questions/6" for ::1 at 2020-10-20 19:15:06 -0400
+Started GET "/questions/7" for ::1 at 2020-10-20 19:15:06 -0400
+Started GET "/questions/8" for ::1 at 2020-10-20 19:15:06 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"5"}
+Processing by QuestionsController#show as */*
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"7"}
+  [1m[36mQuestion Load (1.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"6"}
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 1202)
+
+
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mQuestion Load (1.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Parameters: {"id"=>"8"}
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.8ms | Allocations: 1839)
+
+
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 1.0ms | Allocations: 2009)
+
+
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.5ms | Allocations: 1441)
+
+
+Started GET "/questions/9" for ::1 at 2020-10-20 19:15:08 -0400
+Started GET "/questions/10" for ::1 at 2020-10-20 19:15:08 -0400
+Started GET "/questions/12" for ::1 at 2020-10-20 19:15:08 -0400
+Started GET "/questions/11" for ::1 at 2020-10-20 19:15:08 -0400
+Started GET "/questions/13" for ::1 at 2020-10-20 19:15:08 -0400
+Processing by QuestionsController#show as */*
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"9"}
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"11"}
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"10"}
+  Parameters: {"id"=>"12"}
+  [1m[36mQuestion Load (1.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mQuestion Load (1.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mQuestion Load (1.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+Processing by QuestionsController#show as */*
+  [1m[36mQuestion Load (1.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 1.7ms | Allocations: 2077)
+
+
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  Parameters: {"id"=>"13"}
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.2ms | Allocations: 3341)
+
+
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 1.6ms | Allocations: 1863)
+
+
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 2768)
+
+
+Started GET "/questions/15" for ::1 at 2020-10-20 19:15:08 -0400
+  [1m[36mQuestion Load (4.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Started GET "/questions/16" for ::1 at 2020-10-20 19:15:08 -0400
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 4.7ms | Allocations: 2010)
+
+
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"16"}
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"15"}
+  [1m[36mQuestion Load (0.9ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mQuestion Load (1.9ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 1.9ms | Allocations: 1644)
+
+
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.9ms | Allocations: 1254)
+
+
+Started GET "/questions/14" for ::1 at 2020-10-20 19:15:09 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"14"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 795)
+
+
+Started GET "/questions/17" for ::1 at 2020-10-20 19:15:11 -0400
+Started GET "/questions/19" for ::1 at 2020-10-20 19:15:11 -0400
+Started GET "/questions/18" for ::1 at 2020-10-20 19:15:11 -0400
+Started GET "/questions/20" for ::1 at 2020-10-20 19:15:11 -0400
+Started GET "/questions/21" for ::1 at 2020-10-20 19:15:11 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"20"}
+Processing by QuestionsController#show as */*
+Processing by QuestionsController#show as */*
+Processing by QuestionsController#show as */*
+  [1m[36mQuestion Load (0.9ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Parameters: {"id"=>"18"}
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  Parameters: {"id"=>"17"}
+Processing by QuestionsController#show as */*
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.9ms | Allocations: 1102)
+
+
+  Parameters: {"id"=>"19"}
+  [1m[36mQuestion Load (2.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mQuestion Load (1.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 1.1ms | Allocations: 1542)
+
+
+Started GET "/questions/23" for ::1 at 2020-10-20 19:15:11 -0400
+  Parameters: {"id"=>"21"}
+  [1m[36mQuestion Load (5.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+Completed 200 OK in 10ms (Views: 0.5ms | ActiveRecord: 2.3ms | Allocations: 2774)
+
+
+  [1m[36mQuestion Load (3.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 5.4ms | Allocations: 4222)
+
+
+Processing by QuestionsController#show as */*
+Started GET "/questions/25" for ::1 at 2020-10-20 19:15:11 -0400
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 3.3ms | Allocations: 2712)
+
+
+Started GET "/questions/24" for ::1 at 2020-10-20 19:15:11 -0400
+Started GET "/questions/26" for ::1 at 2020-10-20 19:15:11 -0400
+  Parameters: {"id"=>"23"}
+Started GET "/questions/27" for ::1 at 2020-10-20 19:15:11 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"25"}
+  [1m[36mQuestion Load (2.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+Processing by QuestionsController#show as */*
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"24"}
+  Parameters: {"id"=>"27"}
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+Processing by QuestionsController#show as */*
+Completed 404 Not Found in 7ms (ActiveRecord: 2.7ms | Allocations: 2467)
+
+
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  Parameters: {"id"=>"26"}
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=23):
+  
+app/controllers/questions_controller.rb:8:in `show'
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 404 Not Found in 5ms (ActiveRecord: 0.2ms | Allocations: 2917)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=25):
+  
+app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mQuestion Load (1.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mQuestion Load (18.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+Started GET "/questions/28" for ::1 at 2020-10-20 19:15:11 -0400
+Completed 404 Not Found in 45ms (ActiveRecord: 0.8ms | Allocations: 51779)
+
+
+Started GET "/questions/29" for ::1 at 2020-10-20 19:15:11 -0400
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=24):
+  
+app/controllers/questions_controller.rb:8:in `show'
+Completed 404 Not Found in 47ms (ActiveRecord: 1.1ms | Allocations: 52640)
+
+
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=27):
+  
+app/controllers/questions_controller.rb:8:in `show'
+Started GET "/questions/30" for ::1 at 2020-10-20 19:15:11 -0400
+Completed 404 Not Found in 69ms (ActiveRecord: 18.6ms | Allocations: 77733)
+
+
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"28"}
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=26):
+  
+app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mQuestion Load (23.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+Processing by QuestionsController#show as */*
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Processing by QuestionsController#show as */*
+Completed 404 Not Found in 46ms (ActiveRecord: 23.6ms | Allocations: 51020)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=28):
+  
+app/controllers/questions_controller.rb:8:in `show'
+  Parameters: {"id"=>"29"}
+Started GET "/questions/31" for ::1 at 2020-10-20 19:15:11 -0400
+Started GET "/questions/32" for ::1 at 2020-10-20 19:15:11 -0400
+  Parameters: {"id"=>"30"}
+Processing by QuestionsController#show as */*
+Processing by QuestionsController#show as */*
+  [1m[36mQuestion Load (3.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[36mQuestion Load (1.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  Parameters: {"id"=>"32"}
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  Parameters: {"id"=>"31"}
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+Completed 404 Not Found in 5ms (ActiveRecord: 3.5ms | Allocations: 1966)
+
+
+Completed 404 Not Found in 4ms (ActiveRecord: 1.5ms | Allocations: 1958)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=29):
+  
+app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mQuestion Load (1.9ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 404 Not Found in 20ms (ActiveRecord: 1.9ms | Allocations: 26623)
+
+
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=31):
+  
+app/controllers/questions_controller.rb:8:in `show'
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=30):
+  
+app/controllers/questions_controller.rb:8:in `show'
+Completed 404 Not Found in 23ms (ActiveRecord: 0.8ms | Allocations: 27598)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Question with 'id'=32):
+  
+app/controllers/questions_controller.rb:8:in `show'
+Started GET "/questions/22" for ::1 at 2020-10-20 19:15:12 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"22"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 794)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-20 19:15:14 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 795)
+
+
+Started POST "/users" for ::1 at 2020-10-20 19:15:16 -0400
+Started GET "/questions/1" for ::1 at 2020-10-20 19:15:16 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"suli", "user"=>{"name"=>"suli"}}
+Processing by QuestionsController#show as */*
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  Parameters: {"id"=>"1"}
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 864)
+
+
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "suli"], ["created_at", "2020-10-20 23:15:16.104701"], ["updated_at", "2020-10-20 23:15:16.104701"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (9.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 18ms (Views: 0.3ms | ActiveRecord: 11.1ms | Allocations: 3718)
+
+
+Started POST "/games" for ::1 at 2020-10-20 19:15:16 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>11, "game"=>{"score"=>0, "user_id"=>11}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 11], ["created_at", "2020-10-20 23:15:16.133159"], ["updated_at", "2020-10-20 23:15:16.133159"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 3752)
+
+
+Started GET "/questions/2" for ::1 at 2020-10-20 19:15:17 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 796)
+
+
+Started GET "/questions/3" for ::1 at 2020-10-20 19:15:20 -0400
+Started GET "/questions/4" for ::1 at 2020-10-20 19:15:20 -0400
+Processing by QuestionsController#show as */*
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"3"}
+  Parameters: {"id"=>"4"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 870)
+
+
+  [1m[36mQuestion Load (1.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 1.5ms | Allocations: 1754)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-20 19:15:57 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 796)
+
+
+Started POST "/users" for ::1 at 2020-10-20 19:15:59 -0400
+Started GET "/questions/1" for ::1 at 2020-10-20 19:15:59 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"suli", "user"=>{"name"=>"suli"}}
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mQuestion Load (1.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 1585)
+
+
+  [1m[36mUser Create (1.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "suli"], ["created_at", "2020-10-20 23:15:59.457828"], ["updated_at", "2020-10-20 23:15:59.457828"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (4.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 6.3ms | Allocations: 3520)
+
+
+Started POST "/games" for ::1 at 2020-10-20 19:15:59 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>12, "game"=>{"score"=>0, "user_id"=>12}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.5ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 12], ["created_at", "2020-10-20 23:15:59.478268"], ["updated_at", "2020-10-20 23:15:59.478268"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 1.2ms | Allocations: 3755)
+
+
+Started GET "/questions/2" for ::1 at 2020-10-20 19:16:01 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 795)
+
+
+Started GET "/questions/3" for ::1 at 2020-10-20 19:16:12 -0400
+Started GET "/questions/4" for ::1 at 2020-10-20 19:16:12 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"3"}
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.9ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 1331)
+
+
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 1547)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-20 19:16:46 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.6ms | Allocations: 795)
+
+
+Started POST "/users" for ::1 at 2020-10-20 19:16:48 -0400
+Started GET "/questions/1" for ::1 at 2020-10-20 19:16:48 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"suli", "user"=>{"name"=>"suli"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "suli"], ["created_at", "2020-10-20 23:16:48.107073"], ["updated_at", "2020-10-20 23:16:48.107073"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mQuestion Load (1.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 1.3ms | Allocations: 1550)
+
+
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 1.8ms | Allocations: 3827)
+
+
+Started POST "/games" for ::1 at 2020-10-20 19:16:48 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>13, "game"=>{"score"=>0, "user_id"=>13}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 13], ["created_at", "2020-10-20 23:16:48.128261"], ["updated_at", "2020-10-20 23:16:48.128261"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.2ms | Allocations: 3754)
+
+
+Started GET "/questions/2" for ::1 at 2020-10-20 19:16:49 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 795)
+
+
+Started GET "/questions/4" for ::1 at 2020-10-20 19:16:55 -0400
+Started GET "/questions/3" for ::1 at 2020-10-20 19:16:55 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"4"}
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mQuestion Load (1.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 1.4ms | Allocations: 1110)
+
+
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.7ms | Allocations: 1563)
+
+
+Started GET "/questions/5" for ::1 at 2020-10-20 19:17:01 -0400
+Started GET "/questions/6" for ::1 at 2020-10-20 19:17:01 -0400
+Started GET "/questions/8" for ::1 at 2020-10-20 19:17:01 -0400
+Processing by QuestionsController#show as */*
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"5"}
+  Parameters: {"id"=>"6"}
+Started GET "/questions/7" for ::1 at 2020-10-20 19:17:01 -0400
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Processing by QuestionsController#show as */*
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 2205)
+
+
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.7ms | Allocations: 1965)
+
+
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"8"}
+  Parameters: {"id"=>"7"}
+  [1m[36mQuestion Load (1.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mQuestion Load (3.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 1.4ms | Allocations: 829)
+
+
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 3.2ms | Allocations: 1826)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-20 19:17:35 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 796)
+
+

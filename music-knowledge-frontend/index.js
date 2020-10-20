@@ -1,19 +1,18 @@
 document.addEventListener('DOMContentLoaded', e => {
-  let questionArray = []
+  
+  // const questionId = Math.floor(Math.random() * 10) + 1
+  let questionId = 1
+  const questionUrl = 'http://localhost:3000/questions/'
   const getQuestions = () => {
-    fetch('http://localhost:3000/questions')
+    fetch('http://localhost:3000/questions/1')
     .then(response => response.json())
     .then(data => {
-      questionArray = data
+      console.log(data)
+     
     })
   }
 
-  // questionArray.forEach(e => {
-  //   console.log("hey")
-  // })
 
-  console.log(questionArray)
-  // console.log(questionArray[0])
 
   const renderNewGame = () => {
     const header = document.getElementById('page-header')
@@ -30,8 +29,9 @@ document.addEventListener('DOMContentLoaded', e => {
       e.preventDefault()
       const username = e.target.username.value
       createUser(username)
-      createGame()
-      // renderQuestions()
+      renderQuestion()
+      
+      
     })
 
   }
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', e => {
     fetch('http://localhost:3000/users', userOptions)
     .then(response => response.json())
     .then(data => {
-      // createGame(0, data.id)
+      createGame(0, data.id)
     })
   }
 
@@ -65,23 +65,68 @@ document.addEventListener('DOMContentLoaded', e => {
       body: JSON.stringify(
         {
           score: score,
-          user_id: 10
+          user_id: userId
         })
     }
     fetch('http://localhost:3000/games', gameOptions)
     .then(response => response.json())
-    // .then(data => {
-    //   console.log(data)
-    //   // renderQuestions(data.id)
-    // })
+    .then(data => {
+      console.log(data)
+      // renderQuestions(data.id)
+    })
   }
 
-  const renderQuestions = () => {
+  const renderQuestion = () => {
+   
+    fetch(questionUrl + questionId)
+    .then(response => response.json())
+    .then(data => {
+      
+      const mainDiv = document.getElementById('page-header')
+      mainDiv.innerHTML = ''
+      const questionContainer = document.createElement('div')
+      questionContainer.id = "question-container"
+      questionContainer.innerHTML =
+      `<h2>name the artist</h2>
+      <button data-choice= "wrong" type="button">${data.fake1}</button>
+      <button data-choice= "wrong" type="button">${data.fake2}</button>
+      <button data-choice= "wrong" type="button">${data.fake3}</button>
+      <button data-choice= "correct" type="button">${data.correct}</button>
+  
+      `
+      mainDiv.append(questionContainer)
+     
+    })
+
+    const clickHandler = ()=>{
+      document.addEventListener('click', e =>{
+        let score= 0
+        if(e.target.matches(`[data-choice='wrong']`)){
+          score = score -1
+          questionId++
+          console.log(questionId)
+          console.log(score)
+          renderQuestion()
+          
+        }
+        else if(e.target.matches(`[data-choice='correct']`)){
+          score = score + 1
+          questionId++
+          console.log('id', questionId)
+          console.log('score', score)
+          renderQuestion()
+        }
+      })
+    }
+ 
+    
+    
+clickHandler()
 
   }
-//
+  
+
   getQuestions()
   renderNewGame()
-  createGame()
-//
+  
 })

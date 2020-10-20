@@ -6,7 +6,7 @@ class GamesController < ApplicationController
 
   def create
     game = Game.create(games_params)
-    byebug
+    
     render json: game
   end
 
