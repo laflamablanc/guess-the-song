@@ -1,0 +1,1441 @@
+  [1m[35m (378.2ms)[0m  [1m[35mCREATE DATABASE "music_knowledge_backend_development" ENCODING = 'unicode'[0m
+  [1m[35m (121.3ms)[0m  [1m[35mCREATE DATABASE "music_knowledge_backend_test" ENCODING = 'unicode'[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (19.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1262214483776396220)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20201020180058)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (32.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201020180058"]]
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateGames (20201020180144)
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (26.2ms)[0m  [1m[35mCREATE TABLE "games" ("id" bigserial primary key, "score" integer, "user_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201020180144"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateQuestions (20201020180235)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "questions" ("id" bigserial primary key, "game_id" integer, "correct" character varying, "fake1" character varying, "fake2" character varying, "fake3" character varying, "name" character varying, "artist" character varying, "genre" character varying, "filename" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201020180235"]]
+  [1m[35m (16.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-10-20 18:09:27.439358"], ["updated_at", "2020-10-20 18:09:27.439358"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1262214483776396220)[0m
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (14.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Mamadou"], ["created_at", "2020-10-20 18:19:02.925185"], ["updated_at", "2020-10-20 18:19:02.925185"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sean"], ["created_at", "2020-10-20 18:19:02.945195"], ["updated_at", "2020-10-20 18:19:02.945195"]]
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (10.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Create (1.3ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 1], ["created_at", "2020-10-20 18:19:03.042960"], ["updated_at", "2020-10-20 18:19:03.042960"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGame Create (0.4ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 2], ["created_at", "2020-10-20 18:19:03.051223"], ["updated_at", "2020-10-20 18:19:03.051223"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (16.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Mamadou"], ["created_at", "2020-10-20 18:19:54.918159"], ["updated_at", "2020-10-20 18:19:54.918159"]]
+  [1m[35m (15.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sean"], ["created_at", "2020-10-20 18:19:54.942937"], ["updated_at", "2020-10-20 18:19:54.942937"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Create (0.6ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 1], ["created_at", "2020-10-20 18:19:54.968646"], ["updated_at", "2020-10-20 18:19:54.968646"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (12.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGame Create (0.2ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 2], ["created_at", "2020-10-20 18:19:54.994510"], ["updated_at", "2020-10-20 18:19:54.994510"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.5ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "correct", "fake1", "fake2", "fake3", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["game_id", 1], ["correct", "Drake"], ["fake1", "Roddy Rich"], ["fake2", "Young Thug"], ["fake3", "Flava Flav"], ["filename", "assest/1.mp3"], ["created_at", "2020-10-20 18:19:55.012542"], ["updated_at", "2020-10-20 18:19:55.012542"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "correct", "fake1", "fake2", "fake3", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["game_id", 1], ["correct", "Drake"], ["fake1", "Roddy Rich"], ["fake2", "Young Thug"], ["fake3", "Flava Flav"], ["filename", "assest/2.mp3"], ["created_at", "2020-10-20 18:19:55.017472"], ["updated_at", "2020-10-20 18:19:55.017472"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "correct", "fake1", "fake2", "fake3", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["game_id", 1], ["correct", "Drake"], ["fake1", "Roddy Rich"], ["fake2", "Young Thug"], ["fake3", "Flava Flav"], ["filename", "assest/3.mp3"], ["created_at", "2020-10-20 18:19:55.022035"], ["updated_at", "2020-10-20 18:19:55.022035"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/quesions" for ::1 at 2020-10-20 11:22:37 -0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/quesions"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/favicon.ico" for ::1 at 2020-10-20 11:22:38 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/questions" for ::1 at 2020-10-20 11:22:41 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 20ms (Views: 12.9ms | ActiveRecord: 4.8ms | Allocations: 9291)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 11:23:26 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.3ms | Allocations: 1371)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 11:25:04 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.3ms | Allocations: 1371)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 11:33:54 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (1.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 28ms (Views: 18.0ms | ActiveRecord: 5.9ms | Allocations: 9212)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 11:42:51 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.7ms | Allocations: 1462)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 11:44:34 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.3ms | Allocations: 1373)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 11:45:13 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.6ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 11:45:34 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.3ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 11:45:43 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.6ms | Allocations: 1373)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 11:45:52 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.6ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 11:48:53 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.5ms | Allocations: 1373)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 11:49:11 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.4ms | Allocations: 1355)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 11:50:35 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.4ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 11:51:09 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.4ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 11:51:54 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.4ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 11:52:08 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 11:52:16 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.4ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 11:53:37 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.6ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 11:55:20 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.3ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 11:55:29 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.4ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 11:55:57 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.4ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 11:56:16 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.3ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 11:57:05 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.4ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 11:58:18 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.4ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 11:58:33 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.3ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 11:59:01 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.3ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 11:59:12 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.3ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 11:59:33 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.4ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 11:59:41 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.5ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 11:59:53 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.3ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 12:00:29 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.3ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 12:00:39 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (16.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 18ms (Views: 2.0ms | ActiveRecord: 16.2ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 12:00:54 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.4ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 12:01:00 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.3ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 12:14:43 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (1.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 1.1ms | Allocations: 1449)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 12:19:29 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.6ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 12:19:42 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.4ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 12:20:20 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 12:20:24 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.3ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 12:21:08 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.3ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 12:21:23 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (2.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 2.1ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 12:23:10 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.5ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 12:30:13 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (1.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 1.1ms | Allocations: 1450)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 12:31:09 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.3ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 12:35:07 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (12.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 36ms (Views: 14.0ms | ActiveRecord: 18.5ms | Allocations: 8259)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 12:35:56 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.4ms | Allocations: 1354)
+
+
+Started GET "/users" for ::1 at 2020-10-20 12:38:35 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 30ms (Views: 6.3ms | ActiveRecord: 20.5ms | Allocations: 4332)
+
+
+Started GET "/users/1" for ::1 at 2020-10-20 12:38:40 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms | Allocations: 369)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/users_controller.rb:13:in `show'
+Started GET "/users/1" for ::1 at 2020-10-20 12:38:57 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 4.6ms | Allocations: 3895)
+
+
+Started GET "/users/3" for ::1 at 2020-10-20 12:39:01 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 696)
+
+
+Started GET "/users/4" for ::1 at 2020-10-20 12:39:04 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 696)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 12:44:54 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 18ms (Views: 13.0ms | ActiveRecord: 3.7ms | Allocations: 7972)
+
+
+Started POST "/users" for ::1 at 2020-10-20 12:44:59 -0700
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Sean L", "user"=>{"name"=>"Sean L"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sean L"], ["created_at", "2020-10-20 19:44:59.277123"], ["updated_at", "2020-10-20 19:44:59.277123"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 1.4ms | Allocations: 2725)
+
+
+Started GET "/users" for ::1 at 2020-10-20 12:45:12 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 1282)
+
+
+Started GET "/games" for ::1 at 2020-10-20 12:47:55 -0700
+Processing by GamesController#index as HTML
+  [1m[36mGame Load (0.7ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/games_controller.rb:4:in `index'
+Completed 200 OK in 13ms (Views: 6.8ms | ActiveRecord: 4.5ms | Allocations: 4916)
+
+
+Started POST "/users" for ::1 at 2020-10-20 12:49:45 -0700
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Sean Lasfasf", "user"=>{"name"=>"Sean Lasfasf"}}
+  [1m[35m (15.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sean Lasfasf"], ["created_at", "2020-10-20 19:49:45.556679"], ["updated_at", "2020-10-20 19:49:45.556679"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 25ms (Views: 0.2ms | ActiveRecord: 18.8ms | Allocations: 4418)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 12:49:59 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 25ms (Views: 17.4ms | ActiveRecord: 5.9ms | Allocations: 7961)
+
+
+Started POST "/users" for ::1 at 2020-10-20 12:50:02 -0700
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Sean L", "user"=>{"name"=>"Sean L"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sean L"], ["created_at", "2020-10-20 19:50:02.976019"], ["updated_at", "2020-10-20 19:50:02.976019"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 2477)
+
+
+Started GET "/users" for ::1 at 2020-10-20 12:53:02 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 1484)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 12:54:46 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.8ms | Allocations: 1353)
+
+
+Started POST "/users" for ::1 at 2020-10-20 12:55:13 -0700
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Sean La", "user"=>{"name"=>"Sean La"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sean La"], ["created_at", "2020-10-20 19:55:13.149708"], ["updated_at", "2020-10-20 19:55:13.149708"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 2482)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 12:55:17 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.4ms | Allocations: 1354)
+
+
+Started GET "/games" for ::1 at 2020-10-20 12:55:22 -0700
+Started POST "/users" for ::1 at 2020-10-20 12:55:22 -0700
+Processing by GamesController#index as */*
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/games_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 1196)
+
+
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Mamadou 2", "user"=>{"name"=>"Mamadou 2"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Mamadou 2"], ["created_at", "2020-10-20 19:55:22.703131"], ["updated_at", "2020-10-20 19:55:22.703131"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 1.4ms | Allocations: 2503)
+
+
+Started GET "/games" for ::1 at 2020-10-20 12:55:22 -0700
+Processing by GamesController#index as */*
+  [1m[36mGame Load (16.5ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/games_controller.rb:4:in `index'
+Completed 200 OK in 18ms (Views: 1.7ms | ActiveRecord: 16.5ms | Allocations: 1244)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 12:57:11 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.6ms | Allocations: 1379)
+
+
+Started POST "/users" for ::1 at 2020-10-20 12:57:16 -0700
+Started POST "/games" for ::1 at 2020-10-20 12:57:16 -0700
+Processing by GamesController#create as JSON
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Mamadou 3", "user"=>{"name"=>"Mamadou 3"}}
+  Parameters: {"game"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 123)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: game):
+  
+app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Mamadou 3"], ["created_at", "2020-10-20 19:57:16.238644"], ["updated_at", "2020-10-20 19:57:16.238644"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 22ms (Views: 0.2ms | ActiveRecord: 1.8ms | Allocations: 27768)
+
+
+Started POST "/games" for ::1 at 2020-10-20 12:57:16 -0700
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>10, "game"=>{"score"=>0, "user_id"=>10}}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.4ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 10], ["created_at", "2020-10-20 19:57:16.299681"], ["updated_at", "2020-10-20 19:57:16.299681"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+Completed 200 OK in 16ms (Views: 0.4ms | ActiveRecord: 1.7ms | Allocations: 6103)
+
+
+Started GET "/users" for ::1 at 2020-10-20 12:58:31 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.2ms | Allocations: 1752)
+
+
+Started GET "/games" for ::1 at 2020-10-20 12:58:36 -0700
+Processing by GamesController#index as HTML
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/games_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.3ms | Allocations: 1289)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 13:00:08 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 41ms (Views: 15.3ms | ActiveRecord: 24.3ms | Allocations: 8275)
+
+
+Started POST "/users" for ::1 at 2020-10-20 13:00:14 -0700
+Started POST "/games" for ::1 at 2020-10-20 13:00:14 -0700
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Mamadou 4", "user"=>{"name"=>"Mamadou 4"}}
+Processing by GamesController#create as JSON
+  Parameters: {"game"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 1.1ms | Allocations: 125)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: game):
+  
+app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (15.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Mamadou 4"], ["created_at", "2020-10-20 20:00:14.679053"], ["updated_at", "2020-10-20 20:00:14.679053"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 45ms (Views: 0.4ms | ActiveRecord: 22.3ms | Allocations: 30040)
+
+
+Started POST "/games" for ::1 at 2020-10-20 13:00:14 -0700
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>11, "game"=>{"score"=>0, "user_id"=>11}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 11], ["created_at", "2020-10-20 20:00:14.742302"], ["updated_at", "2020-10-20 20:00:14.742302"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+Completed 200 OK in 21ms (Views: 0.3ms | ActiveRecord: 4.0ms | Allocations: 6434)
+
+
+Started POST "/users" for ::1 at 2020-10-20 13:03:09 -0700
+Started POST "/games" for ::1 at 2020-10-20 13:03:09 -0700
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Mamadou 4", "user"=>{"name"=>"Mamadou 4"}}
+Processing by GamesController#create as JSON
+  Parameters: {"game"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 1.0ms | Allocations: 126)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: game):
+  
+app/controllers/games_controller.rb:21:in `games_params'
+app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (23.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Mamadou 4"], ["created_at", "2020-10-20 20:03:09.542972"], ["updated_at", "2020-10-20 20:03:09.542972"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 36ms (Views: 0.3ms | ActiveRecord: 29.3ms | Allocations: 30773)
+
+
+Started POST "/games" for ::1 at 2020-10-20 13:03:09 -0700
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>12, "game"=>{"score"=>0, "user_id"=>12}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.7ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 12], ["created_at", "2020-10-20 20:03:09.593251"], ["updated_at", "2020-10-20 20:03:09.593251"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+Started GET "/questions" for ::1 at 2020-10-20 13:04:59 -0700
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (8.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 48ms (Views: 24.3ms | ActiveRecord: 16.1ms | Allocations: 9219)
+
+
+Started POST "/users" for ::1 at 2020-10-20 13:05:02 -0700
+Started POST "/games" for ::1 at 2020-10-20 13:05:02 -0700
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Sean L", "user"=>{"name"=>"Sean L"}}
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (3.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sean L"], ["created_at", "2020-10-20 20:05:02.282950"], ["updated_at", "2020-10-20 20:05:02.282950"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 7.5ms | Allocations: 7674)
+
+
+Processing by GamesController#create as JSON
+  Parameters: {"game"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 3.9ms | Allocations: 137)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: game):
+  
+app/controllers/games_controller.rb:21:in `games_params'
+app/controllers/games_controller.rb:8:in `create'
+Started POST "/games" for ::1 at 2020-10-20 13:05:02 -0700
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>13, "game"=>{"score"=>0, "user_id"=>13}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.5ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 13], ["created_at", "2020-10-20 20:05:02.336456"], ["updated_at", "2020-10-20 20:05:02.336456"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+Completed 500 Internal Server Error in 133898ms (ActiveRecord: 4.6ms | Allocations: 125395)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/games_controller.rb:10:in `create'
+Started GET "/questions" for ::1 at 2020-10-20 13:07:17 -0700
+Started POST "/games" for ::1 at 2020-10-20 13:07:17 -0700
+Processing by QuestionsController#index as */*
+Started POST "/users" for ::1 at 2020-10-20 13:07:17 -0700
+  [1m[36mQuestion Load (15.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 92ms (Views: 74.0ms | ActiveRecord: 15.3ms | Allocations: 756098)
+
+
+Started POST "/users" for ::1 at 2020-10-20 13:07:18 -0700
+Started POST "/games" for ::1 at 2020-10-20 13:07:18 -0700
+Started POST "/users" for ::1 at 2020-10-20 13:07:18 -0700
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"asdasdasd", "user"=>{"name"=>"asdasdasd"}}
+Processing by GamesController#create as JSON
+  Parameters: {"game"=>{}}
+Completed 400 Bad Request in 7ms (ActiveRecord: 17.1ms | Allocations: 38680)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: games):
+  
+app/controllers/games_controller.rb:21:in `games_params'
+app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (27.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (155.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "asdasdasd"], ["created_at", "2020-10-20 20:07:19.015133"], ["updated_at", "2020-10-20 20:07:19.015133"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 962ms (Views: 7.3ms | ActiveRecord: 283.5ms | Allocations: 8503223)
+
+
+Started POST "/games" for ::1 at 2020-10-20 13:07:21 -0700
+Started POST "/users" for ::1 at 2020-10-20 13:07:21 -0700
+Processing by GamesController#create as JSON
+  Parameters: {"game"=>{}}
+Completed 400 Bad Request in 4ms (ActiveRecord: 73.6ms | Allocations: 40670)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: games):
+  
+app/controllers/games_controller.rb:21:in `games_params'
+app/controllers/games_controller.rb:8:in `create'
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"asdasdasd", "user"=>{"name"=>"asdasdasd"}}
+  [1m[35m (136.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Processing by UsersController#create as JSON
+  [1m[36mUser Create (78.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "asdasdasd"], ["created_at", "2020-10-20 20:07:22.720416"], ["updated_at", "2020-10-20 20:07:22.720416"]]
+  Parameters: {"name"=>"asdasdasd", "user"=>{"name"=>"asdasdasd"}}
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Processing by GamesController#create as JSON
+  [1m[35m (7.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/games" for ::1 at 2020-10-20 13:07:23 -0700
+Processing by UsersController#create as JSON
+  Parameters: {"game"=>{}}
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  Parameters: {"name"=>"asdasdasd", "user"=>{"name"=>"asdasdasd"}}
+Completed 200 OK in 816ms (Views: 7.1ms | ActiveRecord: 338.0ms | Allocations: 6930726)
+
+
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.0ms | Allocations: 34353)
+
+
+  [1m[36mUser Create (38.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "asdasdasd"], ["created_at", "2020-10-20 20:07:23.307287"], ["updated_at", "2020-10-20 20:07:23.307287"]]
+Processing by GamesController#create as JSON
+  [1m[35m (43.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  Parameters: {"game"=>{}}
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  
+ActionController::ParameterMissing (param is missing or the value is empty: games):
+  
+app/controllers/games_controller.rb:21:in `games_params'
+app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Create (9.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "asdasdasd"], ["created_at", "2020-10-20 20:07:23.400123"], ["updated_at", "2020-10-20 20:07:23.400123"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 400 Bad Request in 5ms (ActiveRecord: 0.0ms | Allocations: 33489)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: games):
+  
+app/controllers/games_controller.rb:21:in `games_params'
+app/controllers/games_controller.rb:8:in `create'
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Started POST "/games" for ::1 at 2020-10-20 13:07:23 -0700
+  [1m[35m (396.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 1195ms (Views: 7.2ms | ActiveRecord: 48.2ms | Allocations: 9908354)
+
+
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Processing by GamesController#create as JSON
+Completed 200 OK in 1869ms (Views: 7.0ms | ActiveRecord: 450.0ms | Allocations: 15324955)
+
+
+  Parameters: {"score"=>0, "user_id"=>14, "game"=>{"score"=>0, "user_id"=>14}}
+Completed 400 Bad Request in 4ms (ActiveRecord: 0.0ms | Allocations: 37169)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: games):
+  
+app/controllers/games_controller.rb:21:in `games_params'
+app/controllers/games_controller.rb:8:in `create'
+Started POST "/games" for ::1 at 2020-10-20 13:07:25 -0700
+Started POST "/games" for ::1 at 2020-10-20 13:07:26 -0700
+Processing by GamesController#create as JSON
+Started POST "/games" for ::1 at 2020-10-20 13:07:26 -0700
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>16, "game"=>{"score"=>0, "user_id"=>16}}
+  Parameters: {"score"=>0, "user_id"=>15, "game"=>{"score"=>0, "user_id"=>15}}
+Completed 400 Bad Request in 7ms (ActiveRecord: 0.0ms | Allocations: 37169)
+
+
+Completed 400 Bad Request in 6ms (ActiveRecord: 0.0ms | Allocations: 37169)
+
+
+Processing by GamesController#create as JSON
+  
+ActionController::ParameterMissing (param is missing or the value is empty: games):
+  
+app/controllers/games_controller.rb:21:in `games_params'
+app/controllers/games_controller.rb:8:in `create'
+  
+ActionController::ParameterMissing (param is missing or the value is empty: games):
+  
+app/controllers/games_controller.rb:21:in `games_params'
+app/controllers/games_controller.rb:8:in `create'
+  Parameters: {"score"=>0, "user_id"=>17, "game"=>{"score"=>0, "user_id"=>17}}
+Completed 400 Bad Request in 4ms (ActiveRecord: 0.0ms | Allocations: 35345)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: games):
+  
+app/controllers/games_controller.rb:21:in `games_params'
+app/controllers/games_controller.rb:8:in `create'
+Started GET "/questions" for ::1 at 2020-10-20 13:11:30 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (1.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 274ms (Views: 233.4ms | ActiveRecord: 17.9ms | Allocations: 2292231)
+
+
+Started POST "/users" for ::1 at 2020-10-20 13:13:12 -0700
+Started POST "/games" for ::1 at 2020-10-20 13:13:13 -0700
+Processing by GamesController#create as JSON
+  Parameters: {"game"=>{}}
+Completed 400 Bad Request in 5ms (ActiveRecord: 5.3ms | Allocations: 42278)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: game):
+  
+app/controllers/games_controller.rb:21:in `games_params'
+app/controllers/games_controller.rb:8:in `create'
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"asdasdasd", "user"=>{"name"=>"asdasdasd"}}
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (5.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "asdasdasd"], ["created_at", "2020-10-20 20:13:14.090883"], ["updated_at", "2020-10-20 20:13:14.090883"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 158ms (Views: 8.0ms | ActiveRecord: 19.7ms | Allocations: 1213526)
+
+
+Started POST "/games" for ::1 at 2020-10-20 13:13:14 -0700
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>18, "game"=>{"score"=>0, "user_id"=>18}}
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (1.9ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 18], ["created_at", "2020-10-20 20:13:14.423638"], ["updated_at", "2020-10-20 20:13:14.423638"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (21.6ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/questions" for ::1 at 2020-10-20 13:13:14 -0700
+  ↳ app/controllers/games_controller.rb:8:in `create'
+Completed 500 Internal Server Error in 114253ms (ActiveRecord: 39.7ms | Allocations: 1949190)
+
+
+Processing by QuestionsController#index as */*
+Started GET "/questions" for ::1 at 2020-10-20 13:15:08 -0700
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/games_controller.rb:10:in `create'
+Started GET "/questions" for ::1 at 2020-10-20 13:15:08 -0700
+  [1m[36mQuestion Load (36.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+Processing by QuestionsController#index as HTML
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 740ms (Views: 698.8ms | ActiveRecord: 36.8ms | Allocations: 6182000)
+
+
+  [1m[36mQuestion Load (363.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 880ms (Views: 510.6ms | ActiveRecord: 363.0ms | Allocations: 6669018)
+
+
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (4.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 289ms (Views: 253.5ms | ActiveRecord: 10.5ms | Allocations: 2218293)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 13:15:11 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (3.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 67ms (Views: 59.1ms | ActiveRecord: 3.0ms | Allocations: 567134)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 13:15:59 -0700
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 35ms (Views: 25.7ms | ActiveRecord: 5.0ms | Allocations: 9217)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 13:16:02 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.9ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.9ms | Allocations: 1374)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 13:16:42 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.5ms | Allocations: 1373)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 13:19:06 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.3ms | Allocations: 1373)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 13:19:48 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.4ms | Allocations: 1373)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 13:19:48 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.7ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 13:19:49 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.4ms | Allocations: 1355)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 13:19:49 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.4ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 13:19:49 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.4ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 13:19:50 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.4ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 13:19:50 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.4ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 13:20:00 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.3ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 13:20:45 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.6ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 13:22:10 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.4ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 13:22:33 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.6ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 13:22:43 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.6ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 13:27:04 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.6ms | Allocations: 1354)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 13:27:12 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.6ms | Allocations: 1354)
+
+
+Started POST "/users" for ::1 at 2020-10-20 13:27:15 -0700
+Started POST "/games" for ::1 at 2020-10-20 13:27:15 -0700
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Sean L", "user"=>{"name"=>"Sean L"}}
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sean L"], ["created_at", "2020-10-20 20:27:15.414185"], ["updated_at", "2020-10-20 20:27:15.414185"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 11.1ms | Allocations: 7711)
+
+
+Started POST "/games" for ::1 at 2020-10-20 13:27:15 -0700
+Processing by GamesController#create as JSON
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>19, "game"=>{"score"=>0, "user_id"=>19}}
+  Parameters: {"game"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 21.9ms | Allocations: 125)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: game):
+  
+app/controllers/games_controller.rb:20:in `games_params'
+app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.7ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 19], ["created_at", "2020-10-20 20:27:15.496801"], ["updated_at", "2020-10-20 20:27:15.496801"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+Completed 200 OK in 55ms (Views: 0.3ms | ActiveRecord: 38.3ms | Allocations: 33834)
+
+
+Started GET "/users" for ::1 at 2020-10-20 13:27:26 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.3ms | Allocations: 2599)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 13:28:27 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 23ms (Views: 15.2ms | ActiveRecord: 6.6ms | Allocations: 8266)
+
+
+Started POST "/users" for ::1 at 2020-10-20 13:28:30 -0700
+Started POST "/games" for ::1 at 2020-10-20 13:28:30 -0700
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Mamadou 2", "user"=>{"name"=>"Mamadou 2"}}
+Processing by GamesController#create as JSON
+  Parameters: {"game"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 2.6ms | Allocations: 126)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: game):
+  
+app/controllers/games_controller.rb:21:in `games_params'
+app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (11.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Mamadou 2"], ["created_at", "2020-10-20 20:28:30.415020"], ["updated_at", "2020-10-20 20:28:30.415020"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 44ms (Views: 0.3ms | ActiveRecord: 21.7ms | Allocations: 30769)
+
+
+Started POST "/games" for ::1 at 2020-10-20 13:28:30 -0700
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>20, "game"=>{"score"=>0, "user_id"=>20}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (17.0ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 20], ["created_at", "2020-10-20 20:28:30.478304"], ["updated_at", "2020-10-20 20:28:30.478304"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+Completed 200 OK in 228065ms (Views: 0.3ms | ActiveRecord: 21.9ms | Allocations: 46294)
+
+
+Started GET "/games" for ::1 at 2020-10-20 13:32:18 -0700
+Started GET "/questions" for ::1 at 2020-10-20 13:32:18 -0700
+Processing by GamesController#index as HTML
+Processing by QuestionsController#index as */*
+  [1m[36mGame Load (0.7ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/games_controller.rb:4:in `index'
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.7ms | Allocations: 2628)
+
+
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.3ms | Allocations: 3160)
+
+
+Started POST "/users" for ::1 at 2020-10-20 13:32:22 -0700
+Started POST "/games" for ::1 at 2020-10-20 13:32:22 -0700
+Processing by UsersController#create as JSON
+Processing by GamesController#create as JSON
+  Parameters: {"name"=>"Mamadou 2", "user"=>{"name"=>"Mamadou 2"}}
+  Parameters: {"game"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 120)
+
+
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  
+ActionController::ParameterMissing (param is missing or the value is empty: game):
+  
+app/controllers/games_controller.rb:21:in `games_params'
+app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Create (19.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Mamadou 2"], ["created_at", "2020-10-20 20:32:22.277054"], ["updated_at", "2020-10-20 20:32:22.277054"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 27ms (Views: 0.3ms | ActiveRecord: 22.9ms | Allocations: 28490)
+
+
+Started POST "/games" for ::1 at 2020-10-20 13:32:22 -0700
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>21, "game"=>{"score"=>0, "user_id"=>21}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.6ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 21], ["created_at", "2020-10-20 20:32:22.321216"], ["updated_at", "2020-10-20 20:32:22.321216"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+Completed 200 OK in 10241ms (Views: 0.3ms | ActiveRecord: 1.8ms | Allocations: 5419)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 13:32:32 -0700
+Processing by QuestionsController#index as */*
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Started POST "/games" for ::1 at 2020-10-20 13:32:32 -0700
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.7ms | Allocations: 1714)
+
+
+Started POST "/users" for ::1 at 2020-10-20 13:32:32 -0700
+Started POST "/users" for ::1 at 2020-10-20 13:32:32 -0700
+Started POST "/games" for ::1 at 2020-10-20 13:32:32 -0700
+Processing by GamesController#create as JSON
+Started POST "/games" for ::1 at 2020-10-20 13:32:32 -0700
+  Parameters: {"game"=>{}}
+Processing by UsersController#create as JSON
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 117)
+
+
+  Parameters: {"name"=>"Mamadou 2", "user"=>{"name"=>"Mamadou 2"}}
+  
+ActionController::ParameterMissing (param is missing or the value is empty: game):
+  
+app/controllers/games_controller.rb:21:in `games_params'
+app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (26.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Mamadou 2"], ["created_at", "2020-10-20 20:32:32.578042"], ["updated_at", "2020-10-20 20:32:32.578042"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 38ms (Views: 0.8ms | ActiveRecord: 28.5ms | Allocations: 28275)
+
+
+Started POST "/games" for ::1 at 2020-10-20 13:32:32 -0700
+Processing by GamesController#create as JSON
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Mamadou 2", "user"=>{"name"=>"Mamadou 2"}}
+Processing by GamesController#create as JSON
+Processing by GamesController#create as JSON
+  Parameters: {"game"=>{}}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  Parameters: {"game"=>{}}
+  Parameters: {"score"=>0, "user_id"=>22, "game"=>{"score"=>0, "user_id"=>22}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 117)
+
+
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 117)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: game):
+  
+app/controllers/games_controller.rb:21:in `games_params'
+app/controllers/games_controller.rb:8:in `create'
+  
+ActionController::ParameterMissing (param is missing or the value is empty: game):
+  
+app/controllers/games_controller.rb:21:in `games_params'
+app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (37.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Create (58.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Mamadou 2"], ["created_at", "2020-10-20 20:32:32.635191"], ["updated_at", "2020-10-20 20:32:32.635191"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 72ms (Views: 0.5ms | ActiveRecord: 60.7ms | Allocations: 56932)
+
+
+  [1m[36mGame Create (0.9ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 22], ["created_at", "2020-10-20 20:32:32.705566"], ["updated_at", "2020-10-20 20:32:32.705566"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+Completed 200 OK in 22950ms (Views: 0.3ms | ActiveRecord: 41.6ms | Allocations: 58855)
+
+
+Started GET "/games" for ::1 at 2020-10-20 13:32:55 -0700
+Started POST "/games" for ::1 at 2020-10-20 13:32:55 -0700
+Started POST "/users" for ::1 at 2020-10-20 13:32:55 -0700
+Processing by GamesController#index as HTML
+Processing by GamesController#create as JSON
+Processing by UsersController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>23, "game"=>{"score"=>0, "user_id"=>23}}
+  Parameters: {"name"=>"Mamadou 2", "user"=>{"name"=>"Mamadou 2"}}
+  [1m[36mGame Load (1.4ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  [1m[35m (2.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:4:in `index'
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 1.4ms | Allocations: 4467)
+
+
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Mamadou 2"], ["created_at", "2020-10-20 20:32:55.609852"], ["updated_at", "2020-10-20 20:32:55.609852"]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.7ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 23], ["created_at", "2020-10-20 20:32:55.619070"], ["updated_at", "2020-10-20 20:32:55.619070"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 15ms (Views: 0.4ms | ActiveRecord: 6.3ms | Allocations: 7557)
+
+
+  ↳ app/controllers/games_controller.rb:8:in `create'
+Completed 200 OK in 159701ms (Views: 0.3ms | ActiveRecord: 5.4ms | Allocations: 10925)
+
+
+Started GET "/questions" for ::1 at 2020-10-20 13:35:35 -0700
+Started GET "/games" for ::1 at 2020-10-20 13:35:35 -0700
+Processing by QuestionsController#index as */*
+Processing by GamesController#index as HTML
+Started POST "/games" for ::1 at 2020-10-20 13:35:35 -0700
+  [1m[36mQuestion Load (1.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 1.1ms | Allocations: 1739)
+
+
+  [1m[36mGame Load (2.4ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/games_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 3.5ms | ActiveRecord: 2.4ms | Allocations: 3824)
+
+
+Processing by GamesController#create as JSON
+  Parameters: {"user_id"=>10, "game"=>{"user_id"=>10}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.8ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 10], ["created_at", "2020-10-20 20:35:35.325764"], ["updated_at", "2020-10-20 20:35:35.325764"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+Completed 200 OK in 1086ms (Views: 0.4ms | ActiveRecord: 1.6ms | Allocations: 5415)
+
+
+Started GET "/games" for ::1 at 2020-10-20 13:35:41 -0700
+Processing by GamesController#index as HTML
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/games_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.2ms | Allocations: 2241)
+
+
