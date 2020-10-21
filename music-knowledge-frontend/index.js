@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', e => {
 
   const song = document.getElementById('audio')
 
-  // const questionId = Math.floor(Math.random() * 10) + 1
   let questionId = 1
   let score= 0
   const questionUrl = 'http://localhost:3000/questions/'
@@ -32,8 +31,6 @@ document.addEventListener('DOMContentLoaded', e => {
       const username = e.target.username.value
       createUser(username)
       renderQuestion()
-
-
     })
 
   }
@@ -73,7 +70,6 @@ document.addEventListener('DOMContentLoaded', e => {
     fetch('http://localhost:3000/games', gameOptions)
     .then(response => response.json())
     .then(data => {
-      // renderQuestions(data.id)
     })
   }
 
@@ -86,15 +82,12 @@ document.addEventListener('DOMContentLoaded', e => {
     song.pause();
   };
 
-  const renderQuestion = () => {
+  const renderQuestion = (filename) => {
 
     fetch(questionUrl + questionId)
     .then(response => response.json())
     .then(data => {
       let filename = data.filename
-
-      // song.src = filename
-
       const mainDiv = document.getElementById('page-header')
       mainDiv.innerHTML = ''
       const questionContainer = document.createElement('div')
@@ -102,52 +95,49 @@ document.addEventListener('DOMContentLoaded', e => {
       questionContainer.innerHTML =
       `<h2>name the artist</h2>
       <p>${score}</p>
-      <button data-choice= "wrong" type="button">${data.fake1}</button>
-      <button data-choice= "wrong" type="button">${data.fake2}</button>
-      <button data-choice= "wrong" type="button">${data.fake3}</button>
-      <button data-choice= "correct" type="button">${data.correct}</button>
+      <button data-choice = " " type="button">${data.answer1}</button>
+      <button data-choice = " " type="button">${data.answer2}</button>
+      <button data-choice = " " type="button">${data.answer3}</button>
+      <button data-choice = " " type="button">${data.answer4}</button>
       <button data-play= '${data.filename}'> Play Audio </button>
       <button data-pause= '${data.filename}'> Pause Audio </button>
+      <div id='artist' style="visibility: hidden">${data.artist}</div>
       `
-
       mainDiv.append(questionContainer)
-
+      playAudio(filename)
       questionContainer.addEventListener('click', e => {
         if (e.target.matches('[data-play]')) {
-          let filename = e.target.dataset.play
+          let filename = e.target.dataset.play  //dont touch
           playAudio(filename)
         } else if (e.target.matches('[data-pause]')) {
-          let filename = e.target.dataset.pause
+          let filename = e.target.dataset.pause  //dont touch
           pauseAudio(filename)
-
         }
       })
 
     })
 
   }
-  const clickHandler = ()=>{
+  const clickHandler = (artist)=>{
 
     document.addEventListener('click', e =>{
 
-      if(e.target.matches(`[data-choice='wrong']`)){
-        score = score -1
-        questionId++
-        console.log("id", questionId)
-        console.log("score" ,score)
-        renderQuestion()
+      if(e.target.matches(`[data-choice]`)){
+        let button = e.target
+        let artistName = document.getElementById('artist')
+        console.log(button.textContent)
+        console.log(artistName.textContent)
+        if (button.textContent === artistName.textContent){
+          score++
+        } else {
+          score--
+        }
 
-      }
-      else if(e.target.matches(`[data-choice='correct']`)){
-        score = score + 1
         questionId++
-        console.log('id', questionId)
-        console.log('score', score)
         renderQuestion()
       }
     })
   }
-
 
 
 

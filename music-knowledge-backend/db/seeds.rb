@@ -12,105 +12,122 @@ User.create(name: "Sean")
 Game.create(score: 0, user_id: 1)
 Game.create(score:0, user_id: 2)
 
-# Question.create(
-#   game_id: 1,
-#   correct: "Drake",
-#   fake1: "Roddy Rich",
-#   fake2: "Young Thug",
-#   fake3: "Flava Flav",
-#   filename: "assest/1.mp3"
-# )
-#
-# Question.create(
-#   game_id: 1,
-#   correct: "jayz",
-#   fake1: "Roddy Rich",
-#   fake2: "Young Thug",
-#   fake3: "Flava Flav",
-#   filename: "assest/2.mp3"
-# )
-# Question.create(
-#   game_id: 1,
-#   correct: "minaj",
-#   fake1: "Roddy Rich",
-#   fake2: "Young Thug",
-#   fake3: "Flava Flav",
-#   filename: "assest/3.mp3"
-# )
-#
-# Question.create(
-#   game_id: 1,
-#   correct: "justin beiber",
-#   fake1: "Roddy Rich",
-#   fake2: "Young Thug",
-#   fake3: "Flava Flav",
-#   filename: "assest/3.mp3"
-# )
-# Question.create(
-#   game_id: 1,
-#   correct: "eminem",
-#   fake1: "Roddy Rich",
-#   fake2: "Young Thug",
-#   fake3: "Flava Flav",
-#   filename: "assest/3.mp3"
-# )
-# Question.create(
-#   game_id: 1,
-#   correct: "j cole",
-#   fake1: "Roddy Rich",
-#   fake2: "Young Thug",
-#   fake3: "Flava Flav",
-#   filename: "assest/3.mp3"
-# )
-# Question.create(
-#   game_id: 1,
-#   correct: "lil wayne",
-#   fake1: "Roddy Rich",
-#   fake2: "Young Thug",
-#   fake3: "Flava Flav",
-#   filename: "assest/3.mp3"
-# )
-#
-# Question.create(
-#   game_id: 1,
-#   correct: "kendrick",
-#   fake1: "Roddy Rich",
-#   fake2: "Young Thug",
-#   fake3: "Flava Flav",
-#   filename: "assest/3.mp3"
-# )
-# Question.create(
-#   game_id: 1,
-#   correct: "cardi b",
-#   fake1: "Roddy Rich",
-#   fake2: "Young Thug",
-#   fake3: "Flava Flav",
-#   filename: "assest/3.mp3"
-# )
-#
-# Question.create(
-#   game_id: 1,
-#   correct: "Pop Smoke",
-#   fake1: "Roddy Rich",
-#   fake2: "Young Thug",
-#   fake3: "Flava Flav",
-#   filename: "assest/3.mp3"
-# )
-#
-# Question.create(
-#   game_id: 1,
-#   correct: "P Diddy",
-#   fake1: "Roddy Rich",
-#   fake2: "Young Thug",
-#   fake3: "Flava Flav",
-#   filename: "assest/3.mp3"
-# )
+Question.create(
+  game_id: 1,
+  answer1: "A$AP Rocky",
+  answer2: "Roddy Rich",
+  answer3: "Young Thug",
+  answer4: "Flava Flav",
+  name: "Goldie",
+  artist: "A$AP Rocky",
+  genre: "rap",
+  filename: "mp3s/Goldie.mp3"
+)
 
 Question.create(
   game_id: 1,
-  correct: "A$AP Rocky",
-  fake1: "Roddy Rich",
-  fake2: "Young Thug",
-  fake3: "Flava Flav",
-  filename: "mp3s/Goldie.mp3"
+  answer1: "A$AP Rocky",
+  answer2: "Roddy Rich",
+  answer3: "DaBaby",
+  answer4: "Flava Flav",
+  name: "Goldie",
+  artist: "DaBaby",
+  genre: "rap",
+  filename: "mp3s/BOP.mp3"
+)
+
+Question.create(
+  game_id: 1,
+  answer1: "A$AP Rocky",
+  answer2: "Drake",
+  answer3: "Young Thug",
+  answer4: "Flava Flav",
+  name: "Goldie",
+  artist: "Drake",
+  genre: "rap",
+  filename: "mp3s/Bottom.mp3"
+)
+
+Question.create(
+  game_id: 1,
+  answer1: "A$AP Rocky",
+  answer2: "Roddy Rich",
+  answer3: "Young Thug",
+  answer4: "Roddie Rich",
+  name: "Goldie",
+  artist: "Roddie Rich",
+  genre: "rap",
+  filename: "mp3s/Box.mp3"
+)
+
+Question.create(
+  game_id: 1,
+  answer1: "Missy Elliot",
+  answer2: "Roddy Rich",
+  answer3: "Young Thug",
+  answer4: "Flava Flav",
+  name: "Goldie",
+  artist: "Missy Elliot",
+  genre: "rap",
+  filename: "mp3s/Freak.mp3"
+)
+
+Question.create(
+  game_id: 1,
+  answer1: "A$AP Rocky",
+  answer2: "Roddy Rich",
+  answer3: "Young Thug",
+  answer4: "Migos",
+  name: "Goldie",
+  artist: "Migos",
+  genre: "rap",
+  filename: "mp3s/PureWater.mp3"
+)
+
+Question.create(
+  game_id: 1,
+  answer1: "A$AP Rocky",
+  answer2: "Kendrick Lamar",
+  answer3: "Young Thug",
+  answer4: "Flava Flav",
+  name: "Backseat FreeStyle",
+  artist: "Kendrick Lamar",
+  genre: "rap",
+  filename: "mp3s/BackseatFreestyle.mp3"
+)
+
+Question.create(
+  game_id: 1,
+  answer1: "Childish Gambino",
+  answer2: "Roddy Rich",
+  answer3: "Young Thug",
+  answer4: "Flava Flav",
+  name: "Redbone",
+  artist: "Childish Gambino",
+  genre: "rap",
+  filename: "mp3s/Redbone.mp3"
+)
+
+Question.create(
+  game_id: 1,
+  answer1: "A$AP Rocky",
+  answer2: "Roddy Rich",
+  answer3: "Young Thug",
+  answer4: "Kanye West",
+  name: "Goldie",
+  artist: "Kanye West",
+  genre: "rap",
+  filename: "mp3s/Runaway.mp3"
+)
+
+Question.create(
+  game_id: 1,
+  answer1: "A$AP Rocky",
+  answer2: "Eminem",
+  answer3: "Young Thug",
+  answer4: "Flava Flav",
+  name: "Goldie",
+  artist: "Eminem",
+  genre: "rap",
+  filename: "mp3s/Stan.mp3"
 )
