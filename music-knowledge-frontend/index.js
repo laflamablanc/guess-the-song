@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', e => {
-  
+
+  const song = document.getElementById('audio')
+
   // const questionId = Math.floor(Math.random() * 10) + 1
   let questionId = 1
   let score= 0
@@ -8,8 +10,7 @@ document.addEventListener('DOMContentLoaded', e => {
     fetch('http://localhost:3000/questions/1')
     .then(response => response.json())
     .then(data => {
-      console.log(data)
-     
+
     })
   }
 
@@ -31,8 +32,8 @@ document.addEventListener('DOMContentLoaded', e => {
       const username = e.target.username.value
       createUser(username)
       renderQuestion()
-      
-      
+
+
     })
 
   }
@@ -72,17 +73,28 @@ document.addEventListener('DOMContentLoaded', e => {
     fetch('http://localhost:3000/games', gameOptions)
     .then(response => response.json())
     .then(data => {
-      console.log(data)
       // renderQuestions(data.id)
     })
   }
 
+  const playAudio = (audioFilepath) => {
+    song.src = audioFilepath
+    song.play();
+  };
+
+  const pauseAudio = (audioFilepath) => {
+    song.pause();
+  };
+
   const renderQuestion = () => {
-   
+
     fetch(questionUrl + questionId)
     .then(response => response.json())
     .then(data => {
-      
+      let filename = data.filename
+
+      // song.src = filename
+
       const mainDiv = document.getElementById('page-header')
       mainDiv.innerHTML = ''
       const questionContainer = document.createElement('div')
@@ -94,24 +106,37 @@ document.addEventListener('DOMContentLoaded', e => {
       <button data-choice= "wrong" type="button">${data.fake2}</button>
       <button data-choice= "wrong" type="button">${data.fake3}</button>
       <button data-choice= "correct" type="button">${data.correct}</button>
-  
+      <button data-play= '${data.filename}'> Play Audio </button>
+      <button data-pause= '${data.filename}'> Pause Audio </button>
       `
+
       mainDiv.append(questionContainer)
-     
+
+      questionContainer.addEventListener('click', e => {
+        if (e.target.matches('[data-play]')) {
+          let filename = e.target.dataset.play
+          playAudio(filename)
+        } else if (e.target.matches('[data-pause]')) {
+          let filename = e.target.dataset.pause
+          pauseAudio(filename)
+
+        }
+      })
+
     })
 
   }
   const clickHandler = ()=>{
-    
+
     document.addEventListener('click', e =>{
-      
+
       if(e.target.matches(`[data-choice='wrong']`)){
         score = score -1
         questionId++
         console.log("id", questionId)
         console.log("score" ,score)
         renderQuestion()
-        
+
       }
       else if(e.target.matches(`[data-choice='correct']`)){
         score = score + 1
@@ -123,9 +148,11 @@ document.addEventListener('DOMContentLoaded', e => {
     })
   }
 
-  
+
+
+
   clickHandler()
   getQuestions()
   renderNewGame()
-  
+
 })

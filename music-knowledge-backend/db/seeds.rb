@@ -12,97 +12,105 @@ User.create(name: "Sean")
 Game.create(score: 0, user_id: 1)
 Game.create(score:0, user_id: 2)
 
-Question.create(
-  game_id: 1,
-  correct: "Drake",
-  fake1: "Roddy Rich",
-  fake2: "Young Thug",
-  fake3: "Flava Flav",
-  filename: "assest/1.mp3"
-)
+# Question.create(
+#   game_id: 1,
+#   correct: "Drake",
+#   fake1: "Roddy Rich",
+#   fake2: "Young Thug",
+#   fake3: "Flava Flav",
+#   filename: "assest/1.mp3"
+# )
+#
+# Question.create(
+#   game_id: 1,
+#   correct: "jayz",
+#   fake1: "Roddy Rich",
+#   fake2: "Young Thug",
+#   fake3: "Flava Flav",
+#   filename: "assest/2.mp3"
+# )
+# Question.create(
+#   game_id: 1,
+#   correct: "minaj",
+#   fake1: "Roddy Rich",
+#   fake2: "Young Thug",
+#   fake3: "Flava Flav",
+#   filename: "assest/3.mp3"
+# )
+#
+# Question.create(
+#   game_id: 1,
+#   correct: "justin beiber",
+#   fake1: "Roddy Rich",
+#   fake2: "Young Thug",
+#   fake3: "Flava Flav",
+#   filename: "assest/3.mp3"
+# )
+# Question.create(
+#   game_id: 1,
+#   correct: "eminem",
+#   fake1: "Roddy Rich",
+#   fake2: "Young Thug",
+#   fake3: "Flava Flav",
+#   filename: "assest/3.mp3"
+# )
+# Question.create(
+#   game_id: 1,
+#   correct: "j cole",
+#   fake1: "Roddy Rich",
+#   fake2: "Young Thug",
+#   fake3: "Flava Flav",
+#   filename: "assest/3.mp3"
+# )
+# Question.create(
+#   game_id: 1,
+#   correct: "lil wayne",
+#   fake1: "Roddy Rich",
+#   fake2: "Young Thug",
+#   fake3: "Flava Flav",
+#   filename: "assest/3.mp3"
+# )
+#
+# Question.create(
+#   game_id: 1,
+#   correct: "kendrick",
+#   fake1: "Roddy Rich",
+#   fake2: "Young Thug",
+#   fake3: "Flava Flav",
+#   filename: "assest/3.mp3"
+# )
+# Question.create(
+#   game_id: 1,
+#   correct: "cardi b",
+#   fake1: "Roddy Rich",
+#   fake2: "Young Thug",
+#   fake3: "Flava Flav",
+#   filename: "assest/3.mp3"
+# )
+#
+# Question.create(
+#   game_id: 1,
+#   correct: "Pop Smoke",
+#   fake1: "Roddy Rich",
+#   fake2: "Young Thug",
+#   fake3: "Flava Flav",
+#   filename: "assest/3.mp3"
+# )
+#
+# Question.create(
+#   game_id: 1,
+#   correct: "P Diddy",
+#   fake1: "Roddy Rich",
+#   fake2: "Young Thug",
+#   fake3: "Flava Flav",
+#   filename: "assest/3.mp3"
+# )
 
 Question.create(
   game_id: 1,
-  correct: "jayz",
+  correct: "A$AP Rocky",
   fake1: "Roddy Rich",
   fake2: "Young Thug",
   fake3: "Flava Flav",
-  filename: "assest/2.mp3"
+  filename: "mp3s/Goldie.mp3"
 )
-Question.create(
-  game_id: 1,
-  correct: "minaj",
-  fake1: "Roddy Rich",
-  fake2: "Young Thug",
-  fake3: "Flava Flav",
-  filename: "assest/3.mp3"
-)
-
-Question.create(
-  game_id: 1,
-  correct: "justin beiber",
-  fake1: "Roddy Rich",
-  fake2: "Young Thug",
-  fake3: "Flava Flav",
-  filename: "assest/3.mp3"
-)
-Question.create(
-  game_id: 1,
-  correct: "eminem",
-  fake1: "Roddy Rich",
-  fake2: "Young Thug",
-  fake3: "Flava Flav",
-  filename: "assest/3.mp3"
-)
-Question.create(
-  game_id: 1,
-  correct: "j cole",
-  fake1: "Roddy Rich",
-  fake2: "Young Thug",
-  fake3: "Flava Flav",
-  filename: "assest/3.mp3"
-)
-Question.create(
-  game_id: 1,
-  correct: "lil wayne",
-  fake1: "Roddy Rich",
-  fake2: "Young Thug",
-  fake3: "Flava Flav",
-  filename: "assest/3.mp3"
-)
-
-Question.create(
-  game_id: 1,
-  correct: "kendrick",
-  fake1: "Roddy Rich",
-  fake2: "Young Thug",
-  fake3: "Flava Flav",
-  filename: "assest/3.mp3"
-)
-Question.create(
-  game_id: 1,
-  correct: "cardi b",
-  fake1: "Roddy Rich",
-  fake2: "Young Thug",
-  fake3: "Flava Flav",
-  filename: "assest/3.mp3"
-)
-
-Question.create(
-  game_id: 1,
-  correct: "Pop Smoke",
-  fake1: "Roddy Rich",
-  fake2: "Young Thug",
-  fake3: "Flava Flav",
-  filename: "assest/3.mp3"
-)
-
-Question.create(
-  game_id: 1,
-  correct: "P Diddy",
-  fake1: "Roddy Rich",
-  fake2: "Young Thug",
-  fake3: "Flava Flav",
-  filename: "assest/3.mp3"
-)
-
