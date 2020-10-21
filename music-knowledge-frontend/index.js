@@ -132,7 +132,6 @@ document.addEventListener('DOMContentLoaded', e => {
         } else {
           score--
         }
-
         questionId++
         renderQuestion()
       }
