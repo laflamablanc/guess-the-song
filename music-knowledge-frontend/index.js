@@ -92,8 +92,15 @@ document.addEventListener('DOMContentLoaded', e => {
       mainDiv.innerHTML = ''
       const questionContainer = document.createElement('div')
       questionContainer.id = "question-container"
-      questionContainer.innerHTML =
-      `<h2>name the artist</h2>
+      questionContainer.innerHTML =`
+      <h1 id="navbar-title">Music Knowledge Quiz</h1>
+      <table id="timers">
+        <tr>
+          <td> Time Left:</td>
+          <td> <span id="gameTimer" class="nav-item"></span> </td>
+        </tr>
+      </table>
+      <h2>name the artist</h2>
       <p>${score}</p>
       <button data-choice = " " type="button">${data.answer1}</button>
       <button data-choice = " " type="button">${data.answer2}</button>
@@ -139,9 +146,50 @@ document.addEventListener('DOMContentLoaded', e => {
   }
 
 
+  // ----timer code-----
+  let gameDuration = 60
+  let gameSecElapsed = 0
+  var gameInterval;
+
+  let gameTimerEl = document.querySelector("#gameTimer");
+  let timerTab = document.querySelector("#timers");
+  var test = false;
 
   clickHandler()
   getQuestions()
   renderNewGame()
+
+  function startGameTimer () {
+    if (test) { console.log("--- startGameTimer ---"); }
+    setGameTime();
+
+    gameInterval = setInterval(function() {
+      gameSecElapsed++;
+      renderTime();
+    }, 1000);
+  }
+
+  function setGameTime() {
+    if (test) { console.log("--- setGameTime ---"); }
+    if (test) { console.log("gameDuration " + gameDuration); }
+    clearInterval(gameInterval);
+    gameSeconds = gameDuration;
+  }
+
+  function renderTime() {
+
+    gameTimerEl.textContent = gameDuration - gameSecElapsed;
+
+    if ((gameDuration - gameSecElapsed) < 1 ) {
+     endOfGame();
+    }
+  }
+
+  function endOfGame(){
+    console.log('Game Over')
+  }
+
+  startGameTimer()
+
 
 })
