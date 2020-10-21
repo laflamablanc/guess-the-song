@@ -15,10 +15,27 @@
 
   <h1> Music Knowledge </h1>
     <div id="page-header"> </div>
-    
+    <!-- <audio controls>
+      <source src="mp3s/Goldie.mp3" type="audio/mpeg">
+    </audio> -->
+
+    <script>
+    function playAudio() {
+      var audio = new Audio('https://raw.githubusercontent.com/laflamablanc/guess-the-song/main/music-knowledge-frontend/Goldie.mp3')
+      audio.play();
+    };
+    </script>
+    <button onclick='playAudio();'> Play Audio </button>
+
+    <!-- playAudio() -->
 
 
 
+
+
+
+
+  <script src ="audio.js"></script>
   <script src="index.js"></script>
 </body>
 
