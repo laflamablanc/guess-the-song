@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', e => {
   
   // const questionId = Math.floor(Math.random() * 10) + 1
   let questionId = 1
+  let score= 0
   const questionUrl = 'http://localhost:3000/questions/'
   const getQuestions = () => {
     fetch('http://localhost:3000/questions/1')
@@ -88,6 +89,7 @@ document.addEventListener('DOMContentLoaded', e => {
       questionContainer.id = "question-container"
       questionContainer.innerHTML =
       `<h2>name the artist</h2>
+      <p>${score}</p>
       <button data-choice= "wrong" type="button">${data.fake1}</button>
       <button data-choice= "wrong" type="button">${data.fake2}</button>
       <button data-choice= "wrong" type="button">${data.fake3}</button>
@@ -98,34 +100,31 @@ document.addEventListener('DOMContentLoaded', e => {
      
     })
 
-    const clickHandler = ()=>{
-      document.addEventListener('click', e =>{
-        let score= 0
-        if(e.target.matches(`[data-choice='wrong']`)){
-          score = score -1
-          questionId++
-          console.log(questionId)
-          console.log(score)
-          renderQuestion()
-          
-        }
-        else if(e.target.matches(`[data-choice='correct']`)){
-          score = score + 1
-          questionId++
-          console.log('id', questionId)
-          console.log('score', score)
-          renderQuestion()
-        }
-      })
-    }
- 
-    
-    
-clickHandler()
-
   }
-  
+  const clickHandler = ()=>{
+    
+    document.addEventListener('click', e =>{
+      
+      if(e.target.matches(`[data-choice='wrong']`)){
+        score = score -1
+        questionId++
+        console.log("id", questionId)
+        console.log("score" ,score)
+        renderQuestion()
+        
+      }
+      else if(e.target.matches(`[data-choice='correct']`)){
+        score = score + 1
+        questionId++
+        console.log('id', questionId)
+        console.log('score', score)
+        renderQuestion()
+      }
+    })
+  }
 
+  
+  clickHandler()
   getQuestions()
   renderNewGame()
   
