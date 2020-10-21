@@ -30,7 +30,11 @@ document.addEventListener('DOMContentLoaded', e => {
       e.preventDefault()
       const username = e.target.username.value
       createUser(username)
+      const timerTable = document.getElementById('timers')
+      
       renderQuestion()
+      timerTable.style.display = 'inline'
+      startGameTimer()
     })
 
   }
@@ -93,13 +97,7 @@ document.addEventListener('DOMContentLoaded', e => {
       const questionContainer = document.createElement('div')
       questionContainer.id = "question-container"
       questionContainer.innerHTML =`
-      <h1 id="navbar-title">Music Knowledge Quiz</h1>
-      <table id="timers">
-        <tr>
-          <td> Time Left:</td>
-          <td> <span id="gameTimer" class="nav-item"></span> </td>
-        </tr>
-      </table>
+     
       <h2>name the artist</h2>
       <p>${score}</p>
       <button data-choice = " " type="button">${data.answer1}</button>
@@ -121,11 +119,11 @@ document.addEventListener('DOMContentLoaded', e => {
           pauseAudio(filename)
         }
       })
-
+      
     })
 
   }
-  const clickHandler = (artist)=>{
+  const clickHandler = ()=>{
 
     document.addEventListener('click', e =>{
 
@@ -141,7 +139,9 @@ document.addEventListener('DOMContentLoaded', e => {
         }
         questionId++
         renderQuestion()
+
       }
+
     })
   }
 
@@ -177,19 +177,25 @@ document.addEventListener('DOMContentLoaded', e => {
   }
 
   function renderTime() {
-
+    
     gameTimerEl.textContent = gameDuration - gameSecElapsed;
-
+    
     if ((gameDuration - gameSecElapsed) < 1 ) {
      endOfGame();
     }
   }
 
   function endOfGame(){
+
     console.log('Game Over')
+    clearInterval(gameInterval);
+    const questionContainer = document.getElementById('question-container')
+    questionContainer.innerHTML = score
+    song.pause()
+
   }
 
-  startGameTimer()
+  
 
 
 })
