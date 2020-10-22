@@ -11,18 +11,18 @@ h2{
 .navbar{
     text-align: center;
     /* background-color: white; */
-    
+
 }
 #timers{
     color: rgb(18, 212, 18);
 }
 body{
     background-image: url(https://images.unsplash.com/photo-1582730147924-d92f4da00252?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2251&q=80);
-    height: 500px; /* You must set a specified height */
+    height: 700px; /* You must set a specified height */
  background-position: center; /* Center the image */
  background-repeat: no-repeat; /* Do not repeat the image */
  background-size: cover;
- 
+
     font-family: 'Alfa Slab One';font-size: 22px;
 
 }
@@ -60,7 +60,7 @@ body{
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 30px;
+    font-size: 50px;
     margin: 4px 2px;
     transition-duration: 0.4s;
     cursor: pointer;
@@ -84,17 +84,18 @@ input[type=text] {
       font-size: 20px;
       border-radius: 3px;
       border: 1px solid black;
-      height: 30px;
+      height: 50px;
       background-color: rgb(243, 239, 239);
-      
-    
+
+
   }
 
   .button-choice:hover{
     background-color: transparent;
-    
+
   }
   .button-grid{
+    padding: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     row-gap: 10px;

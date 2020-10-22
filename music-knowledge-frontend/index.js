@@ -34,9 +34,10 @@ document.addEventListener('DOMContentLoaded', e => {
       createUser(username)
       const timerTable = document.getElementById('timers')
 
-      renderQuestion()
+      // renderQuestion()
+      displayRound()
       timerTable.style.display = 'inline'
-      startGameTimer()
+
     })
 
   }
@@ -89,7 +90,26 @@ document.addEventListener('DOMContentLoaded', e => {
     song.pause();
   };
 
-  const renderQuestion = (filename) => {
+  const displayRound = () => {
+    const mainDiv = document.getElementById('page-header')
+    mainDiv.innerHTML = ''
+    const roundContainer = document.createElement('div')
+    roundContainer.id = "question-container"
+    roundContainer.innerHTML =`
+    <h2>Round ${round}</h2>
+    <button class= "play-buttons" data-choice = " " type="button">Start Round</button>
+    `
+    mainDiv.append(roundContainer)
+    roundContainer.addEventListener('click', e => {
+      if (e.target.matches('[data-choice]')) {
+        renderQuestion()
+        startGameTimer()
+
+      }
+    })
+  }
+
+  const renderQuestion = () => {
     fetch(questionUrl + questionId)
     .then(response => response.json())
     .then(data => {
@@ -101,7 +121,7 @@ document.addEventListener('DOMContentLoaded', e => {
       questionContainer.innerHTML =`
 
       <h2>${data.ask}</h2>
-      <p>${score}</p>
+      <p>SCORE: ${score}</p>
       <div class = "button-grid">
         <button class= "button-choice" data-choice = " " type="button">${data.answer1}</button>
         <button class= "button-choice" data-choice = " " type="button">${data.answer2}</button>
@@ -113,8 +133,10 @@ document.addEventListener('DOMContentLoaded', e => {
         <button class= "play-buttons" data-pause= '${data.filename}'> ⏸ </button>
       </div>
       <div id='correct' style="visibility: hidden">${data.correct}</div>
-      
+
       `
+
+
       mainDiv.append(questionContainer)
       playAudio(filename)
       questionContainer.addEventListener('click', e => {
@@ -137,15 +159,16 @@ document.addEventListener('DOMContentLoaded', e => {
       if(e.target.matches(`[data-choice]`)){
         let button = e.target
         let correctAnswer = document.getElementById('correct')
-        console.log(button.textContent)
-        console.log(correctAnswer.textContent)
-        if (button.textContent === correctAnswer.textContent){
-          score = score + 100
-        } else {
-          score = score -50
+
+        if (correctAnswer){
+          if (button.textContent === correctAnswer.textContent){
+            score = score + 100
+          } else {
+            score = score -50
+          }
+          questionId++
+          renderQuestion()
         }
-        questionId++
-        renderQuestion()
 
       }
 
@@ -190,11 +213,13 @@ document.addEventListener('DOMContentLoaded', e => {
     if ((gameDuration - gameSecElapsed) < 1 ) {
       if (round === 1) {
         console.log(round)
+        clearInterval(gameInterval)
         gameDuration = 60
         gameSecElapsed = 0
         questionId = 19
         round++
-        renderQuestion()
+        song.pause()
+        displayRound()
         changeTimerGreen()
       } else {
         console.log(round)
@@ -214,19 +239,19 @@ document.addEventListener('DOMContentLoaded', e => {
     song.pause()
 
   }
- 
+
  function changeTimerRed(){
     let timer = document.getElementById('timers')
-    timer.style.color= 'red' 
+    timer.style.color= 'red'
   }
 
   function changeTimerGreen(){
     let timer = document.getElementById('timers')
     timer.style.color= 'rgb(18, 212, 18)'
   }
- 
- 
- 
+
+
+
 
 
 
