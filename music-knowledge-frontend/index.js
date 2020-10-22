@@ -102,13 +102,18 @@ document.addEventListener('DOMContentLoaded', e => {
 
       <h2>${data.ask}</h2>
       <p>${score}</p>
-      <button data-choice = " " type="button">${data.answer1}</button>
-      <button data-choice = " " type="button">${data.answer2}</button>
-      <button data-choice = " " type="button">${data.answer3}</button>
-      <button data-choice = " " type="button">${data.answer4}</button>
-      <button data-play= '${data.filename}'> Play Audio </button>
-      <button data-pause= '${data.filename}'> Pause Audio </button>
+      <div class = "button-grid">
+        <button class= "button-choice" data-choice = " " type="button">${data.answer1}</button>
+        <button class= "button-choice" data-choice = " " type="button">${data.answer2}</button>
+        <button class= "button-choice" data-choice = " " type="button">${data.answer3}</button>
+        <button class= "button-choice" data-choice = " " type="button">${data.answer4}</button>
+      </div>
+      <div class = "">
+        <button class= "play-buttons" data-play= '${data.filename}'> ▶️ </button>
+        <button class= "play-buttons" data-pause= '${data.filename}'> ⏸ </button>
+      </div>
       <div id='correct' style="visibility: hidden">${data.correct}</div>
+      
       `
       mainDiv.append(questionContainer)
       playAudio(filename)

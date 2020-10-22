@@ -53,6 +53,19 @@ body{
     cursor: pointer;
     border-radius: 5px;
 }
+.play-buttons{
+    background-color:rgb(186, 196, 187);
+
+    padding: 10px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 5px;
+}
 
 
 input[type=text] {
@@ -65,4 +78,25 @@ input[type=text] {
     color: black;
     font-size: 20px;
     border-radius: 25px;
+  }
+
+ .button-choice{
+      font-size: 20px;
+      border-radius: 3px;
+      border: 1px solid black;
+      height: 30px;
+      background-color: rgb(243, 239, 239);
+      
+    
+  }
+
+  .button-choice:hover{
+    background-color: transparent;
+    
+  }
+  .button-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 10px;
+    column-gap: 10px;
   }

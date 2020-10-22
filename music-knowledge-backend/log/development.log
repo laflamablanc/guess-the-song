@@ -19506,3 +19506,1938 @@ Processing by QuestionsController#show as */*
 Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms | Allocations: 894)
 
 
+Started POST "/users" for ::1 at 2020-10-22 13:53:09 -0400
+Started GET "/questions/1" for ::1 at 2020-10-22 13:53:09 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.52ms)
+  [1m[36mUser Create (15.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-22 17:53:09.255332"], ["updated_at", "2020-10-22 17:53:09.255332"]]
+Completed 200 OK in 32ms (Views: 5.0ms | ActiveRecord: 12.4ms | Allocations: 13838)
+
+
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (31.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.23ms)
+Completed 200 OK in 65ms (Views: 1.8ms | ActiveRecord: 58.6ms | Allocations: 14939)
+
+
+Started POST "/games" for ::1 at 2020-10-22 13:53:09 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>33, "game"=>{"score"=>0, "user_id"=>33}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 33], ["created_at", "2020-10-22 17:53:09.339554"], ["updated_at", "2020-10-22 17:53:09.339554"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.18ms)
+Completed 200 OK in 19ms (Views: 0.6ms | ActiveRecord: 4.3ms | Allocations: 7756)
+
+
+Started GET "/questions/19" for ::1 at 2020-10-22 13:53:24 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"19"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.31ms)
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 930)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 13:53:26 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.49ms)
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 912)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 13:54:51 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.47ms)
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.4ms | Allocations: 912)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 13:55:03 -0400
+Started POST "/users" for ::1 at 2020-10-22 13:55:03 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+  [1m[36mQuestion Load (1.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.28ms)
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 1.1ms | Allocations: 2033)
+
+
+  [1m[36mUser Create (7.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-22 17:55:03.864178"], ["updated_at", "2020-10-22 17:55:03.864178"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (57.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.28ms)
+Completed 200 OK in 70ms (Views: 0.7ms | ActiveRecord: 65.5ms | Allocations: 3633)
+
+
+Started POST "/games" for ::1 at 2020-10-22 13:55:03 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>34, "game"=>{"score"=>0, "user_id"=>34}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.5ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 34], ["created_at", "2020-10-22 17:55:03.946812"], ["updated_at", "2020-10-22 17:55:03.946812"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.2ms)
+Completed 200 OK in 8ms (Views: 0.7ms | ActiveRecord: 1.5ms | Allocations: 3848)
+
+
+Started GET "/questions/2" for ::1 at 2020-10-22 13:55:12 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.28ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/3" for ::1 at 2020-10-22 13:55:15 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.27ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 894)
+
+
+Started GET "/questions/19" for ::1 at 2020-10-22 13:55:18 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"19"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.37ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 894)
+
+
+Started GET "/questions/20" for ::1 at 2020-10-22 13:55:24 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"20"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.3ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/21" for ::1 at 2020-10-22 13:55:27 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"21"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.47ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.3ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 13:55:51 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.31ms)
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.6ms | Allocations: 894)
+
+
+Started POST "/users" for ::1 at 2020-10-22 13:56:14 -0400
+Started GET "/questions/1" for ::1 at 2020-10-22 13:56:14 -0400
+Processing by UsersController#create as JSON
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.3ms)
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-22 17:56:14.321026"], ["updated_at", "2020-10-22 17:56:14.321026"]]
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.7ms | Allocations: 2052)
+
+
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.19ms)
+Completed 200 OK in 11ms (Views: 0.7ms | ActiveRecord: 6.6ms | Allocations: 3631)
+
+
+Started POST "/games" for ::1 at 2020-10-22 13:56:14 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>35, "game"=>{"score"=>0, "user_id"=>35}}
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.5ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 35], ["created_at", "2020-10-22 17:56:14.355486"], ["updated_at", "2020-10-22 17:56:14.355486"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.22ms)
+Completed 200 OK in 16ms (Views: 0.7ms | ActiveRecord: 3.8ms | Allocations: 3847)
+
+
+Started GET "/questions/2" for ::1 at 2020-10-22 13:56:18 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.29ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 894)
+
+
+Started GET "/questions/3" for ::1 at 2020-10-22 13:56:25 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.37ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/4" for ::1 at 2020-10-22 13:56:29 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.35ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/19" for ::1 at 2020-10-22 13:56:29 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"19"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.32ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/20" for ::1 at 2020-10-22 13:56:38 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"20"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.28ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/21" for ::1 at 2020-10-22 13:56:44 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"21"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.34ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/22" for ::1 at 2020-10-22 13:57:05 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"22"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.33ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 13:57:10 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.35ms)
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.4ms | Allocations: 894)
+
+
+Started POST "/users" for ::1 at 2020-10-22 13:59:46 -0400
+Started GET "/questions/1" for ::1 at 2020-10-22 13:59:46 -0400
+Processing by QuestionsController#show as */*
+Processing by UsersController#create as JSON
+  Parameters: {"id"=>"1"}
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+  [1m[36mQuestion Load (0.9ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.32ms)
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.9ms | Allocations: 2017)
+
+
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-22 17:59:46.266243"], ["updated_at", "2020-10-22 17:59:46.266243"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (18.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.39ms)
+Completed 200 OK in 26ms (Views: 1.0ms | ActiveRecord: 19.4ms | Allocations: 3635)
+
+
+Started POST "/games" for ::1 at 2020-10-22 13:59:46 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>36, "game"=>{"score"=>0, "user_id"=>36}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 36], ["created_at", "2020-10-22 17:59:46.315270"], ["updated_at", "2020-10-22 17:59:46.315270"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.34ms)
+Completed 200 OK in 15ms (Views: 0.9ms | ActiveRecord: 7.7ms | Allocations: 3847)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 13:59:57 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.45ms)
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:01:05 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.32ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started POST "/users" for ::1 at 2020-10-22 14:01:06 -0400
+Started GET "/questions/1" for ::1 at 2020-10-22 14:01:06 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mQuestion Load (0.9ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.38ms)
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.9ms | Allocations: 1722)
+
+
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-22 18:01:06.471361"], ["updated_at", "2020-10-22 18:01:06.471361"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (13.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.16ms)
+Completed 200 OK in 21ms (Views: 0.5ms | ActiveRecord: 13.8ms | Allocations: 3712)
+
+
+Started POST "/games" for ::1 at 2020-10-22 14:01:06 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>37, "game"=>{"score"=>0, "user_id"=>37}}
+  [1m[35m (12.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 37], ["created_at", "2020-10-22 18:01:06.532821"], ["updated_at", "2020-10-22 18:01:06.532821"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.15ms)
+Completed 200 OK in 22ms (Views: 0.6ms | ActiveRecord: 13.8ms | Allocations: 3846)
+
+
+Started GET "/questions/19" for ::1 at 2020-10-22 14:01:21 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"19"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.32ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:02:12 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.37ms)
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.3ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:04:57 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.26ms)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started POST "/users" for ::1 at 2020-10-22 14:04:58 -0400
+Started GET "/questions/1" for ::1 at 2020-10-22 14:04:58 -0400
+Processing by UsersController#create as JSON
+Processing by QuestionsController#show as */*
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.47ms)
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.3ms | Allocations: 1698)
+
+
+  [1m[36mUser Create (1.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-22 18:04:58.240678"], ["updated_at", "2020-10-22 18:04:58.240678"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (21.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.35ms)
+Completed 200 OK in 32ms (Views: 3.5ms | ActiveRecord: 24.1ms | Allocations: 3697)
+
+
+Started POST "/games" for ::1 at 2020-10-22 14:04:58 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>38, "game"=>{"score"=>0, "user_id"=>38}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.4ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 38], ["created_at", "2020-10-22 18:04:58.288744"], ["updated_at", "2020-10-22 18:04:58.288744"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (19.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.31ms)
+Completed 200 OK in 30ms (Views: 0.9ms | ActiveRecord: 20.6ms | Allocations: 3845)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:05:10 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.53ms)
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.4ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:06:50 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.49ms)
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.4ms | Allocations: 894)
+
+
+Started POST "/users" for ::1 at 2020-10-22 14:06:51 -0400
+Started GET "/questions/1" for ::1 at 2020-10-22 14:06:51 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by QuestionsController#show as */*
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-22 18:06:51.485798"], ["updated_at", "2020-10-22 18:06:51.485798"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.31ms)
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 0.3ms | Allocations: 2133)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.18ms)
+Completed 200 OK in 10ms (Views: 1.1ms | ActiveRecord: 1.0ms | Allocations: 4015)
+
+
+Started POST "/games" for ::1 at 2020-10-22 14:06:51 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>39, "game"=>{"score"=>0, "user_id"=>39}}
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (8.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.4ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 39], ["created_at", "2020-10-22 18:06:51.528387"], ["updated_at", "2020-10-22 18:06:51.528387"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (18.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.19ms)
+Completed 200 OK in 39ms (Views: 0.6ms | ActiveRecord: 27.2ms | Allocations: 3849)
+
+
+Started GET "/questions/2" for ::1 at 2020-10-22 14:06:53 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.33ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/3" for ::1 at 2020-10-22 14:06:54 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.34ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:06:55 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.59ms)
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 894)
+
+
+Started POST "/users" for ::1 at 2020-10-22 14:07:00 -0400
+Started GET "/questions/1" for ::1 at 2020-10-22 14:07:00 -0400
+Processing by UsersController#create as JSON
+Processing by QuestionsController#show as */*
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mQuestion Load (1.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-22 18:07:00.316273"], ["updated_at", "2020-10-22 18:07:00.316273"]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.27ms)
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 1.2ms | Allocations: 2382)
+
+
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.24ms)
+Completed 200 OK in 8ms (Views: 1.0ms | ActiveRecord: 1.4ms | Allocations: 3696)
+
+
+Started POST "/games" for ::1 at 2020-10-22 14:07:00 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>40, "game"=>{"score"=>0, "user_id"=>40}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (8.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.4ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 40], ["created_at", "2020-10-22 18:07:00.354669"], ["updated_at", "2020-10-22 18:07:00.354669"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.2ms)
+Completed 200 OK in 21ms (Views: 0.7ms | ActiveRecord: 9.7ms | Allocations: 3845)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:07:06 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.47ms)
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.3ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:07:38 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.71ms)
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 0.5ms | Allocations: 894)
+
+
+Started POST "/users" for ::1 at 2020-10-22 14:07:38 -0400
+Started GET "/questions/1" for ::1 at 2020-10-22 14:07:38 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by QuestionsController#show as */*
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-22 18:07:38.997548"], ["updated_at", "2020-10-22 18:07:38.997548"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.31ms)
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.7ms | Allocations: 1648)
+
+
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.25ms)
+Completed 200 OK in 7ms (Views: 0.9ms | ActiveRecord: 1.9ms | Allocations: 4014)
+
+
+Started POST "/games" for ::1 at 2020-10-22 14:07:39 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>41, "game"=>{"score"=>0, "user_id"=>41}}
+  [1m[35m (11.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.7ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 41], ["created_at", "2020-10-22 18:07:39.033061"], ["updated_at", "2020-10-22 18:07:39.033061"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.21ms)
+Completed 200 OK in 23ms (Views: 0.7ms | ActiveRecord: 14.2ms | Allocations: 3846)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:07:41 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.53ms)
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.4ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:07:50 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.42ms)
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started POST "/users" for ::1 at 2020-10-22 14:07:51 -0400
+Started GET "/questions/1" for ::1 at 2020-10-22 14:07:51 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mQuestion Load (1.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-22 18:07:51.846215"], ["updated_at", "2020-10-22 18:07:51.846215"]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.42ms)
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 1.2ms | Allocations: 2365)
+
+
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.16ms)
+Completed 200 OK in 8ms (Views: 0.6ms | ActiveRecord: 1.5ms | Allocations: 3710)
+
+
+Started POST "/games" for ::1 at 2020-10-22 14:07:51 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>42, "game"=>{"score"=>0, "user_id"=>42}}
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 42], ["created_at", "2020-10-22 18:07:51.885813"], ["updated_at", "2020-10-22 18:07:51.885813"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.22ms)
+Completed 200 OK in 20ms (Views: 0.7ms | ActiveRecord: 6.3ms | Allocations: 3847)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:07:54 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.66ms)
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.3ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:08:35 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.39ms)
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms | Allocations: 895)
+
+
+Started POST "/users" for ::1 at 2020-10-22 14:08:36 -0400
+Started GET "/questions/1" for ::1 at 2020-10-22 14:08:36 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by QuestionsController#show as */*
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.62ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 895)
+
+
+  [1m[36mUser Create (3.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-22 18:08:36.659908"], ["updated_at", "2020-10-22 18:08:36.659908"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.2ms)
+Completed 200 OK in 13ms (Views: 0.6ms | ActiveRecord: 7.6ms | Allocations: 4014)
+
+
+Started POST "/games" for ::1 at 2020-10-22 14:08:36 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>43, "game"=>{"score"=>0, "user_id"=>43}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (9.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 43], ["created_at", "2020-10-22 18:08:36.700764"], ["updated_at", "2020-10-22 18:08:36.700764"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.26ms)
+Completed 200 OK in 21ms (Views: 0.8ms | ActiveRecord: 11.3ms | Allocations: 3845)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:08:38 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.46ms)
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.3ms | Allocations: 894)
+
+
+Started POST "/users" for ::1 at 2020-10-22 14:08:44 -0400
+Started GET "/questions/1" for ::1 at 2020-10-22 14:08:44 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by QuestionsController#show as */*
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-22 18:08:44.570189"], ["updated_at", "2020-10-22 18:08:44.570189"]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.29ms)
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 1648)
+
+
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.22ms)
+Completed 200 OK in 8ms (Views: 0.6ms | ActiveRecord: 1.4ms | Allocations: 4014)
+
+
+Started POST "/games" for ::1 at 2020-10-22 14:08:44 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>44, "game"=>{"score"=>0, "user_id"=>44}}
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (7.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (3.1ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 44], ["created_at", "2020-10-22 18:08:44.606460"], ["updated_at", "2020-10-22 18:08:44.606460"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.19ms)
+Completed 200 OK in 25ms (Views: 0.7ms | ActiveRecord: 13.4ms | Allocations: 3845)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:08:51 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.32ms)
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:10:27 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.42ms)
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.3ms | Allocations: 894)
+
+
+Started POST "/users" for ::1 at 2020-10-22 14:10:28 -0400
+Started GET "/questions/1" for ::1 at 2020-10-22 14:10:28 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by QuestionsController#show as */*
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-22 18:10:28.631173"], ["updated_at", "2020-10-22 18:10:28.631173"]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.3ms)
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 1649)
+
+
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.24ms)
+Completed 200 OK in 7ms (Views: 0.8ms | ActiveRecord: 1.4ms | Allocations: 4015)
+
+
+Started POST "/games" for ::1 at 2020-10-22 14:10:28 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>45, "game"=>{"score"=>0, "user_id"=>45}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (13.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 45], ["created_at", "2020-10-22 18:10:28.669948"], ["updated_at", "2020-10-22 18:10:28.669948"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (32.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.24ms)
+Completed 200 OK in 57ms (Views: 0.9ms | ActiveRecord: 46.6ms | Allocations: 3845)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:10:31 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.47ms)
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started POST "/users" for ::1 at 2020-10-22 14:10:42 -0400
+Started GET "/questions/1" for ::1 at 2020-10-22 14:10:42 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mQuestion Load (1.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.46ms)
+  [1m[36mUser Create (4.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-22 18:10:42.879829"], ["updated_at", "2020-10-22 18:10:42.879829"]]
+Completed 200 OK in 6ms (Views: 1.3ms | ActiveRecord: 1.5ms | Allocations: 1724)
+
+
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.2ms)
+Completed 200 OK in 11ms (Views: 0.6ms | ActiveRecord: 4.5ms | Allocations: 3710)
+
+
+Started POST "/games" for ::1 at 2020-10-22 14:10:42 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>46, "game"=>{"score"=>0, "user_id"=>46}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (6.5ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 46], ["created_at", "2020-10-22 18:10:42.915724"], ["updated_at", "2020-10-22 18:10:42.915724"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.26ms)
+Completed 200 OK in 28ms (Views: 0.9ms | ActiveRecord: 12.2ms | Allocations: 3847)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:10:47 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.5ms)
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:11:45 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.49ms)
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 894)
+
+
+Started POST "/users" for ::1 at 2020-10-22 14:11:48 -0400
+Started GET "/questions/1" for ::1 at 2020-10-22 14:11:48 -0400
+Processing by UsersController#create as JSON
+Processing by QuestionsController#show as */*
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.35ms)
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 1697)
+
+
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-22 18:11:48.807512"], ["updated_at", "2020-10-22 18:11:48.807512"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (71.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.25ms)
+Completed 200 OK in 80ms (Views: 1.1ms | ActiveRecord: 73.6ms | Allocations: 3696)
+
+
+Started POST "/games" for ::1 at 2020-10-22 14:11:48 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>47, "game"=>{"score"=>0, "user_id"=>47}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 47], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.4ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 47], ["created_at", "2020-10-22 18:11:48.898843"], ["updated_at", "2020-10-22 18:11:48.898843"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (13.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.31ms)
+Completed 200 OK in 22ms (Views: 0.8ms | ActiveRecord: 14.1ms | Allocations: 3845)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:11:51 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.32ms)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:14:20 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.51ms)
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 0.4ms | Allocations: 894)
+
+
+Started POST "/users" for ::1 at 2020-10-22 14:14:22 -0400
+Started GET "/questions/1" for ::1 at 2020-10-22 14:14:22 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mQuestion Load (1.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.55ms)
+  [1m[36mUser Create (2.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-22 18:14:22.321072"], ["updated_at", "2020-10-22 18:14:22.321072"]]
+Completed 200 OK in 6ms (Views: 1.6ms | ActiveRecord: 1.8ms | Allocations: 1722)
+
+
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.2ms)
+Completed 200 OK in 12ms (Views: 0.8ms | ActiveRecord: 3.1ms | Allocations: 3707)
+
+
+Started POST "/games" for ::1 at 2020-10-22 14:14:22 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>48, "game"=>{"score"=>0, "user_id"=>48}}
+  [1m[35m (8.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 48], ["created_at", "2020-10-22 18:14:22.367574"], ["updated_at", "2020-10-22 18:14:22.367574"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.38ms)
+Completed 200 OK in 29ms (Views: 1.0ms | ActiveRecord: 15.3ms | Allocations: 3845)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:14:36 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (1.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.75ms)
+Completed 200 OK in 6ms (Views: 1.9ms | ActiveRecord: 1.0ms | Allocations: 895)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:15:46 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.74ms)
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started POST "/users" for ::1 at 2020-10-22 14:15:47 -0400
+Started GET "/questions/1" for ::1 at 2020-10-22 14:15:47 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by QuestionsController#show as */*
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-22 18:15:47.697828"], ["updated_at", "2020-10-22 18:15:47.697828"]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.38ms)
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.3ms | Allocations: 1648)
+
+
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.4ms)
+Completed 200 OK in 9ms (Views: 1.1ms | ActiveRecord: 1.9ms | Allocations: 4014)
+
+
+Started POST "/games" for ::1 at 2020-10-22 14:15:47 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>49, "game"=>{"score"=>0, "user_id"=>49}}
+  [1m[35m (3.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (2.4ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 49], ["created_at", "2020-10-22 18:15:47.781402"], ["updated_at", "2020-10-22 18:15:47.781402"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.24ms)
+Completed 200 OK in 32ms (Views: 1.2ms | ActiveRecord: 6.7ms | Allocations: 3847)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:15:50 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.51ms)
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started POST "/users" for ::1 at 2020-10-22 14:15:53 -0400
+Started GET "/questions/1" for ::1 at 2020-10-22 14:15:53 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mQuestion Load (0.9ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.33ms)
+  [1m[36mUser Create (1.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-22 18:15:53.806536"], ["updated_at", "2020-10-22 18:15:53.806536"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.9ms | Allocations: 1720)
+
+
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.17ms)
+Completed 200 OK in 8ms (Views: 0.7ms | ActiveRecord: 2.5ms | Allocations: 3708)
+
+
+Started POST "/games" for ::1 at 2020-10-22 14:15:53 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>50, "game"=>{"score"=>0, "user_id"=>50}}
+  [1m[35m (4.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (5.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.4ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 50], ["created_at", "2020-10-22 18:15:53.843549"], ["updated_at", "2020-10-22 18:15:53.843549"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.17ms)
+Completed 200 OK in 23ms (Views: 0.6ms | ActiveRecord: 10.7ms | Allocations: 3845)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:15:56 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.48ms)
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:16:51 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.42ms)
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started POST "/users" for ::1 at 2020-10-22 14:16:52 -0400
+Started GET "/questions/1" for ::1 at 2020-10-22 14:16:52 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by QuestionsController#show as */*
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-22 18:16:52.834714"], ["updated_at", "2020-10-22 18:16:52.834714"]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.28ms)
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 1648)
+
+
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.2ms)
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 1.3ms | Allocations: 4014)
+
+
+Started POST "/games" for ::1 at 2020-10-22 14:16:52 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>51, "game"=>{"score"=>0, "user_id"=>51}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (1.6ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 51], ["created_at", "2020-10-22 18:16:52.859366"], ["updated_at", "2020-10-22 18:16:52.859366"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (20.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.23ms)
+Completed 200 OK in 38ms (Views: 0.7ms | ActiveRecord: 22.6ms | Allocations: 3845)
+
+
+Started GET "/questions/19" for ::1 at 2020-10-22 14:17:07 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"19"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.34ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:17:25 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (1.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.5ms)
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 1.6ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:18:07 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.41ms)
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.3ms | Allocations: 894)
+
+
+Started POST "/users" for ::1 at 2020-10-22 14:18:08 -0400
+Started GET "/questions/1" for ::1 at 2020-10-22 14:18:08 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-22 18:18:08.779313"], ["updated_at", "2020-10-22 18:18:08.779313"]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.27ms)
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 1577)
+
+
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.16ms)
+Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 2.1ms | Allocations: 4015)
+
+
+Started POST "/games" for ::1 at 2020-10-22 14:18:08 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>52, "game"=>{"score"=>0, "user_id"=>52}}
+  [1m[35m (14.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.6ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 52], ["created_at", "2020-10-22 18:18:08.819607"], ["updated_at", "2020-10-22 18:18:08.819607"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.21ms)
+Completed 200 OK in 26ms (Views: 0.7ms | ActiveRecord: 17.0ms | Allocations: 3848)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:18:11 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (2.84ms)
+Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 0.3ms | Allocations: 895)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:18:28 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.52ms)
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.5ms | Allocations: 894)
+
+
+Started POST "/users" for ::1 at 2020-10-22 14:18:29 -0400
+Started GET "/questions/1" for ::1 at 2020-10-22 14:18:29 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by QuestionsController#show as */*
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-22 18:18:29.277937"], ["updated_at", "2020-10-22 18:18:29.277937"]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.42ms)
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.2ms | Allocations: 1652)
+
+
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.3ms)
+Completed 200 OK in 8ms (Views: 1.1ms | ActiveRecord: 1.5ms | Allocations: 4016)
+
+
+Started POST "/games" for ::1 at 2020-10-22 14:18:29 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>53, "game"=>{"score"=>0, "user_id"=>53}}
+  [1m[35m (5.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 53], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.8ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 53], ["created_at", "2020-10-22 18:18:29.312742"], ["updated_at", "2020-10-22 18:18:29.312742"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.23ms)
+Completed 200 OK in 22ms (Views: 0.8ms | ActiveRecord: 10.1ms | Allocations: 3846)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:18:32 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.46ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started POST "/users" for ::1 at 2020-10-22 14:18:43 -0400
+Started GET "/questions/1" for ::1 at 2020-10-22 14:18:43 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-22 18:18:43.776777"], ["updated_at", "2020-10-22 18:18:43.776777"]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.29ms)
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.7ms | Allocations: 2368)
+
+
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.28ms)
+Completed 200 OK in 7ms (Views: 1.3ms | ActiveRecord: 1.1ms | Allocations: 3710)
+
+
+Started POST "/games" for ::1 at 2020-10-22 14:18:43 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>54, "game"=>{"score"=>0, "user_id"=>54}}
+  [1m[35m (10.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 54], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 54], ["created_at", "2020-10-22 18:18:43.818556"], ["updated_at", "2020-10-22 18:18:43.818556"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.14ms)
+Completed 200 OK in 19ms (Views: 0.6ms | ActiveRecord: 11.3ms | Allocations: 3845)
+
+
+Started GET "/questions/19" for ::1 at 2020-10-22 14:18:58 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"19"}
+  [1m[36mQuestion Load (1.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.65ms)
+Completed 200 OK in 5ms (Views: 1.5ms | ActiveRecord: 1.3ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:19:31 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.34ms)
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.4ms | Allocations: 894)
+
+
+Started POST "/users" for ::1 at 2020-10-22 14:19:32 -0400
+Started GET "/questions/1" for ::1 at 2020-10-22 14:19:32 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mQuestion Load (1.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-22 18:19:32.756937"], ["updated_at", "2020-10-22 18:19:32.756937"]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.54ms)
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 5ms (Views: 2.0ms | ActiveRecord: 1.0ms | Allocations: 2365)
+
+
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.2ms)
+Completed 200 OK in 9ms (Views: 0.7ms | ActiveRecord: 2.1ms | Allocations: 3884)
+
+
+Started POST "/games" for ::1 at 2020-10-22 14:19:32 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>55, "game"=>{"score"=>0, "user_id"=>55}}
+  [1m[35m (4.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 55], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.4ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 55], ["created_at", "2020-10-22 18:19:32.795099"], ["updated_at", "2020-10-22 18:19:32.795099"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.16ms)
+Completed 200 OK in 24ms (Views: 0.8ms | ActiveRecord: 13.2ms | Allocations: 3845)
+
+
+Started GET "/questions/19" for ::1 at 2020-10-22 14:19:47 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"19"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.3ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 895)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:21:32 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.39ms)
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms | Allocations: 894)
+
+
+Started POST "/users" for ::1 at 2020-10-22 14:21:33 -0400
+Started GET "/questions/1" for ::1 at 2020-10-22 14:21:33 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by QuestionsController#show as */*
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-22 18:21:33.553272"], ["updated_at", "2020-10-22 18:21:33.553272"]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.4ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.2ms | Allocations: 1634)
+
+
+  [1m[35m (9.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.29ms)
+Completed 200 OK in 16ms (Views: 1.0ms | ActiveRecord: 10.0ms | Allocations: 4015)
+
+
+Started POST "/games" for ::1 at 2020-10-22 14:21:33 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>56, "game"=>{"score"=>0, "user_id"=>56}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 56], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 56], ["created_at", "2020-10-22 18:21:33.597491"], ["updated_at", "2020-10-22 18:21:33.597491"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.15ms)
+Completed 200 OK in 9ms (Views: 0.6ms | ActiveRecord: 1.1ms | Allocations: 3847)
+
+
+Started GET "/questions/19" for ::1 at 2020-10-22 14:21:48 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"19"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.27ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 895)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:22:30 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.63ms)
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started POST "/users" for ::1 at 2020-10-22 14:22:31 -0400
+Started GET "/questions/1" for ::1 at 2020-10-22 14:22:31 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by QuestionsController#show as */*
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-22 18:22:31.241833"], ["updated_at", "2020-10-22 18:22:31.241833"]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.3ms)
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 1649)
+
+
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.2ms)
+Completed 200 OK in 7ms (Views: 0.6ms | ActiveRecord: 1.6ms | Allocations: 4015)
+
+
+Started POST "/games" for ::1 at 2020-10-22 14:22:31 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>57, "game"=>{"score"=>0, "user_id"=>57}}
+  [1m[35m (6.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 57], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (3.1ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 57], ["created_at", "2020-10-22 18:22:31.279815"], ["updated_at", "2020-10-22 18:22:31.279815"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.3ms)
+Completed 200 OK in 28ms (Views: 0.9ms | ActiveRecord: 16.1ms | Allocations: 3848)
+
+
+Started GET "/questions/19" for ::1 at 2020-10-22 14:22:46 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"19"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.56ms)
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:22:49 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.57ms)
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started POST "/users" for ::1 at 2020-10-22 14:22:50 -0400
+Started GET "/questions/1" for ::1 at 2020-10-22 14:22:50 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-22 18:22:50.558401"], ["updated_at", "2020-10-22 18:22:50.558401"]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.31ms)
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.4ms | Allocations: 1609)
+
+
+  [1m[35m (28.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.24ms)
+Completed 200 OK in 36ms (Views: 1.0ms | ActiveRecord: 29.2ms | Allocations: 4015)
+
+
+Started POST "/games" for ::1 at 2020-10-22 14:22:50 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>58, "game"=>{"score"=>0, "user_id"=>58}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 58], ["created_at", "2020-10-22 18:22:50.605582"], ["updated_at", "2020-10-22 18:22:50.605582"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.18ms)
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 1.1ms | Allocations: 3845)
+
+
+Started GET "/questions/19" for ::1 at 2020-10-22 14:23:05 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"19"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.33ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:24:22 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.38ms)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started POST "/users" for ::1 at 2020-10-22 14:24:23 -0400
+Started GET "/questions/1" for ::1 at 2020-10-22 14:24:23 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-22 18:24:23.638058"], ["updated_at", "2020-10-22 18:24:23.638058"]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.63ms)
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.7ms | Allocations: 2369)
+
+
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.17ms)
+Completed 200 OK in 8ms (Views: 0.7ms | ActiveRecord: 1.1ms | Allocations: 3711)
+
+
+Started POST "/games" for ::1 at 2020-10-22 14:24:23 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>59, "game"=>{"score"=>0, "user_id"=>59}}
+  [1m[35m (3.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 59], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (4.3ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 59], ["created_at", "2020-10-22 18:24:23.678428"], ["updated_at", "2020-10-22 18:24:23.678428"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.18ms)
+Completed 200 OK in 26ms (Views: 0.7ms | ActiveRecord: 13.3ms | Allocations: 3846)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:24:26 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.47ms)
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.3ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:26:44 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.42ms)
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.3ms | Allocations: 894)
+
+
+Started POST "/users" for ::1 at 2020-10-22 14:26:45 -0400
+Started GET "/questions/1" for ::1 at 2020-10-22 14:26:45 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by QuestionsController#show as */*
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-22 18:26:45.134791"], ["updated_at", "2020-10-22 18:26:45.134791"]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.29ms)
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 1649)
+
+
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.17ms)
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 1.4ms | Allocations: 4016)
+
+
+Started POST "/games" for ::1 at 2020-10-22 14:26:45 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>60, "game"=>{"score"=>0, "user_id"=>60}}
+  [1m[35m (14.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 60], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.5ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 60], ["created_at", "2020-10-22 18:26:45.172981"], ["updated_at", "2020-10-22 18:26:45.172981"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.2ms)
+Completed 200 OK in 24ms (Views: 0.8ms | ActiveRecord: 15.2ms | Allocations: 3846)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:26:58 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.37ms)
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms | Allocations: 894)
+
+
+Started POST "/users" for ::1 at 2020-10-22 14:27:00 -0400
+Started GET "/questions/1" for ::1 at 2020-10-22 14:27:00 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mQuestion Load (1.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-22 18:27:00.033442"], ["updated_at", "2020-10-22 18:27:00.033442"]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.3ms)
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 1.0ms | Allocations: 2423)
+
+
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.3ms)
+Completed 200 OK in 9ms (Views: 0.8ms | ActiveRecord: 1.8ms | Allocations: 3710)
+
+
+Started POST "/games" for ::1 at 2020-10-22 14:27:00 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>61, "game"=>{"score"=>0, "user_id"=>61}}
+  [1m[35m (7.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.7ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 61], ["created_at", "2020-10-22 18:27:00.075178"], ["updated_at", "2020-10-22 18:27:00.075178"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.23ms)
+Completed 200 OK in 24ms (Views: 1.0ms | ActiveRecord: 12.0ms | Allocations: 3845)
+
+
+Started GET "/questions/19" for ::1 at 2020-10-22 14:27:15 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"19"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.29ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:27:15 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.59ms)
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.6ms | Allocations: 894)
+
+
+Started POST "/users" for ::1 at 2020-10-22 14:27:24 -0400
+Started GET "/questions/1" for ::1 at 2020-10-22 14:27:24 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by QuestionsController#show as */*
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-22 18:27:24.458158"], ["updated_at", "2020-10-22 18:27:24.458158"]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.49ms)
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.2ms | Allocations: 1648)
+
+
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.23ms)
+Completed 200 OK in 8ms (Views: 0.6ms | ActiveRecord: 1.8ms | Allocations: 4014)
+
+
+Started POST "/games" for ::1 at 2020-10-22 14:27:24 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>62, "game"=>{"score"=>0, "user_id"=>62}}
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 62], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (2.6ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 62], ["created_at", "2020-10-22 18:27:24.488739"], ["updated_at", "2020-10-22 18:27:24.488739"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.25ms)
+Completed 200 OK in 23ms (Views: 0.7ms | ActiveRecord: 9.4ms | Allocations: 3845)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:27:34 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.71ms)
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 895)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:28:24 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.45ms)
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started POST "/users" for ::1 at 2020-10-22 14:28:25 -0400
+Started GET "/questions/1" for ::1 at 2020-10-22 14:28:25 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mQuestion Load (1.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-22 18:28:25.135452"], ["updated_at", "2020-10-22 18:28:25.135452"]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.36ms)
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 1.1ms | Allocations: 2367)
+
+
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.3ms)
+Completed 200 OK in 9ms (Views: 0.9ms | ActiveRecord: 2.0ms | Allocations: 4007)
+
+
+Started POST "/games" for ::1 at 2020-10-22 14:28:25 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>63, "game"=>{"score"=>0, "user_id"=>63}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.4ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 63], ["created_at", "2020-10-22 18:28:25.179813"], ["updated_at", "2020-10-22 18:28:25.179813"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.17ms)
+Completed 200 OK in 9ms (Views: 0.6ms | ActiveRecord: 1.2ms | Allocations: 3845)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:28:34 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (1.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.55ms)
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 1.8ms | Allocations: 895)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:29:00 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.5ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started POST "/users" for ::1 at 2020-10-22 14:29:00 -0400
+Started GET "/questions/1" for ::1 at 2020-10-22 14:29:00 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by QuestionsController#show as */*
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-22 18:29:00.950833"], ["updated_at", "2020-10-22 18:29:00.950833"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.38ms)
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 1636)
+
+
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.33ms)
+Completed 200 OK in 10ms (Views: 1.1ms | ActiveRecord: 2.5ms | Allocations: 4015)
+
+
+Started POST "/games" for ::1 at 2020-10-22 14:29:00 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>64, "game"=>{"score"=>0, "user_id"=>64}}
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.4ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 64], ["created_at", "2020-10-22 18:29:00.991949"], ["updated_at", "2020-10-22 18:29:00.991949"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.34ms)
+Completed 200 OK in 20ms (Views: 0.9ms | ActiveRecord: 5.0ms | Allocations: 3845)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:29:10 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.46ms)
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.3ms | Allocations: 894)
+
+
+Started POST "/users" for ::1 at 2020-10-22 14:29:12 -0400
+Started GET "/questions/1" for ::1 at 2020-10-22 14:29:12 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+Processing by QuestionsController#show as */*
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  Parameters: {"id"=>"1"}
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-22 18:29:12.376142"], ["updated_at", "2020-10-22 18:29:12.376142"]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.3ms)
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 1605)
+
+
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.19ms)
+Completed 200 OK in 8ms (Views: 0.6ms | ActiveRecord: 2.6ms | Allocations: 3909)
+
+
+Started POST "/games" for ::1 at 2020-10-22 14:29:12 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>65, "game"=>{"score"=>0, "user_id"=>65}}
+  [1m[35m (4.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.4ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 65], ["created_at", "2020-10-22 18:29:12.412801"], ["updated_at", "2020-10-22 18:29:12.412801"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.16ms)
+Completed 200 OK in 24ms (Views: 0.5ms | ActiveRecord: 10.1ms | Allocations: 3845)
+
+
+Started GET "/questions/19" for ::1 at 2020-10-22 14:29:27 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"19"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.29ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 14:29:52 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.42ms)
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started POST "/users" for ::1 at 2020-10-22 14:29:53 -0400
+Started GET "/questions/1" for ::1 at 2020-10-22 14:29:53 -0400
+Processing by UsersController#create as JSON
+Processing by QuestionsController#show as */*
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-22 18:29:53.355805"], ["updated_at", "2020-10-22 18:29:53.355805"]]
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.46ms)
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 0.8ms | Allocations: 2382)
+
+
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.24ms)
+Completed 200 OK in 7ms (Views: 0.7ms | ActiveRecord: 1.5ms | Allocations: 3697)
+
+
+Started POST "/games" for ::1 at 2020-10-22 14:29:53 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>66, "game"=>{"score"=>0, "user_id"=>66}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 66], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 66], ["created_at", "2020-10-22 18:29:53.391735"], ["updated_at", "2020-10-22 18:29:53.391735"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.23ms)
+Completed 200 OK in 23ms (Views: 0.9ms | ActiveRecord: 6.5ms | Allocations: 3847)
+
+
+Started GET "/questions/19" for ::1 at 2020-10-22 14:30:08 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"19"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.28ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 895)
+
+
