@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2020_10_20_180235) do
 
   create_table "questions", force: :cascade do |t|
     t.integer "game_id"
+    t.string "ask"
     t.string "answer1"
     t.string "answer2"
     t.string "answer3"
