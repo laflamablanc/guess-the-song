@@ -19,11 +19,11 @@ document.addEventListener('DOMContentLoaded', e => {
     const header = document.getElementById('page-header')
     const title = document.createElement('h2')
     title.textContent = "New Game"
+    title.id = 'new-game'
     const form = document.createElement('form')
     form.innerHTML = `
-      <label for="username" class="hidden"> Username:</label><br>
       <input type="text" id="username" name="username" placeholder = "Type Username"><br>
-      <input type="submit" value="Play">
+      <button class = "play-button"type="submit" value="Play">🎵</button>
       `
     header.append(title, form)
     form.addEventListener('submit', e => {
@@ -194,8 +194,6 @@ document.addEventListener('DOMContentLoaded', e => {
     song.pause()
 
   }
-
-  
 
 
 })
