@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', e => {
 
 
   // ----timer code-----
-  let gameDuration = 60
+  let gameDuration = 15
   let gameSecElapsed = 0
   var gameInterval;
 
@@ -190,10 +190,13 @@ document.addEventListener('DOMContentLoaded', e => {
         questionId = 19
         round++
         renderQuestion()
+        changeTimerGreen()
       } else {
         console.log(round)
         endOfGame();
       }
+    } else if ((gameDuration - gameSecElapsed) === 9) {
+      changeTimerRed()
     }
   }
 
@@ -206,7 +209,19 @@ document.addEventListener('DOMContentLoaded', e => {
     song.pause()
 
   }
+ 
+ function changeTimerRed(){
+    let timer = document.getElementById('timers')
+    timer.style.color= 'red' 
+  }
 
+  function changeTimerGreen(){
+    let timer = document.getElementById('timers')
+    timer.style.color= 'rgb(18, 212, 18)'
+  }
+ 
+ 
+ 
 
 
 
