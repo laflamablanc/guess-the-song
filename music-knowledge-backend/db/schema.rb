@@ -29,8 +29,7 @@ ActiveRecord::Schema.define(version: 2020_10_20_180235) do
     t.string "answer2"
     t.string "answer3"
     t.string "answer4"
-    t.string "name"
-    t.string "artist"
+    t.string "correct"
     t.string "genre"
     t.string "filename"
     t.datetime "created_at", precision: 6, null: false

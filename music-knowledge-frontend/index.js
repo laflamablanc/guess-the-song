@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', e => {
       <button data-choice = " " type="button">${data.answer4}</button>
       <button data-play= '${data.filename}'> Play Audio </button>
       <button data-pause= '${data.filename}'> Pause Audio </button>
-      <div id='artist' style="visibility: hidden">${data.artist}</div>
+      <div id='correct' style="visibility: hidden">${data.correct}</div>
       `
       mainDiv.append(questionContainer)
       playAudio(filename)
@@ -132,13 +132,13 @@ document.addEventListener('DOMContentLoaded', e => {
 
       if(e.target.matches(`[data-choice]`)){
         let button = e.target
-        let artistName = document.getElementById('artist')
+        let correctAnswer = document.getElementById('correct')
         console.log(button.textContent)
-        console.log(artistName.textContent)
-        if (button.textContent === artistName.textContent){
-          score++
+        console.log(correctAnswer.textContent)
+        if (button.textContent === correctAnswer.textContent){
+          score = score + 100
         } else {
-          score--
+          score = score -50
         }
         questionId++
         renderQuestion()
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', e => {
 
 
   // ----timer code-----
-  let gameDuration = 10
+  let gameDuration = 60
   let gameSecElapsed = 0
   var gameInterval;
 
@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', e => {
     if ((gameDuration - gameSecElapsed) < 1 ) {
       if (round === 1) {
         console.log(round)
-        gameDuration = 10
+        gameDuration = 60
         gameSecElapsed = 0
         questionId = 19
         round++
