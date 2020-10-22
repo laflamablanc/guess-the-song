@@ -24,10 +24,9 @@ document.addEventListener('DOMContentLoaded', e => {
     title.textContent = "New Game"
     const form = document.createElement('form')
     form.innerHTML = `
-      <label for="username" class="hidden"> Username:</label><br>
-      <input type="text" id="username" name="username" placeholder = "Type Username"><br>
-      <input type="submit" value="Play">
-      `
+     <input type="text" id="username" name="username" placeholder = "Type Username"><br>
+     <button class = "play-button"type="submit" value="Play">🎵</button>
+     `
     header.append(title, form)
     form.addEventListener('submit', e => {
       e.preventDefault()
