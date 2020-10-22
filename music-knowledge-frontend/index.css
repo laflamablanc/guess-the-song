@@ -67,6 +67,20 @@ body{
     border-radius: 5px;
 }
 
+.play-again{
+    background-color:rgb(186, 196, 187);
+
+    padding: 10px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 50px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
 
 input[type=text] {
     width: 60%;

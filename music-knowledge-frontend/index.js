@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', e => {
   let score= 0
   let round = 1
   let userId = 0
+  let gameId = 0
 
   const questionUrl = 'http://localhost:3000/questions/'
   const getQuestions = () => {
@@ -19,6 +20,7 @@ document.addEventListener('DOMContentLoaded', e => {
 
 
   const renderNewGame = () => {
+    gameDuration = 15
     const header = document.getElementById('page-header')
     const title = document.createElement('h2')
     title.textContent = "New Game"
@@ -75,9 +77,10 @@ document.addEventListener('DOMContentLoaded', e => {
           user_id: userId
         })
     }
-    fetch('http://localhost:3000/games', gameOptions)
+    fetch('http://localhost:3000/games/', gameOptions)
     .then(response => response.json())
     .then(data => {
+      gameId = data.id
     })
   }
 
@@ -203,7 +206,6 @@ document.addEventListener('DOMContentLoaded', e => {
     if (test) { console.log("--- setGameTime ---"); }
     if (test) { console.log("gameDuration " + gameDuration); }
     clearInterval(gameInterval);
-    gameSeconds = gameDuration;
   }
 
   function renderTime() {
@@ -214,7 +216,7 @@ document.addEventListener('DOMContentLoaded', e => {
       if (round === 1) {
         console.log(round)
         clearInterval(gameInterval)
-        gameDuration = 60
+        gameDuration = 15
         gameSecElapsed = 0
         questionId = 19
         round++
@@ -224,6 +226,7 @@ document.addEventListener('DOMContentLoaded', e => {
       } else {
         console.log(round)
         endOfGame();
+        sendScore()
       }
     } else if ((gameDuration - gameSecElapsed) === 9) {
       changeTimerRed()
@@ -234,10 +237,43 @@ document.addEventListener('DOMContentLoaded', e => {
 
     console.log('Game Over')
     clearInterval(gameInterval);
-    const questionContainer = document.getElementById('question-container')
-    questionContainer.innerHTML = score
+    // const questionContainer = document.getElementById('question-container')
+    // questionContainer.innerHTML = `Your Score: ${score}`
     song.pause()
 
+  }
+
+  function sendScore(){
+
+    const gameOptions = {
+      method: "PATCH" ,
+      headers:{
+        "content-type" : "application/json",
+        "accept" : "application/json"
+      },
+      body: JSON.stringify(
+        {score: score}
+      )
+    }
+
+    fetch('http://localhost:3000/games/'+gameId, gameOptions)
+    .then(response => response.json())
+    .then(data => {
+      displayScore(data.score)
+    })
+
+  }
+
+  function displayScore(score){
+    const questionContainer = document.getElementById('question-container')
+    questionContainer.innerHTML = `
+    <h2>Your Score: ${score}</h2>
+    <button class= "play-again">🔁</button>
+    `
+    const playAgain = questionContainer.querySelector('.play-again')
+    playAgain.addEventListener('click', e => {
+      location.reload();
+    })
   }
 
  function changeTimerRed(){

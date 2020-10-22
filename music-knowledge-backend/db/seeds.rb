@@ -6,14 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(name: "Mamadou")
-User.create(name: "Sean")
-
-Game.create(score: 0, user_id: 1)
-Game.create(score:0, user_id: 2)
 
 Question.create(
-  game_id: 1,
+  # game_id: 1,
   ask: "Select the Artist",
   answer1: "A$AP Rocky",
   answer2: "Roddy Rich",
@@ -25,7 +20,7 @@ Question.create(
 )
 
 Question.create(
-  game_id: 1,
+  # game_id: 1,
   ask: "Select the Artist",
   answer1: "Lil Baby",
   answer2: "Baby",
@@ -37,7 +32,7 @@ Question.create(
 )
 
 Question.create(
-  game_id: 1,
+  # game_id: 1,
   ask: "Select the Artist",
   answer1: "Kanye West",
   answer2: "Drake",
@@ -49,7 +44,7 @@ Question.create(
 )
 
 Question.create(
-  game_id: 1,
+  # game_id: 1,
   ask: "Select the Artist",
   answer1: "A$AP Ferg",
   answer2: "Richy Rodd",
@@ -61,7 +56,7 @@ Question.create(
 )
 
 Question.create(
-  game_id: 1,
+  # game_id: 1,
   ask: "Select the Artist",
   answer1: "Missy Elliot",
   answer2: "Lil Kim",
@@ -73,7 +68,7 @@ Question.create(
 )
 
 Question.create(
-  game_id: 1,
+  # game_id: 1,
   ask: "Select the Artist",
   answer1: "Cam'ron",
   answer2: "Diddy",
@@ -85,7 +80,7 @@ Question.create(
 )
 
 Question.create(
-  game_id: 1,
+  # game_id: 1,
   ask: "Select the Artist",
   answer1: "J. Cole",
   answer2: "Kendrick Lamar",
@@ -97,7 +92,7 @@ Question.create(
 )
 
 Question.create(
-  game_id: 1,
+  # game_id: 1,
   ask: "Select the Artist",
   answer1: "Childish Gambino",
   answer2: "Chance the Rapper",
@@ -109,7 +104,7 @@ Question.create(
 )
 
 Question.create(
-  game_id: 1,
+  # game_id: 1,
   ask: "Select the Artist",
   answer1: "A$AP Rocky",
   answer2: "Roddy Rich",
@@ -121,7 +116,7 @@ Question.create(
 )
 
 Question.create(
-  game_id: 1,
+  # game_id: 1,
   ask: "Select the Artist",
   answer1: "Ja Rule",
   answer2: "50 Cent",
@@ -133,7 +128,7 @@ Question.create(
 )
 
 Question.create(
-  game_id: 1,
+  # game_id: 1,
   ask: "Select the Artist",
   answer1: "A$AP Rocky",
   answer2: "Eminem",
@@ -145,7 +140,7 @@ Question.create(
 )
 
 Question.create(
-  game_id: 1,
+  # game_id: 1,
   ask: "Select the Artist",
   answer1: "Mase",
   answer2: "Notorious BIG",
@@ -157,7 +152,7 @@ Question.create(
 )
 
 Question.create(
-  game_id: 1,
+  # game_id: 1,
   ask: "Select the Artist",
   answer1: "Jay-Z",
   answer2: "Snoop Dogg",
@@ -169,7 +164,7 @@ Question.create(
 )
 
 Question.create(
-  game_id: 1,
+  # game_id: 1,
   ask: "Select the Artist",
   answer1: "Ice T",
   answer2: "Ludacris",
@@ -181,7 +176,7 @@ Question.create(
 )
 
 Question.create(
-  game_id: 1,
+  # game_id: 1,
   ask: "Select the Artist",
   answer1: "Mac Miller",
   answer2: "Lil Dicky",
@@ -193,7 +188,7 @@ Question.create(
 )
 
 Question.create(
-  game_id: 1,
+  # game_id: 1,
   ask: "Select the Artist",
   answer1: "Macklemore",
   answer2: "Eminem",
@@ -205,7 +200,7 @@ Question.create(
 )
 
 Question.create(
-  game_id: 1,
+  # game_id: 1,
   ask: "Select the Artist",
   answer1: "Earl Sweatshirt",
   answer2: "Outkast",
@@ -217,7 +212,7 @@ Question.create(
 )
 
 Question.create(
-  game_id: 1,
+  # game_id: 1,
   ask: "Select the Artist",
   answer1: "Nicki Minaj",
   answer2: "Cardi B",
@@ -232,7 +227,7 @@ Question.create(
 # ---------NAME THE SONG----------
 
 Question.create(
-  game_id: 1,
+  # game_id: 1,
   ask: "Name the Song",
   answer1: "Pursuit of Happiness",
   answer2: "Day N Nite",
@@ -244,7 +239,7 @@ Question.create(
 )
 
 Question.create(
-  game_id: 1,
+  # game_id: 1,
   ask: "Name the Song",
   answer1: "99 Problems",
   answer2: "Big Pimpin",
@@ -256,7 +251,7 @@ Question.create(
 )
 
 Question.create(
-  game_id: 1,
+  # game_id: 1,
   ask: "Name the Song",
   answer1: "Still D.R.E.",
   answer2: "Forgot About Dre",
@@ -268,7 +263,7 @@ Question.create(
 )
 
 Question.create(
-  game_id: 1,
+  # game_id: 1,
   ask: "Name the Song",
   answer1: "Ghost",
   answer2: "Warsaw",
@@ -280,7 +275,7 @@ Question.create(
 )
 
 Question.create(
-  game_id: 1,
+  # game_id: 1,
   ask: "Name the Song",
   answer1: "Come Back to Earth",
   answer2: "Ladders",
@@ -292,7 +287,7 @@ Question.create(
 )
 
 Question.create(
-  game_id: 1,
+  # game_id: 1,
   ask: "Name the Song",
   answer1: "3005",
   answer2: "Redbone",
@@ -304,7 +299,7 @@ Question.create(
 )
 
 Question.create(
-  game_id: 1,
+  # game_id: 1,
   ask: "Name the Song",
   answer1: "All of the Lights",
   answer2: "Heartless",
@@ -316,7 +311,7 @@ Question.create(
 )
 
 Question.create(
-  game_id: 1,
+  # game_id: 1,
   ask: "Name the Song",
   answer1: "Stan",
   answer2: "Lose Yourself",
@@ -328,7 +323,7 @@ Question.create(
 )
 
 Question.create(
-  game_id: 1,
+  # game_id: 1,
   ask: "Name the Song",
   answer1: "Yosemite",
   answer2: "Goosbumps",
@@ -340,7 +335,7 @@ Question.create(
 )
 
 Question.create(
-  game_id: 1,
+  # game_id: 1,
   ask: "Name the Song",
   answer1: "Big Poppa",
   answer2: "Dear Mama",
@@ -352,7 +347,7 @@ Question.create(
 )
 
 Question.create(
-  game_id: 1,
+  # game_id: 1,
   ask: "Name the Song",
   answer1: "Started From the Bottom",
   answer2: "6 God",
@@ -364,7 +359,7 @@ Question.create(
 )
 
 Question.create(
-  game_id: 1,
+  # game_id: 1,
   ask: "Name the Song",
   answer1: "Die Young",
   answer2: "The Box",
@@ -376,7 +371,7 @@ Question.create(
 )
 
 Question.create(
-  game_id: 1,
+  # game_id: 1,
   ask: "Name the Song",
   answer1: "Get Your Freak On",
   answer2: "1 2 Step",
@@ -388,7 +383,7 @@ Question.create(
 )
 
 Question.create(
-  game_id: 1,
+  # game_id: 1,
   ask: "Name the Song",
   answer1: "Pure Water",
   answer2: "Versace",
@@ -400,7 +395,7 @@ Question.create(
 )
 
 Question.create(
-  game_id: 1,
+  # game_id: 1,
   ask: "Name the Song",
   answer1: "Money Trees",
   answer2: "MAAD City",
@@ -412,7 +407,7 @@ Question.create(
 )
 
 Question.create(
-  game_id: 1,
+  # game_id: 1,
   ask: "Name the Song",
   answer1: "L$D",
   answer2: "LVL",
@@ -424,7 +419,7 @@ Question.create(
 )
 
 Question.create(
-  game_id: 1,
+  # game_id: 1,
   ask: "Name the Song",
   answer1: "Bop",
   answer2: "Boop",
@@ -436,7 +431,7 @@ Question.create(
 )
 
 Question.create(
-  game_id: 1,
+  # game_id: 1,
   ask: "Name the Song",
   answer1: "I Like It",
   answer2: "Money",
