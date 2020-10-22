@@ -17236,3 +17236,869 @@ Processing by QuestionsController#show as */*
 Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 894)
 
 
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (5.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (48.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "music_knowledge_backend_development"[0m
+  [1m[35m (37.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "music_knowledge_backend_test"[0m
+  [1m[35m (188.0ms)[0m  [1m[35mCREATE DATABASE "music_knowledge_backend_development" ENCODING = 'unicode'[0m
+  [1m[35m (75.2ms)[0m  [1m[35mCREATE DATABASE "music_knowledge_backend_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (3.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "games" CASCADE[0m
+  [1m[35m (14.2ms)[0m  [1m[35mCREATE TABLE "games" ("id" bigserial primary key, "score" integer, "user_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "questions" CASCADE[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "questions" ("id" bigserial primary key, "game_id" integer, "ask" character varying, "answer1" character varying, "answer2" character varying, "answer3" character varying, "answer4" character varying, "correct" character varying, "genre" character varying, "filename" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20201020180235)[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20201020180058),
+(20201020180144);
+
+[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-10-22 16:47:55.264806"], ["updated_at", "2020-10-22 16:47:55.264806"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "ff5fa9a2dbdd3891d5f6077ddf97c8cc12050ee0"], ["created_at", "2020-10-22 16:47:55.272570"], ["updated_at", "2020-10-22 16:47:55.272570"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "games" CASCADE[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "games" ("id" bigserial primary key, "score" integer, "user_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "questions" CASCADE[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "questions" ("id" bigserial primary key, "game_id" integer, "ask" character varying, "answer1" character varying, "answer2" character varying, "answer3" character varying, "answer4" character varying, "correct" character varying, "genre" character varying, "filename" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20201020180235)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20201020180058),
+(20201020180144);
+
+[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-10-22 16:47:55.342368"], ["updated_at", "2020-10-22 16:47:55.342368"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (1.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-10-22 16:47:55.347501"], ["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "ff5fa9a2dbdd3891d5f6077ddf97c8cc12050ee0"], ["created_at", "2020-10-22 16:47:55.353302"], ["updated_at", "2020-10-22 16:47:55.353302"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Mamadou"], ["created_at", "2020-10-22 16:47:55.399602"], ["updated_at", "2020-10-22 16:47:55.399602"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sean"], ["created_at", "2020-10-22 16:47:55.404906"], ["updated_at", "2020-10-22 16:47:55.404906"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Create (1.4ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 1], ["created_at", "2020-10-22 16:47:55.424781"], ["updated_at", "2020-10-22 16:47:55.424781"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGame Create (0.2ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 2], ["created_at", "2020-10-22 16:47:55.431082"], ["updated_at", "2020-10-22 16:47:55.431082"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.5ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Select the Artist"], ["answer1", "A$AP Rocky"], ["answer2", "Roddy Rich"], ["answer3", "Young Thug"], ["answer4", "Flava Flav"], ["correct", "A$AP Rocky"], ["genre", "rap"], ["filename", "mp3s/Goldie.mp3"], ["created_at", "2020-10-22 16:47:55.449633"], ["updated_at", "2020-10-22 16:47:55.449633"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Select the Artist"], ["answer1", "Lil Baby"], ["answer2", "Baby"], ["answer3", "DaBaby"], ["answer4", "The Adult"], ["correct", "DaBaby"], ["genre", "rap"], ["filename", "mp3s/BOP.mp3"], ["created_at", "2020-10-22 16:47:55.459048"], ["updated_at", "2020-10-22 16:47:55.459048"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Select the Artist"], ["answer1", "Kanye West"], ["answer2", "Drake"], ["answer3", "Young Thug"], ["answer4", "Eminem"], ["correct", "Drake"], ["genre", "rap"], ["filename", "mp3s/Bottom.mp3"], ["created_at", "2020-10-22 16:47:55.463997"], ["updated_at", "2020-10-22 16:47:55.463997"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Select the Artist"], ["answer1", "A$AP Ferg"], ["answer2", "Richy Rodd"], ["answer3", "Chance the Rapper"], ["answer4", "Roddy Ricch"], ["correct", "Roddy Ricch"], ["genre", "rap"], ["filename", "mp3s/Box.mp3"], ["created_at", "2020-10-22 16:47:55.468967"], ["updated_at", "2020-10-22 16:47:55.468967"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Select the Artist"], ["answer1", "Missy Elliot"], ["answer2", "Lil Kim"], ["answer3", "Xzibit"], ["answer4", "Timbaland"], ["correct", "Missy Elliot"], ["genre", "rap"], ["filename", "mp3s/Freak.mp3"], ["created_at", "2020-10-22 16:47:55.473335"], ["updated_at", "2020-10-22 16:47:55.473335"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Select the Artist"], ["answer1", "Cam'ron"], ["answer2", "Diddy"], ["answer3", "Kanye West"], ["answer4", "Migos"], ["correct", "Migos"], ["genre", "rap"], ["filename", "mp3s/PureWater.mp3"], ["created_at", "2020-10-22 16:47:55.478060"], ["updated_at", "2020-10-22 16:47:55.478060"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Select the Artist"], ["answer1", "J. Cole"], ["answer2", "Kendrick Lamar"], ["answer3", "Chamillionaire"], ["answer4", "Ludacris"], ["correct", "Kendrick Lamar"], ["genre", "rap"], ["filename", "mp3s/BackseatFreestyle.mp3"], ["created_at", "2020-10-22 16:47:55.483797"], ["updated_at", "2020-10-22 16:47:55.483797"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Select the Artist"], ["answer1", "Childish Gambino"], ["answer2", "Chance the Rapper"], ["answer3", "Boyz II Men"], ["answer4", "Prince"], ["correct", "Childish Gambino"], ["genre", "rap"], ["filename", "mp3s/Redbone.mp3"], ["created_at", "2020-10-22 16:47:55.489042"], ["updated_at", "2020-10-22 16:47:55.489042"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Select the Artist"], ["answer1", "A$AP Rocky"], ["answer2", "Roddy Rich"], ["answer3", "Young Thug"], ["answer4", "Kanye West"], ["correct", "Kanye West"], ["genre", "rap"], ["filename", "mp3s/Runaway.mp3"], ["created_at", "2020-10-22 16:47:55.493518"], ["updated_at", "2020-10-22 16:47:55.493518"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Select the Artist"], ["answer1", "Ja Rule"], ["answer2", "50 Cent"], ["answer3", "Eminem"], ["answer4", "Vanilla Ice"], ["correct", "Eminem"], ["genre", "rap"], ["filename", "mp3s/Stan.mp3"], ["created_at", "2020-10-22 16:47:55.498036"], ["updated_at", "2020-10-22 16:47:55.498036"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Select the Artist"], ["answer1", "A$AP Rocky"], ["answer2", "Eminem"], ["answer3", "Travis Scott"], ["answer4", "Migos"], ["correct", "Travis Scott"], ["genre", "rap"], ["filename", "mp3s/Butterfly.mp3"], ["created_at", "2020-10-22 16:47:55.503466"], ["updated_at", "2020-10-22 16:47:55.503466"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Select the Artist"], ["answer1", "Mase"], ["answer2", "Notorious BIG"], ["answer3", "Diddy"], ["answer4", "Tupac"], ["correct", "Notorious BIG"], ["genre", "rap"], ["filename", "mp3s/Hypnotize.mp3"], ["created_at", "2020-10-22 16:47:55.508138"], ["updated_at", "2020-10-22 16:47:55.508138"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Select the Artist"], ["answer1", "Jay-Z"], ["answer2", "Snoop Dogg"], ["answer3", "Nas"], ["answer4", "Jadakiss"], ["correct", "Jay-Z"], ["genre", "rap"], ["filename", "mp3s/BigPimpin.mp3"], ["created_at", "2020-10-22 16:47:55.512968"], ["updated_at", "2020-10-22 16:47:55.512968"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Select the Artist"], ["answer1", "Ice T"], ["answer2", "Ludacris"], ["answer3", "Ice Cube"], ["answer4", "Dr. Dre"], ["correct", "Dr. Dre"], ["genre", "rap"], ["filename", "mp3s/ForgotDre.mp3"], ["created_at", "2020-10-22 16:47:55.518748"], ["updated_at", "2020-10-22 16:47:55.518748"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Select the Artist"], ["answer1", "Mac Miller"], ["answer2", "Lil Dicky"], ["answer3", "Eminem"], ["answer4", "Vanilla Ice"], ["correct", "Jack Harlow"], ["genre", "rap"], ["filename", "mp3s/WhatsPoppin.mp3"], ["created_at", "2020-10-22 16:47:55.523501"], ["updated_at", "2020-10-22 16:47:55.523501"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Select the Artist"], ["answer1", "Macklemore"], ["answer2", "Eminem"], ["answer3", "Post Malone"], ["answer4", "Jack Harlow"], ["correct", "Mac Miller"], ["genre", "rap"], ["filename", "mp3s/Ladders.mp3"], ["created_at", "2020-10-22 16:47:55.532406"], ["updated_at", "2020-10-22 16:47:55.532406"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Select the Artist"], ["answer1", "Earl Sweatshirt"], ["answer2", "Outkast"], ["answer3", "Young Thug"], ["answer4", "Kid Cudi"], ["correct", "Kid Cudi"], ["genre", "rap"], ["filename", "mp3s/Pursuit.mp3"], ["created_at", "2020-10-22 16:47:55.537026"], ["updated_at", "2020-10-22 16:47:55.537026"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Select the Artist"], ["answer1", "Nicki Minaj"], ["answer2", "Cardi B"], ["answer3", "Lil Kim"], ["answer4", "Missy Elliot"], ["correct", "Cardi B"], ["genre", "rap"], ["filename", "mp3s/BodakYellow.mp3"], ["created_at", "2020-10-22 16:47:55.541553"], ["updated_at", "2020-10-22 16:47:55.541553"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Name the Song"], ["answer1", "Pursuit of Happiness"], ["answer2", "Day N Nite"], ["answer3", "Cudi Zone"], ["answer4", "Moon Man"], ["correct", "Pursuit of Happiness"], ["genre", "rap"], ["filename", "mp3s/Pursuit.mp3"], ["created_at", "2020-10-22 16:47:55.545897"], ["updated_at", "2020-10-22 16:47:55.545897"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Name the Song"], ["answer1", "99 Problems"], ["answer2", "Big Pimpin"], ["answer3", "Dirt off Your Shoulders"], ["answer4", "Welcome to the Party"], ["correct", "Big Pimpin"], ["genre", "rap"], ["filename", "mp3s/BigPimpin.mp3"], ["created_at", "2020-10-22 16:47:55.550648"], ["updated_at", "2020-10-22 16:47:55.550648"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Name the Song"], ["answer1", "Still D.R.E."], ["answer2", "Forgot About Dre"], ["answer3", "California Love"], ["answer4", "Nuthin but a G Thang"], ["correct", "Forgot About Dre"], ["genre", "rap"], ["filename", "mp3s/ForgotDre.mp3"], ["created_at", "2020-10-22 16:47:55.555787"], ["updated_at", "2020-10-22 16:47:55.555787"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Name the Song"], ["answer1", "Ghost"], ["answer2", "Warsaw"], ["answer3", "Thru the Night"], ["answer4", "Whats Poppin"], ["correct", "Whats Poppin"], ["genre", "rap"], ["filename", "mp3s/WhatsPoppin.mp3"], ["created_at", "2020-10-22 16:47:55.562128"], ["updated_at", "2020-10-22 16:47:55.562128"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Name the Song"], ["answer1", "Come Back to Earth"], ["answer2", "Ladders"], ["answer3", "Hurt Feelings"], ["answer4", "Self Care"], ["correct", "Ladders"], ["genre", "rap"], ["filename", "mp3s/Ladders.mp3"], ["created_at", "2020-10-22 16:47:55.567918"], ["updated_at", "2020-10-22 16:47:55.567918"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Name the Song"], ["answer1", "3005"], ["answer2", "Redbone"], ["answer3", "Bonfire"], ["answer4", "Camp"], ["correct", "Redbone"], ["genre", "rap"], ["filename", "mp3s/Redbone.mp3"], ["created_at", "2020-10-22 16:47:55.573392"], ["updated_at", "2020-10-22 16:47:55.573392"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Name the Song"], ["answer1", "All of the Lights"], ["answer2", "Heartless"], ["answer3", "Famous"], ["answer4", "Runaway"], ["correct", "Runaway"], ["genre", "rap"], ["filename", "mp3s/Runaway.mp3"], ["created_at", "2020-10-22 16:47:55.578485"], ["updated_at", "2020-10-22 16:47:55.578485"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Name the Song"], ["answer1", "Stan"], ["answer2", "Lose Yourself"], ["answer3", "Love the Way You Lie"], ["answer4", "The Way I Am"], ["correct", "Stan"], ["genre", "rap"], ["filename", "mp3s/Stan.mp3"], ["created_at", "2020-10-22 16:47:55.583593"], ["updated_at", "2020-10-22 16:47:55.583593"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Name the Song"], ["answer1", "Yosemite"], ["answer2", "Goosbumps"], ["answer3", "Butterfly Effect"], ["answer4", "Sicko Mode"], ["correct", "Butterfly Effect"], ["genre", "rap"], ["filename", "mp3s/Butterfly.mp3"], ["created_at", "2020-10-22 16:47:55.588526"], ["updated_at", "2020-10-22 16:47:55.588526"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Name the Song"], ["answer1", "Big Poppa"], ["answer2", "Dear Mama"], ["answer3", "Molly"], ["answer4", "Hypnotize"], ["correct", "Hypnotize"], ["genre", "rap"], ["filename", "mp3s/Hypnotize.mp3"], ["created_at", "2020-10-22 16:47:55.594368"], ["updated_at", "2020-10-22 16:47:55.594368"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Name the Song"], ["answer1", "Started From the Bottom"], ["answer2", "6 God"], ["answer3", "Worst Behavior"], ["answer4", "Hotline Bling"], ["correct", "Started From the Bottom"], ["genre", "rap"], ["filename", "mp3s/Bottom.mp3"], ["created_at", "2020-10-22 16:47:55.599269"], ["updated_at", "2020-10-22 16:47:55.599269"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Name the Song"], ["answer1", "Die Young"], ["answer2", "The Box"], ["answer3", "High Fashion"], ["answer4", "Ballin"], ["correct", "The Box"], ["genre", "rap"], ["filename", "mp3s/Box.mp3"], ["created_at", "2020-10-22 16:47:55.605591"], ["updated_at", "2020-10-22 16:47:55.605591"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Name the Song"], ["answer1", "Get Your Freak On"], ["answer2", "1 2 Step"], ["answer3", "Work It"], ["answer4", "Lose Control"], ["correct", "Get Your Freak On"], ["genre", "rap"], ["filename", "mp3s/Freak.mp3"], ["created_at", "2020-10-22 16:47:55.610265"], ["updated_at", "2020-10-22 16:47:55.610265"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Name the Song"], ["answer1", "Pure Water"], ["answer2", "Versace"], ["answer3", "Bad and Boujee"], ["answer4", "Motorsport"], ["correct", "Pure Water"], ["genre", "rap"], ["filename", "mp3s/PureWater.mp3"], ["created_at", "2020-10-22 16:47:55.615017"], ["updated_at", "2020-10-22 16:47:55.615017"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Name the Song"], ["answer1", "Money Trees"], ["answer2", "MAAD City"], ["answer3", "Good Kid"], ["answer4", "Backseat Freestyle"], ["correct", "Backseat Freestyle"], ["genre", "rap"], ["filename", "mp3s/BackseatFreestyle.mp3"], ["created_at", "2020-10-22 16:47:55.619853"], ["updated_at", "2020-10-22 16:47:55.619853"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Name the Song"], ["answer1", "L$D"], ["answer2", "LVL"], ["answer3", "Goldie"], ["answer4", "Praise The Lord"], ["correct", "Goldie"], ["genre", "rap"], ["filename", "mp3s/Goldie.mp3"], ["created_at", "2020-10-22 16:47:55.625070"], ["updated_at", "2020-10-22 16:47:55.625070"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Name the Song"], ["answer1", "Bop"], ["answer2", "Boop"], ["answer3", "Beep"], ["answer4", "Baba"], ["correct", "Bop"], ["genre", "rap"], ["filename", "mp3s/BOP.mp3"], ["created_at", "2020-10-22 16:47:55.629458"], ["updated_at", "2020-10-22 16:47:55.629458"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Name the Song"], ["answer1", "I Like It"], ["answer2", "Money"], ["answer3", "WAP"], ["answer4", "Bodak Yellow"], ["correct", "Bop"], ["genre", "rap"], ["filename", "mp3s/BodakYellow.mp3"], ["created_at", "2020-10-22 16:47:55.634410"], ["updated_at", "2020-10-22 16:47:55.634410"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1262214483776396220)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1262214483776396220)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Mamadou"], ["created_at", "2020-10-22 16:48:10.694843"], ["updated_at", "2020-10-22 16:48:10.694843"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sean"], ["created_at", "2020-10-22 16:48:10.699673"], ["updated_at", "2020-10-22 16:48:10.699673"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Create (0.7ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 1], ["created_at", "2020-10-22 16:48:10.718798"], ["updated_at", "2020-10-22 16:48:10.718798"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGame Create (0.2ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 2], ["created_at", "2020-10-22 16:48:10.723768"], ["updated_at", "2020-10-22 16:48:10.723768"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (1.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Select the Artist"], ["answer1", "A$AP Rocky"], ["answer2", "Roddy Rich"], ["answer3", "Young Thug"], ["answer4", "Flava Flav"], ["correct", "A$AP Rocky"], ["genre", "rap"], ["filename", "mp3s/Goldie.mp3"], ["created_at", "2020-10-22 16:48:10.748564"], ["updated_at", "2020-10-22 16:48:10.748564"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Select the Artist"], ["answer1", "Lil Baby"], ["answer2", "Baby"], ["answer3", "DaBaby"], ["answer4", "The Adult"], ["correct", "DaBaby"], ["genre", "rap"], ["filename", "mp3s/BOP.mp3"], ["created_at", "2020-10-22 16:48:10.754476"], ["updated_at", "2020-10-22 16:48:10.754476"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Select the Artist"], ["answer1", "Kanye West"], ["answer2", "Drake"], ["answer3", "Young Thug"], ["answer4", "Eminem"], ["correct", "Drake"], ["genre", "rap"], ["filename", "mp3s/Bottom.mp3"], ["created_at", "2020-10-22 16:48:10.758962"], ["updated_at", "2020-10-22 16:48:10.758962"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.4ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Select the Artist"], ["answer1", "A$AP Ferg"], ["answer2", "Richy Rodd"], ["answer3", "Chance the Rapper"], ["answer4", "Roddy Ricch"], ["correct", "Roddy Ricch"], ["genre", "rap"], ["filename", "mp3s/Box.mp3"], ["created_at", "2020-10-22 16:48:10.764241"], ["updated_at", "2020-10-22 16:48:10.764241"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Select the Artist"], ["answer1", "Missy Elliot"], ["answer2", "Lil Kim"], ["answer3", "Xzibit"], ["answer4", "Timbaland"], ["correct", "Missy Elliot"], ["genre", "rap"], ["filename", "mp3s/Freak.mp3"], ["created_at", "2020-10-22 16:48:10.769094"], ["updated_at", "2020-10-22 16:48:10.769094"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Select the Artist"], ["answer1", "Cam'ron"], ["answer2", "Diddy"], ["answer3", "Kanye West"], ["answer4", "Migos"], ["correct", "Migos"], ["genre", "rap"], ["filename", "mp3s/PureWater.mp3"], ["created_at", "2020-10-22 16:48:10.773481"], ["updated_at", "2020-10-22 16:48:10.773481"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Select the Artist"], ["answer1", "J. Cole"], ["answer2", "Kendrick Lamar"], ["answer3", "Chamillionaire"], ["answer4", "Ludacris"], ["correct", "Kendrick Lamar"], ["genre", "rap"], ["filename", "mp3s/BackseatFreestyle.mp3"], ["created_at", "2020-10-22 16:48:10.777876"], ["updated_at", "2020-10-22 16:48:10.777876"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Select the Artist"], ["answer1", "Childish Gambino"], ["answer2", "Chance the Rapper"], ["answer3", "Boyz II Men"], ["answer4", "Prince"], ["correct", "Childish Gambino"], ["genre", "rap"], ["filename", "mp3s/Redbone.mp3"], ["created_at", "2020-10-22 16:48:10.782283"], ["updated_at", "2020-10-22 16:48:10.782283"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Select the Artist"], ["answer1", "A$AP Rocky"], ["answer2", "Roddy Rich"], ["answer3", "Young Thug"], ["answer4", "Kanye West"], ["correct", "Kanye West"], ["genre", "rap"], ["filename", "mp3s/Runaway.mp3"], ["created_at", "2020-10-22 16:48:10.787426"], ["updated_at", "2020-10-22 16:48:10.787426"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Select the Artist"], ["answer1", "Ja Rule"], ["answer2", "50 Cent"], ["answer3", "Eminem"], ["answer4", "Vanilla Ice"], ["correct", "Eminem"], ["genre", "rap"], ["filename", "mp3s/Stan.mp3"], ["created_at", "2020-10-22 16:48:10.792876"], ["updated_at", "2020-10-22 16:48:10.792876"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Select the Artist"], ["answer1", "A$AP Rocky"], ["answer2", "Eminem"], ["answer3", "Travis Scott"], ["answer4", "Migos"], ["correct", "Travis Scott"], ["genre", "rap"], ["filename", "mp3s/Butterfly.mp3"], ["created_at", "2020-10-22 16:48:10.797922"], ["updated_at", "2020-10-22 16:48:10.797922"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Select the Artist"], ["answer1", "Mase"], ["answer2", "Notorious BIG"], ["answer3", "Diddy"], ["answer4", "Tupac"], ["correct", "Notorious BIG"], ["genre", "rap"], ["filename", "mp3s/Hypnotize.mp3"], ["created_at", "2020-10-22 16:48:10.803355"], ["updated_at", "2020-10-22 16:48:10.803355"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Select the Artist"], ["answer1", "Jay-Z"], ["answer2", "Snoop Dogg"], ["answer3", "Nas"], ["answer4", "Jadakiss"], ["correct", "Jay-Z"], ["genre", "rap"], ["filename", "mp3s/BigPimpin.mp3"], ["created_at", "2020-10-22 16:48:10.808031"], ["updated_at", "2020-10-22 16:48:10.808031"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Select the Artist"], ["answer1", "Ice T"], ["answer2", "Ludacris"], ["answer3", "Ice Cube"], ["answer4", "Dr. Dre"], ["correct", "Dr. Dre"], ["genre", "rap"], ["filename", "mp3s/ForgotDre.mp3"], ["created_at", "2020-10-22 16:48:10.813007"], ["updated_at", "2020-10-22 16:48:10.813007"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Select the Artist"], ["answer1", "Mac Miller"], ["answer2", "Lil Dicky"], ["answer3", "Eminem"], ["answer4", "Vanilla Ice"], ["correct", "Jack Harlow"], ["genre", "rap"], ["filename", "mp3s/WhatsPoppin.mp3"], ["created_at", "2020-10-22 16:48:10.817980"], ["updated_at", "2020-10-22 16:48:10.817980"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Select the Artist"], ["answer1", "Macklemore"], ["answer2", "Eminem"], ["answer3", "Post Malone"], ["answer4", "Jack Harlow"], ["correct", "Mac Miller"], ["genre", "rap"], ["filename", "mp3s/Ladders.mp3"], ["created_at", "2020-10-22 16:48:10.827077"], ["updated_at", "2020-10-22 16:48:10.827077"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Select the Artist"], ["answer1", "Earl Sweatshirt"], ["answer2", "Outkast"], ["answer3", "Young Thug"], ["answer4", "Kid Cudi"], ["correct", "Kid Cudi"], ["genre", "rap"], ["filename", "mp3s/Pursuit.mp3"], ["created_at", "2020-10-22 16:48:10.832234"], ["updated_at", "2020-10-22 16:48:10.832234"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Select the Artist"], ["answer1", "Nicki Minaj"], ["answer2", "Cardi B"], ["answer3", "Lil Kim"], ["answer4", "Missy Elliot"], ["correct", "Cardi B"], ["genre", "rap"], ["filename", "mp3s/BodakYellow.mp3"], ["created_at", "2020-10-22 16:48:10.836803"], ["updated_at", "2020-10-22 16:48:10.836803"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.6ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Name the Song"], ["answer1", "Pursuit of Happiness"], ["answer2", "Day N Nite"], ["answer3", "Cudi Zone"], ["answer4", "Moon Man"], ["correct", "Pursuit of Happiness"], ["genre", "rap"], ["filename", "mp3s/Pursuit.mp3"], ["created_at", "2020-10-22 16:48:10.841236"], ["updated_at", "2020-10-22 16:48:10.841236"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Name the Song"], ["answer1", "99 Problems"], ["answer2", "Big Pimpin"], ["answer3", "Dirt off Your Shoulders"], ["answer4", "Welcome to the Party"], ["correct", "Big Pimpin"], ["genre", "rap"], ["filename", "mp3s/BigPimpin.mp3"], ["created_at", "2020-10-22 16:48:10.846299"], ["updated_at", "2020-10-22 16:48:10.846299"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Name the Song"], ["answer1", "Still D.R.E."], ["answer2", "Forgot About Dre"], ["answer3", "California Love"], ["answer4", "Nuthin but a G Thang"], ["correct", "Forgot About Dre"], ["genre", "rap"], ["filename", "mp3s/ForgotDre.mp3"], ["created_at", "2020-10-22 16:48:10.851200"], ["updated_at", "2020-10-22 16:48:10.851200"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Name the Song"], ["answer1", "Ghost"], ["answer2", "Warsaw"], ["answer3", "Thru the Night"], ["answer4", "Whats Poppin"], ["correct", "Whats Poppin"], ["genre", "rap"], ["filename", "mp3s/WhatsPoppin.mp3"], ["created_at", "2020-10-22 16:48:10.856393"], ["updated_at", "2020-10-22 16:48:10.856393"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Name the Song"], ["answer1", "Come Back to Earth"], ["answer2", "Ladders"], ["answer3", "Hurt Feelings"], ["answer4", "Self Care"], ["correct", "Ladders"], ["genre", "rap"], ["filename", "mp3s/Ladders.mp3"], ["created_at", "2020-10-22 16:48:10.860842"], ["updated_at", "2020-10-22 16:48:10.860842"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Name the Song"], ["answer1", "3005"], ["answer2", "Redbone"], ["answer3", "Bonfire"], ["answer4", "Camp"], ["correct", "Redbone"], ["genre", "rap"], ["filename", "mp3s/Redbone.mp3"], ["created_at", "2020-10-22 16:48:10.866226"], ["updated_at", "2020-10-22 16:48:10.866226"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Name the Song"], ["answer1", "All of the Lights"], ["answer2", "Heartless"], ["answer3", "Famous"], ["answer4", "Runaway"], ["correct", "Runaway"], ["genre", "rap"], ["filename", "mp3s/Runaway.mp3"], ["created_at", "2020-10-22 16:48:10.871100"], ["updated_at", "2020-10-22 16:48:10.871100"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Name the Song"], ["answer1", "Stan"], ["answer2", "Lose Yourself"], ["answer3", "Love the Way You Lie"], ["answer4", "The Way I Am"], ["correct", "Stan"], ["genre", "rap"], ["filename", "mp3s/Stan.mp3"], ["created_at", "2020-10-22 16:48:10.875428"], ["updated_at", "2020-10-22 16:48:10.875428"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Name the Song"], ["answer1", "Yosemite"], ["answer2", "Goosbumps"], ["answer3", "Butterfly Effect"], ["answer4", "Sicko Mode"], ["correct", "Butterfly Effect"], ["genre", "rap"], ["filename", "mp3s/Butterfly.mp3"], ["created_at", "2020-10-22 16:48:10.880308"], ["updated_at", "2020-10-22 16:48:10.880308"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Name the Song"], ["answer1", "Big Poppa"], ["answer2", "Dear Mama"], ["answer3", "Molly"], ["answer4", "Hypnotize"], ["correct", "Hypnotize"], ["genre", "rap"], ["filename", "mp3s/Hypnotize.mp3"], ["created_at", "2020-10-22 16:48:10.885989"], ["updated_at", "2020-10-22 16:48:10.885989"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Name the Song"], ["answer1", "Started From the Bottom"], ["answer2", "6 God"], ["answer3", "Worst Behavior"], ["answer4", "Hotline Bling"], ["correct", "Started From the Bottom"], ["genre", "rap"], ["filename", "mp3s/Bottom.mp3"], ["created_at", "2020-10-22 16:48:10.890886"], ["updated_at", "2020-10-22 16:48:10.890886"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Name the Song"], ["answer1", "Die Young"], ["answer2", "The Box"], ["answer3", "High Fashion"], ["answer4", "Ballin"], ["correct", "The Box"], ["genre", "rap"], ["filename", "mp3s/Box.mp3"], ["created_at", "2020-10-22 16:48:10.895379"], ["updated_at", "2020-10-22 16:48:10.895379"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Name the Song"], ["answer1", "Get Your Freak On"], ["answer2", "1 2 Step"], ["answer3", "Work It"], ["answer4", "Lose Control"], ["correct", "Get Your Freak On"], ["genre", "rap"], ["filename", "mp3s/Freak.mp3"], ["created_at", "2020-10-22 16:48:10.902847"], ["updated_at", "2020-10-22 16:48:10.902847"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Name the Song"], ["answer1", "Pure Water"], ["answer2", "Versace"], ["answer3", "Bad and Boujee"], ["answer4", "Motorsport"], ["correct", "Pure Water"], ["genre", "rap"], ["filename", "mp3s/PureWater.mp3"], ["created_at", "2020-10-22 16:48:10.907162"], ["updated_at", "2020-10-22 16:48:10.907162"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Name the Song"], ["answer1", "Money Trees"], ["answer2", "MAAD City"], ["answer3", "Good Kid"], ["answer4", "Backseat Freestyle"], ["correct", "Backseat Freestyle"], ["genre", "rap"], ["filename", "mp3s/BackseatFreestyle.mp3"], ["created_at", "2020-10-22 16:48:10.911527"], ["updated_at", "2020-10-22 16:48:10.911527"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Name the Song"], ["answer1", "L$D"], ["answer2", "LVL"], ["answer3", "Goldie"], ["answer4", "Praise The Lord"], ["correct", "Goldie"], ["genre", "rap"], ["filename", "mp3s/Goldie.mp3"], ["created_at", "2020-10-22 16:48:10.916833"], ["updated_at", "2020-10-22 16:48:10.916833"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Name the Song"], ["answer1", "Bop"], ["answer2", "Boop"], ["answer3", "Beep"], ["answer4", "Baba"], ["correct", "Bop"], ["genre", "rap"], ["filename", "mp3s/BOP.mp3"], ["created_at", "2020-10-22 16:48:10.921161"], ["updated_at", "2020-10-22 16:48:10.921161"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("game_id", "ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 1], ["ask", "Name the Song"], ["answer1", "I Like It"], ["answer2", "Money"], ["answer3", "WAP"], ["answer4", "Bodak Yellow"], ["correct", "Bop"], ["genre", "rap"], ["filename", "mp3s/BodakYellow.mp3"], ["created_at", "2020-10-22 16:48:10.925641"], ["updated_at", "2020-10-22 16:48:10.925641"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/questions/1" for ::1 at 2020-10-22 12:48:47 -0400
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.68ms)
+Completed 200 OK in 40ms (Views: 14.4ms | ActiveRecord: 7.5ms | Allocations: 11273)
+
+
+Started POST "/users" for ::1 at 2020-10-22 12:48:48 -0400
+Started GET "/questions/1" for ::1 at 2020-10-22 12:48:48 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-22 16:48:48.196705"], ["updated_at", "2020-10-22 16:48:48.196705"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.22ms)
+Completed 200 OK in 15ms (Views: 2.6ms | ActiveRecord: 4.2ms | Allocations: 5694)
+
+
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+Started POST "/games" for ::1 at 2020-10-22 12:48:48 -0400
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.28ms)
+Completed 200 OK in 8ms (Views: 0.7ms | ActiveRecord: 1.4ms | Allocations: 2730)
+
+
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>5, "game"=>{"score"=>0, "user_id"=>5}}
+  [1m[35m (15.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (22.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (18.4ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 5], ["created_at", "2020-10-22 16:48:48.273067"], ["updated_at", "2020-10-22 16:48:48.273067"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.24ms)
+Completed 200 OK in 76ms (Views: 1.0ms | ActiveRecord: 59.6ms | Allocations: 7714)
+
+
+Started GET "/questions/2" for ::1 at 2020-10-22 12:48:53 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.32ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 912)
+
+
+Started GET "/questions/3" for ::1 at 2020-10-22 12:49:06 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.31ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 912)
+
+
+Started GET "/questions/4" for ::1 at 2020-10-22 12:49:13 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.31ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 895)
+
+
+Started GET "/questions/5" for ::1 at 2020-10-22 12:49:19 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.43ms)
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/6" for ::1 at 2020-10-22 12:49:21 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.29ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 894)
+
+
+Started GET "/questions/7" for ::1 at 2020-10-22 12:49:29 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"7"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.28ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 895)
+
+
+Started GET "/questions/8" for ::1 at 2020-10-22 12:49:35 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"8"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.3ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/9" for ::1 at 2020-10-22 12:49:39 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.39ms)
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/10" for ::1 at 2020-10-22 12:49:45 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.35ms)
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.3ms | Allocations: 894)
+
+
+Started GET "/questions/19" for ::1 at 2020-10-22 12:49:48 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"19"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.29ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/20" for ::1 at 2020-10-22 12:50:40 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"20"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.33ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/21" for ::1 at 2020-10-22 12:50:47 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"21"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.29ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 12:50:55 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.63ms)
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 12:51:48 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.39ms)
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 12:52:01 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.59ms)
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 12:52:39 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.49ms)
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.3ms | Allocations: 895)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 12:52:40 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.51ms)
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 12:52:40 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.4ms)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.4ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 12:53:03 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.31ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 894)
+
+
+Started POST "/users" for ::1 at 2020-10-22 12:53:12 -0400
+Started GET "/questions/1" for ::1 at 2020-10-22 12:53:12 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by QuestionsController#show as */*
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-22 16:53:12.175994"], ["updated_at", "2020-10-22 16:53:12.175994"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mQuestion Load (0.9ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.47ms)
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.9ms | Allocations: 1636)
+
+
+  [1m[35m (31.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.21ms)
+Completed 200 OK in 37ms (Views: 0.6ms | ActiveRecord: 31.6ms | Allocations: 4017)
+
+
+Started POST "/games" for ::1 at 2020-10-22 12:53:12 -0400
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>6, "game"=>{"score"=>0, "user_id"=>6}}
+  [1m[35m (8.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.5ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 6], ["created_at", "2020-10-22 16:53:12.240030"], ["updated_at", "2020-10-22 16:53:12.240030"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.2ms)
+Completed 200 OK in 23ms (Views: 0.7ms | ActiveRecord: 9.7ms | Allocations: 3845)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 12:53:28 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.35ms)
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 12:53:53 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.61ms)
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 12:54:14 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.34ms)
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.3ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 12:54:31 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.34ms)
+Completed 200 OK in 9ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 895)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 12:55:17 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.47ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 895)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 12:58:32 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.59ms)
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 12:58:43 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.32ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 12:59:37 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.46ms)
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 13:00:14 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.26ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 13:00:33 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.47ms)
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.3ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 13:01:19 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.73ms)
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.6ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 13:02:10 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.53ms)
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 13:03:10 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.4ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 13:14:19 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (2.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (3.09ms)
+Completed 200 OK in 21ms (Views: 5.5ms | ActiveRecord: 2.3ms | Allocations: 1014)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 13:14:57 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.63ms)
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.5ms | Allocations: 895)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 13:15:22 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.69ms)
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.3ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 13:15:44 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (2.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.46ms)
+Completed 200 OK in 7ms (Views: 1.1ms | ActiveRecord: 2.6ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 13:15:56 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (1.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.5ms)
+Completed 200 OK in 6ms (Views: 1.2ms | ActiveRecord: 1.2ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 13:16:13 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.56ms)
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.5ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 13:16:57 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.68ms)
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 895)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 13:17:25 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (1.3ms)
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 13:18:00 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.44ms)
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 13:19:09 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.39ms)
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 13:19:38 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.75ms)
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 13:21:22 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.91ms)
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.6ms | Allocations: 894)
+
+
