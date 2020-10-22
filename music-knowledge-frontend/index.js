@@ -4,6 +4,9 @@ document.addEventListener('DOMContentLoaded', e => {
 
   let questionId = 1
   let score= 0
+  let round = 1
+  let userId = 0
+
   const questionUrl = 'http://localhost:3000/questions/'
   const getQuestions = () => {
     fetch('http://localhost:3000/questions/1')
@@ -31,7 +34,7 @@ document.addEventListener('DOMContentLoaded', e => {
       const username = e.target.username.value
       createUser(username)
       const timerTable = document.getElementById('timers')
-      
+
       renderQuestion()
       timerTable.style.display = 'inline'
       startGameTimer()
@@ -54,7 +57,8 @@ document.addEventListener('DOMContentLoaded', e => {
     fetch('http://localhost:3000/users', userOptions)
     .then(response => response.json())
     .then(data => {
-      createGame(0, data.id)
+      userId = data.id
+      createGame(0, userId)
     })
   }
 
@@ -87,7 +91,6 @@ document.addEventListener('DOMContentLoaded', e => {
   };
 
   const renderQuestion = (filename) => {
-
     fetch(questionUrl + questionId)
     .then(response => response.json())
     .then(data => {
@@ -97,8 +100,8 @@ document.addEventListener('DOMContentLoaded', e => {
       const questionContainer = document.createElement('div')
       questionContainer.id = "question-container"
       questionContainer.innerHTML =`
-     
-      <h2>name the artist</h2>
+
+      <h2>${data.ask}</h2>
       <p>${score}</p>
       <button data-choice = " " type="button">${data.answer1}</button>
       <button data-choice = " " type="button">${data.answer2}</button>
@@ -119,7 +122,7 @@ document.addEventListener('DOMContentLoaded', e => {
           pauseAudio(filename)
         }
       })
-      
+
     })
 
   }
@@ -147,7 +150,7 @@ document.addEventListener('DOMContentLoaded', e => {
 
 
   // ----timer code-----
-  let gameDuration = 60
+  let gameDuration = 10
   let gameSecElapsed = 0
   var gameInterval;
 
@@ -177,11 +180,21 @@ document.addEventListener('DOMContentLoaded', e => {
   }
 
   function renderTime() {
-    
+
     gameTimerEl.textContent = gameDuration - gameSecElapsed;
-    
+
     if ((gameDuration - gameSecElapsed) < 1 ) {
-     endOfGame();
+      if (round === 1) {
+        console.log(round)
+        gameDuration = 10
+        gameSecElapsed = 0
+        questionId = 19
+        round++
+        renderQuestion()
+      } else {
+        console.log(round)
+        endOfGame();
+      }
     }
   }
 
@@ -195,7 +208,7 @@ document.addEventListener('DOMContentLoaded', e => {
 
   }
 
-  
+
 
 
 })
