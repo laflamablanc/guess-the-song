@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', e => {
   let round = 1
   let userId = 0
   let gameId = 0
+  let genre = ""
 
   const questionUrl = 'http://localhost:3000/questions/'
   const getQuestions = () => {
@@ -37,7 +38,7 @@ document.addEventListener('DOMContentLoaded', e => {
       const timerTable = document.getElementById('timers')
 
       // renderQuestion()
-      displayRound()
+      chooseGenre()
       timerTable.style.display = 'inline'
 
     })
@@ -92,6 +93,31 @@ document.addEventListener('DOMContentLoaded', e => {
   const pauseAudio = (audioFilepath) => {
     song.pause();
   };
+
+  const chooseGenre = () => {
+    const mainDiv = document.getElementById('page-header')
+    mainDiv.innerHTML = ''
+    const genreSelector = document.createElement('div')
+    genreSelector.id = "genre-selector"
+    genreSelector.innerHTML =`
+    <h2>Select a Genre:</h2>
+    <button id="rap" class= "play-buttons" data-choice = " " type="button">🎤 Rap 🎤</button>
+    <button id="rock" class= "play-buttons" data-choice = " " type="button">🎸 Rock 🎸</button>
+    `
+    mainDiv.append(genreSelector)
+    genreSelector.addEventListener('click', e => {
+      if (e.target.matches('#rap')) {
+        questionId = 1
+        genre = "rap"
+        displayRound()
+      } else if (e.target.matches('#rock')) {
+        questionId = 37
+        genre = "rock"
+        displayRound()
+      }
+    })
+  }
+
 
   const displayRound = () => {
     const mainDiv = document.getElementById('page-header')
@@ -213,17 +239,30 @@ document.addEventListener('DOMContentLoaded', e => {
     gameTimerEl.textContent = gameDuration - gameSecElapsed;
 
     if ((gameDuration - gameSecElapsed) < 1 ) {
-      if (round === 1) {
-        console.log(round)
+      console.log(genre)
+      if (round === 1 && genre === "rap") {
         clearInterval(gameInterval)
         gameDuration = 15
         gameSecElapsed = 0
         questionId = 19
         round++
+        console.log(questionId)
         song.pause()
         displayRound()
         changeTimerGreen()
-      } else {
+      }
+      else if (round === 1 && genre === "rock"){
+        clearInterval(gameInterval)
+        gameDuration = 15
+        gameSecElapsed = 0
+        questionId = 52
+        console.log(questionId)
+        round++
+        song.pause()
+        displayRound()
+        changeTimerGreen()
+      }
+      else {
         console.log(round)
         endOfGame();
         sendScore()
