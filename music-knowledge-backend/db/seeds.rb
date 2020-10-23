@@ -208,16 +208,7 @@ Question.create(
 
 # ---------NAME THE SONG----------
 
-Question.create(
-  ask: "Name the Song",
-  answer1: "Pursuit of Happiness",
-  answer2: "Day N Nite",
-  answer3: "Cudi Zone",
-  answer4: "Moon Man",
-  correct: "Pursuit of Happiness",
-  genre: "rap",
-  filename: "mp3s/Pursuit.mp3"
-)
+
 
 Question.create(
   ask: "Name the Song",
@@ -265,6 +256,17 @@ Question.create(
 
 Question.create(
   ask: "Name the Song",
+  answer1: "Pursuit of Happiness",
+  answer2: "Day N Nite",
+  answer3: "Cudi Zone",
+  answer4: "Moon Man",
+  correct: "Pursuit of Happiness",
+  genre: "rap",
+  filename: "mp3s/Pursuit.mp3"
+)
+
+Question.create(
+  ask: "Name the Song",
   answer1: "3005",
   answer2: "Redbone",
   answer3: "Bonfire",
@@ -272,6 +274,17 @@ Question.create(
   correct: "Redbone",
   genre: "rap",
   filename: "mp3s/Redbone.mp3"
+)
+
+Question.create(
+  ask: "Name the Song",
+  answer1: "I Like It",
+  answer2: "Money",
+  answer3: "WAP",
+  answer4: "Bodak Yellow",
+  correct: "Bop",
+  genre: "rap",
+  filename: "mp3s/BodakYellow.mp3"
 )
 
 Question.create(
@@ -395,16 +408,6 @@ Question.create(
   filename: "mp3s/BOP.mp3"
 )
 
-Question.create(
-  ask: "Name the Song",
-  answer1: "I Like It",
-  answer2: "Money",
-  answer3: "WAP",
-  answer4: "Bodak Yellow",
-  correct: "Bop",
-  genre: "rap",
-  filename: "mp3s/BodakYellow.mp3"
-)
 
 # ---------Alt Rock----------
 
@@ -577,18 +580,29 @@ Question.create(
 # ---------Alt Rock - Name Song ----------
 # 52
 Question.create(
-  ask: "Select the Artist",
+  ask: "Name the Song",
   answer1: "Californication",
   answer2: "Under The Bridge",
   answer3: "Snow",
-  answer4: "Othershide",
+  answer4: "Otherside",
   correct: "Under The Bridge",
   genre: "rock",
   filename: "mp3s/Bridge.mp3"
 )
 
 Question.create(
-  ask: "Select the Artist",
+  ask: "Name the Song",
+  answer1: "Dreams",
+  answer2: "Go Your Own Way",
+  answer3: "Landslide",
+  answer4: "The Chain",
+  correct: "Dreams",
+  genre: "rock",
+  filename: "mp3s/Dreams.mp3"
+)
+
+Question.create(
+  ask: "Name the Song",
   answer1: "Dirty Harry",
   answer2: "DARE",
   answer3: "Feel Good Inc",
@@ -599,7 +613,7 @@ Question.create(
 )
 
 Question.create(
-  ask: "Select the Artist",
+  ask: "Name the Song",
   answer1: "Kids",
   answer2: "Electric Feel",
   answer3: "Time to Pretend",
@@ -610,7 +624,7 @@ Question.create(
 )
 
 Question.create(
-  ask: "Select the Artist",
+  ask: "Name the Song",
   answer1: "Numb",
   answer2: "Paranoid",
   answer3: "Papercut",
@@ -621,18 +635,18 @@ Question.create(
 )
 
 Question.create(
-  ask: "Select the Artist",
-  answer1: "All the Small Things",
-  answer2: "What'y My Age Again?",
-  answer3: "I Miss You",
-  answer4: "First Date",
-  correct: "All the Small Things",
+  ask: "Name the Song",
+  answer1: "I Will Wait",
+  answer2: "White Blank Page",
+  answer3: "Lionheart",
+  answer4: "Othelia",
+  correct: "I Will Wait",
   genre: "rock",
-  filename: "mp3s/SmallThings.mp3"
+  filename: "mp3s/Wait.mp3"
 )
 
 Question.create(
-  ask: "Select the Artist",
+  ask: "Name the Song",
   answer1: "Aerials",
   answer2: "Chop Suey",
   answer3: "Angels",
@@ -643,7 +657,7 @@ Question.create(
 )
 
 Question.create(
-  ask: "Select the Artist",
+  ask: "Name the Song",
   answer1: "Sit Next To Me",
   answer2: "Pumped Up Kicks",
   answer3: "Better Run",
@@ -654,7 +668,7 @@ Question.create(
 )
 
 Question.create(
-  ask: "Select the Artist",
+  ask: "Name the Song",
   answer1: "Do I Wanna Know?",
   answer2: "R U Mine?",
   answer3: "Be My Girl?",
@@ -665,12 +679,12 @@ Question.create(
 )
 
 Question.create(
-  ask: "Select the Artist",
-  answer1: "I Will Wait",
-  answer2: "White Blank Page",
-  answer3: "Lionheart",
-  answer4: "Othelia",
-  correct: "I Will Wait",
+  ask: "Name the Song",
+  answer1: "All the Small Things",
+  answer2: "What's My Age Again?",
+  answer3: "I Miss You",
+  answer4: "First Date",
+  correct: "All the Small Things",
   genre: "rock",
-  filename: "mp3s/Wait.mp3"
+  filename: "mp3s/SmallThings.mp3"
 )

@@ -29601,3 +29601,1327 @@ No serializer found for resource: #<Game id: 1, score: 300, user_id: 1, created_
 Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.2ms | Allocations: 2916)
 
 
+Started GET "/questions/1" for ::1 at 2020-10-23 10:53:51 -0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.6ms)
+Completed 200 OK in 43ms (Views: 8.6ms | ActiveRecord: 6.1ms | Allocations: 9910)
+
+
+Started POST "/users" for ::1 at 2020-10-23 10:53:53 -0700
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-23 17:53:53.234847"], ["updated_at", "2020-10-23 17:53:53.234847"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.26ms)
+Completed 200 OK in 27ms (Views: 7.1ms | ActiveRecord: 4.0ms | Allocations: 5159)
+
+
+Started POST "/games/" for ::1 at 2020-10-23 10:53:53 -0700
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>21, "game"=>{"score"=>0, "user_id"=>21}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.4ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 21], ["created_at", "2020-10-23 17:53:53.277173"], ["updated_at", "2020-10-23 17:53:53.277173"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.19ms)
+Completed 200 OK in 15ms (Views: 0.8ms | ActiveRecord: 3.6ms | Allocations: 7631)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-23 10:53:55 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.28ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 912)
+
+
+Started GET "/questions/19" for ::1 at 2020-10-23 10:54:17 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"19"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.35ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 912)
+
+
+Started GET "/questions/20" for ::1 at 2020-10-23 10:54:22 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"20"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.29ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 912)
+
+
+Started PATCH "/games/21" for ::1 at 2020-10-23 10:54:32 -0700
+Processing by GamesController#update as JSON
+  Parameters: {"score"=>100, "id"=>"21", "game"=>{"score"=>100}}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:19:in `update'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:20:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:20:in `update'
+  [1m[36mGame Update (0.4ms)[0m  [1m[33mUPDATE "games" SET "score" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["score", 100], ["updated_at", "2020-10-23 17:54:32.083901"], ["id", 21]]
+  ↳ app/controllers/games_controller.rb:20:in `update'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:20:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.2ms)
+Completed 200 OK in 8ms (Views: 0.6ms | ActiveRecord: 1.6ms | Allocations: 4571)
+
+
+Started GET "/games/" for ::1 at 2020-10-23 10:54:34 -0700
+Processing by GamesController#index as */*
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/games_controller.rb:3:in `sort_by'
+No serializer found for resource: #<Game id: 17, score: 0, user_id: 17, created_at: "2020-10-23 17:38:19", updated_at: "2020-10-23 17:38:19">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.65ms)
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.2ms | Allocations: 2789)
+
+
+Started POST "/users" for ::1 at 2020-10-23 10:56:11 -0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-23 17:56:11.743751"], ["updated_at", "2020-10-23 17:56:11.743751"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.24ms)
+Completed 200 OK in 13ms (Views: 1.4ms | ActiveRecord: 5.8ms | Allocations: 5482)
+
+
+Started POST "/games/" for ::1 at 2020-10-23 10:56:11 -0700
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>22, "game"=>{"score"=>0, "user_id"=>22}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.4ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 22], ["created_at", "2020-10-23 17:56:11.774809"], ["updated_at", "2020-10-23 17:56:11.774809"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.19ms)
+Completed 200 OK in 16ms (Views: 0.7ms | ActiveRecord: 3.9ms | Allocations: 7918)
+
+
+Started GET "/questions/37" for ::1 at 2020-10-23 10:56:13 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"37"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.55ms)
+Completed 200 OK in 19ms (Views: 3.2ms | ActiveRecord: 3.6ms | Allocations: 8997)
+
+
+Started GET "/questions/52" for ::1 at 2020-10-23 10:56:29 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"52"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.44ms)
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 912)
+
+
+Started GET "/questions/53" for ::1 at 2020-10-23 10:56:32 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"53"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 53], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.29ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 912)
+
+
+Started GET "/questions/54" for ::1 at 2020-10-23 10:56:35 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"54"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 54], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.29ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 912)
+
+
+Started GET "/questions/55" for ::1 at 2020-10-23 10:56:37 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"55"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 55], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.29ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/56" for ::1 at 2020-10-23 10:56:39 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"56"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 56], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.32ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started PATCH "/games/22" for ::1 at 2020-10-23 10:56:44 -0700
+Processing by GamesController#update as JSON
+  Parameters: {"score"=>400, "id"=>"22", "game"=>{"score"=>400}}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:19:in `update'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:20:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:20:in `update'
+  [1m[36mGame Update (0.2ms)[0m  [1m[33mUPDATE "games" SET "score" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["score", 400], ["updated_at", "2020-10-23 17:56:44.803514"], ["id", 22]]
+  ↳ app/controllers/games_controller.rb:20:in `update'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:20:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.18ms)
+Completed 200 OK in 7ms (Views: 0.6ms | ActiveRecord: 1.2ms | Allocations: 4574)
+
+
+Started GET "/games/" for ::1 at 2020-10-23 10:56:46 -0700
+Processing by GamesController#index as */*
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/games_controller.rb:3:in `sort_by'
+No serializer found for resource: #<Game id: 9, score: 2000, user_id: 9, created_at: "2020-10-23 17:14:22", updated_at: "2020-10-23 17:16:32">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.71ms)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.2ms | Allocations: 2887)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-23 11:00:37 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.29ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 894)
+
+
+Started POST "/users" for ::1 at 2020-10-23 11:00:38 -0700
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-23 18:00:38.836737"], ["updated_at", "2020-10-23 18:00:38.836737"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.16ms)
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 1.0ms | Allocations: 2572)
+
+
+Started POST "/games/" for ::1 at 2020-10-23 11:00:38 -0700
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>23, "game"=>{"score"=>0, "user_id"=>23}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 23], ["created_at", "2020-10-23 18:00:38.852552"], ["updated_at", "2020-10-23 18:00:38.852552"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.18ms)
+Completed 200 OK in 7ms (Views: 0.9ms | ActiveRecord: 0.8ms | Allocations: 3806)
+
+
+Started GET "/questions/37" for ::1 at 2020-10-23 11:00:40 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"37"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.44ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 894)
+
+
+Started GET "/questions/52" for ::1 at 2020-10-23 11:00:58 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"52"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.33ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 894)
+
+
+Started PATCH "/games/23" for ::1 at 2020-10-23 11:01:13 -0700
+Processing by GamesController#update as JSON
+  Parameters: {"score"=>0, "id"=>"23", "game"=>{"score"=>0}}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:19:in `update'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:20:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:20:in `update'
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:20:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.21ms)
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 0.8ms | Allocations: 3596)
+
+
+Started GET "/games/" for ::1 at 2020-10-23 11:01:17 -0700
+Processing by GamesController#index as */*
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/games_controller.rb:3:in `sort_by'
+No serializer found for resource: #<Game id: 9, score: 2000, user_id: 9, created_at: "2020-10-23 17:14:22", updated_at: "2020-10-23 17:16:32">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.79ms)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.2ms | Allocations: 2972)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-23 11:02:24 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.28ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started POST "/users" for ::1 at 2020-10-23 11:02:25 -0700
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-23 18:02:25.837199"], ["updated_at", "2020-10-23 18:02:25.837199"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.16ms)
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.9ms | Allocations: 2572)
+
+
+Started POST "/games/" for ::1 at 2020-10-23 11:02:25 -0700
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>24, "game"=>{"score"=>0, "user_id"=>24}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.2ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 24], ["created_at", "2020-10-23 18:02:25.852372"], ["updated_at", "2020-10-23 18:02:25.852372"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.17ms)
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 0.9ms | Allocations: 3806)
+
+
+Started GET "/questions/37" for ::1 at 2020-10-23 11:02:29 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"37"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.34ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/52" for ::1 at 2020-10-23 11:02:46 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"52"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.44ms)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started PATCH "/games/24" for ::1 at 2020-10-23 11:03:01 -0700
+Processing by GamesController#update as JSON
+  Parameters: {"score"=>0, "id"=>"24", "game"=>{"score"=>0}}
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:19:in `update'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:20:in `update'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:20:in `update'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:20:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.23ms)
+Completed 200 OK in 8ms (Views: 0.8ms | ActiveRecord: 1.1ms | Allocations: 3592)
+
+
+Started GET "/games/" for ::1 at 2020-10-23 11:03:03 -0700
+Processing by GamesController#index as */*
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/games_controller.rb:3:in `sort_by'
+No serializer found for resource: #<Game id: 9, score: 2000, user_id: 9, created_at: "2020-10-23 17:14:22", updated_at: "2020-10-23 17:16:32">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.95ms)
+Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 0.2ms | Allocations: 3067)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-23 11:04:05 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.5ms)
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started POST "/users" for ::1 at 2020-10-23 11:04:06 -0700
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-23 18:04:06.116337"], ["updated_at", "2020-10-23 18:04:06.116337"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.24ms)
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 1.1ms | Allocations: 2570)
+
+
+Started POST "/games/" for ::1 at 2020-10-23 11:04:06 -0700
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>25, "game"=>{"score"=>0, "user_id"=>25}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 25], ["created_at", "2020-10-23 18:04:06.142190"], ["updated_at", "2020-10-23 18:04:06.142190"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.19ms)
+Completed 200 OK in 12ms (Views: 0.6ms | ActiveRecord: 1.1ms | Allocations: 3808)
+
+
+Started GET "/questions/37" for ::1 at 2020-10-23 11:04:08 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"37"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.27ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 894)
+
+
+Started GET "/questions/52" for ::1 at 2020-10-23 11:04:26 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"52"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.31ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 894)
+
+
+Started PATCH "/games/25" for ::1 at 2020-10-23 11:04:41 -0700
+Processing by GamesController#update as JSON
+  Parameters: {"score"=>0, "id"=>"25", "game"=>{"score"=>0}}
+  [1m[36mGame Load (0.7ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:19:in `update'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:20:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:20:in `update'
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:20:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.17ms)
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 1.2ms | Allocations: 3592)
+
+
+Started GET "/games/" for ::1 at 2020-10-23 11:04:45 -0700
+Processing by GamesController#index as */*
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/games_controller.rb:3:in `sort_by'
+No serializer found for resource: #<Game id: 9, score: 2000, user_id: 9, created_at: "2020-10-23 17:14:22", updated_at: "2020-10-23 17:16:32">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.94ms)
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 0.2ms | Allocations: 3163)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-23 11:04:47 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.48ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started POST "/users" for ::1 at 2020-10-23 11:05:49 -0700
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-23 18:05:49.947759"], ["updated_at", "2020-10-23 18:05:49.947759"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.18ms)
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 1.0ms | Allocations: 2570)
+
+
+Started POST "/games/" for ::1 at 2020-10-23 11:05:49 -0700
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>26, "game"=>{"score"=>0, "user_id"=>26}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.5ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 26], ["created_at", "2020-10-23 18:05:49.963050"], ["updated_at", "2020-10-23 18:05:49.963050"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.44ms)
+Completed 200 OK in 8ms (Views: 1.0ms | ActiveRecord: 1.2ms | Allocations: 3806)
+
+
+Started GET "/questions/37" for ::1 at 2020-10-23 11:05:53 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"37"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.27ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/38" for ::1 at 2020-10-23 11:05:58 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"38"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.32ms)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 894)
+
+
+Started GET "/questions/39" for ::1 at 2020-10-23 11:05:59 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"39"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.48ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/40" for ::1 at 2020-10-23 11:06:01 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"40"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.29ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/41" for ::1 at 2020-10-23 11:06:02 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"41"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.27ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 894)
+
+
+Started GET "/questions/42" for ::1 at 2020-10-23 11:06:06 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"42"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.42ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/52" for ::1 at 2020-10-23 11:06:09 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"52"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.54ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.1ms | Allocations: 894)
+
+
+Started GET "/questions/53" for ::1 at 2020-10-23 11:06:10 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"53"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 53], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.32ms)
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.4ms | Allocations: 894)
+
+
+Started GET "/questions/54" for ::1 at 2020-10-23 11:06:11 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"54"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 54], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.3ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/55" for ::1 at 2020-10-23 11:06:12 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"55"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 55], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.27ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 894)
+
+
+Started GET "/questions/56" for ::1 at 2020-10-23 11:06:14 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"56"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 56], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.32ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/57" for ::1 at 2020-10-23 11:06:18 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"57"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 57], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.32ms)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/58" for ::1 at 2020-10-23 11:06:20 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"58"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.28ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started PATCH "/games/26" for ::1 at 2020-10-23 11:06:24 -0700
+Processing by GamesController#update as JSON
+  Parameters: {"score"=>350, "id"=>"26", "game"=>{"score"=>350}}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:19:in `update'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:20:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:20:in `update'
+  [1m[36mGame Update (0.4ms)[0m  [1m[33mUPDATE "games" SET "score" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["score", 350], ["updated_at", "2020-10-23 18:06:24.411772"], ["id", 26]]
+  ↳ app/controllers/games_controller.rb:20:in `update'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:20:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.17ms)
+Completed 200 OK in 9ms (Views: 0.6ms | ActiveRecord: 1.6ms | Allocations: 4410)
+
+
+Started GET "/games/" for ::1 at 2020-10-23 11:06:25 -0700
+Processing by GamesController#index as */*
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/games_controller.rb:3:in `sort_by'
+No serializer found for resource: #<Game id: 9, score: 2000, user_id: 9, created_at: "2020-10-23 17:14:22", updated_at: "2020-10-23 17:16:32">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (2.87ms)
+Completed 200 OK in 6ms (Views: 3.5ms | ActiveRecord: 0.4ms | Allocations: 3257)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-23 11:06:43 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.35ms)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.3ms | Allocations: 894)
+
+
+Started POST "/users" for ::1 at 2020-10-23 11:06:44 -0700
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-10-23 18:06:44.428108"], ["updated_at", "2020-10-23 18:06:44.428108"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.17ms)
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.8ms | Allocations: 2570)
+
+
+Started POST "/games/" for ::1 at 2020-10-23 11:06:44 -0700
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>27, "game"=>{"score"=>0, "user_id"=>27}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (1.2ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 27], ["created_at", "2020-10-23 18:06:44.448895"], ["updated_at", "2020-10-23 18:06:44.448895"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.17ms)
+Completed 200 OK in 9ms (Views: 0.6ms | ActiveRecord: 2.0ms | Allocations: 3806)
+
+
+Started GET "/questions/37" for ::1 at 2020-10-23 11:06:47 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"37"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.28ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.5ms | Allocations: 894)
+
+
+Started GET "/questions/52" for ::1 at 2020-10-23 11:07:05 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"52"}
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.46ms)
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.8ms | Allocations: 894)
+
+
+Started PATCH "/games/27" for ::1 at 2020-10-23 11:07:20 -0700
+Processing by GamesController#update as JSON
+  Parameters: {"score"=>0, "id"=>"27", "game"=>{"score"=>0}}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:19:in `update'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:20:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:20:in `update'
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:20:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.19ms)
+Completed 200 OK in 7ms (Views: 0.6ms | ActiveRecord: 0.8ms | Allocations: 3592)
+
+
+Started GET "/games/" for ::1 at 2020-10-23 11:07:21 -0700
+Processing by GamesController#index as */*
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/games_controller.rb:3:in `sort_by'
+No serializer found for resource: #<Game id: 9, score: 2000, user_id: 9, created_at: "2020-10-23 17:14:22", updated_at: "2020-10-23 17:16:32">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (2.25ms)
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.2ms | Allocations: 3353)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-23 11:07:25 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.33ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 894)
+
+
+Started POST "/users" for ::1 at 2020-10-23 11:08:02 -0700
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Sean ", "user"=>{"name"=>"Sean "}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sean "], ["created_at", "2020-10-23 18:08:02.015697"], ["updated_at", "2020-10-23 18:08:02.015697"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.19ms)
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.8ms | Allocations: 2570)
+
+
+Started POST "/games/" for ::1 at 2020-10-23 11:08:02 -0700
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>28, "game"=>{"score"=>0, "user_id"=>28}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 28], ["created_at", "2020-10-23 18:08:02.033848"], ["updated_at", "2020-10-23 18:08:02.033848"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.19ms)
+Completed 200 OK in 9ms (Views: 0.8ms | ActiveRecord: 1.3ms | Allocations: 3806)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-23 11:08:18 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.37ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 894)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-23 11:10:44 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.37ms)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started POST "/users" for ::1 at 2020-10-23 11:10:54 -0700
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Class ", "user"=>{"name"=>"Class "}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Class "], ["created_at", "2020-10-23 18:10:54.814832"], ["updated_at", "2020-10-23 18:10:54.814832"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.18ms)
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.6ms | Allocations: 2570)
+
+
+Started POST "/games/" for ::1 at 2020-10-23 11:10:54 -0700
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>29, "game"=>{"score"=>0, "user_id"=>29}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 29], ["created_at", "2020-10-23 18:10:54.834545"], ["updated_at", "2020-10-23 18:10:54.834545"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.36ms)
+Completed 200 OK in 6ms (Views: 1.0ms | ActiveRecord: 0.8ms | Allocations: 3810)
+
+
+Started GET "/questions/37" for ::1 at 2020-10-23 11:11:04 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"37"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.29ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/38" for ::1 at 2020-10-23 11:11:15 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"38"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.34ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (29.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "music_knowledge_backend_development"[0m
+  [1m[35m (26.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "music_knowledge_backend_test"[0m
+  [1m[35m (114.7ms)[0m  [1m[35mCREATE DATABASE "music_knowledge_backend_development" ENCODING = 'unicode'[0m
+  [1m[35m (109.4ms)[0m  [1m[35mCREATE DATABASE "music_knowledge_backend_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "games" CASCADE[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "games" ("id" bigserial primary key, "score" integer, "user_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "questions" CASCADE[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "questions" ("id" bigserial primary key, "game_id" integer, "ask" character varying, "answer1" character varying, "answer2" character varying, "answer3" character varying, "answer4" character varying, "correct" character varying, "genre" character varying, "filename" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (21.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20201020180235)[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20201020180058),
+(20201020180144);
+
+[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (12.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-10-23 18:54:55.081142"], ["updated_at", "2020-10-23 18:54:55.081142"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "ff5fa9a2dbdd3891d5f6077ddf97c8cc12050ee0"], ["created_at", "2020-10-23 18:54:55.104885"], ["updated_at", "2020-10-23 18:54:55.104885"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "games" CASCADE[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "games" ("id" bigserial primary key, "score" integer, "user_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "questions" CASCADE[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "questions" ("id" bigserial primary key, "game_id" integer, "ask" character varying, "answer1" character varying, "answer2" character varying, "answer3" character varying, "answer4" character varying, "correct" character varying, "genre" character varying, "filename" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (17.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20201020180235)[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20201020180058),
+(20201020180144);
+
+[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-10-23 18:54:55.207357"], ["updated_at", "2020-10-23 18:54:55.207357"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-10-23 18:54:55.213766"], ["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "ff5fa9a2dbdd3891d5f6077ddf97c8cc12050ee0"], ["created_at", "2020-10-23 18:54:55.218429"], ["updated_at", "2020-10-23 18:54:55.218429"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (9.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.7ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "A$AP Rocky"], ["answer2", "Roddy Rich"], ["answer3", "Young Thug"], ["answer4", "Flava Flav"], ["correct", "A$AP Rocky"], ["genre", "rap"], ["filename", "mp3s/Goldie.mp3"], ["created_at", "2020-10-23 18:54:55.284216"], ["updated_at", "2020-10-23 18:54:55.284216"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Lil Baby"], ["answer2", "Baby"], ["answer3", "DaBaby"], ["answer4", "The Adult"], ["correct", "DaBaby"], ["genre", "rap"], ["filename", "mp3s/BOP.mp3"], ["created_at", "2020-10-23 18:54:55.303216"], ["updated_at", "2020-10-23 18:54:55.303216"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Kanye West"], ["answer2", "Drake"], ["answer3", "Young Thug"], ["answer4", "Eminem"], ["correct", "Drake"], ["genre", "rap"], ["filename", "mp3s/Bottom.mp3"], ["created_at", "2020-10-23 18:54:55.306707"], ["updated_at", "2020-10-23 18:54:55.306707"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "A$AP Ferg"], ["answer2", "Richy Rodd"], ["answer3", "Chance the Rapper"], ["answer4", "Roddy Ricch"], ["correct", "Roddy Ricch"], ["genre", "rap"], ["filename", "mp3s/Box.mp3"], ["created_at", "2020-10-23 18:54:55.309585"], ["updated_at", "2020-10-23 18:54:55.309585"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Missy Elliot"], ["answer2", "Lil Kim"], ["answer3", "Xzibit"], ["answer4", "Timbaland"], ["correct", "Missy Elliot"], ["genre", "rap"], ["filename", "mp3s/Freak.mp3"], ["created_at", "2020-10-23 18:54:55.312575"], ["updated_at", "2020-10-23 18:54:55.312575"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Cam'ron"], ["answer2", "Diddy"], ["answer3", "Kanye West"], ["answer4", "Migos"], ["correct", "Migos"], ["genre", "rap"], ["filename", "mp3s/PureWater.mp3"], ["created_at", "2020-10-23 18:54:55.316689"], ["updated_at", "2020-10-23 18:54:55.316689"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "J. Cole"], ["answer2", "Kendrick Lamar"], ["answer3", "Chamillionaire"], ["answer4", "Ludacris"], ["correct", "Kendrick Lamar"], ["genre", "rap"], ["filename", "mp3s/BackseatFreestyle.mp3"], ["created_at", "2020-10-23 18:54:55.319797"], ["updated_at", "2020-10-23 18:54:55.319797"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Childish Gambino"], ["answer2", "Chance the Rapper"], ["answer3", "Boyz II Men"], ["answer4", "Prince"], ["correct", "Childish Gambino"], ["genre", "rap"], ["filename", "mp3s/Redbone.mp3"], ["created_at", "2020-10-23 18:54:55.322800"], ["updated_at", "2020-10-23 18:54:55.322800"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "A$AP Rocky"], ["answer2", "Roddy Rich"], ["answer3", "Young Thug"], ["answer4", "Kanye West"], ["correct", "Kanye West"], ["genre", "rap"], ["filename", "mp3s/Runaway.mp3"], ["created_at", "2020-10-23 18:54:55.325738"], ["updated_at", "2020-10-23 18:54:55.325738"]]
+  [1m[35m (17.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Ja Rule"], ["answer2", "50 Cent"], ["answer3", "Eminem"], ["answer4", "Vanilla Ice"], ["correct", "Eminem"], ["genre", "rap"], ["filename", "mp3s/Stan.mp3"], ["created_at", "2020-10-23 18:54:55.346326"], ["updated_at", "2020-10-23 18:54:55.346326"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "A$AP Rocky"], ["answer2", "Eminem"], ["answer3", "Travis Scott"], ["answer4", "Migos"], ["correct", "Travis Scott"], ["genre", "rap"], ["filename", "mp3s/Butterfly.mp3"], ["created_at", "2020-10-23 18:54:55.349659"], ["updated_at", "2020-10-23 18:54:55.349659"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Mase"], ["answer2", "Notorious BIG"], ["answer3", "Diddy"], ["answer4", "Tupac"], ["correct", "Notorious BIG"], ["genre", "rap"], ["filename", "mp3s/Hypnotize.mp3"], ["created_at", "2020-10-23 18:54:55.352573"], ["updated_at", "2020-10-23 18:54:55.352573"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Jay-Z"], ["answer2", "Snoop Dogg"], ["answer3", "Nas"], ["answer4", "Jadakiss"], ["correct", "Jay-Z"], ["genre", "rap"], ["filename", "mp3s/BigPimpin.mp3"], ["created_at", "2020-10-23 18:54:55.355399"], ["updated_at", "2020-10-23 18:54:55.355399"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Ice T"], ["answer2", "Ludacris"], ["answer3", "Ice Cube"], ["answer4", "Dr. Dre"], ["correct", "Dr. Dre"], ["genre", "rap"], ["filename", "mp3s/ForgotDre.mp3"], ["created_at", "2020-10-23 18:54:55.358597"], ["updated_at", "2020-10-23 18:54:55.358597"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Mac Miller"], ["answer2", "Lil Dicky"], ["answer3", "Eminem"], ["answer4", "Vanilla Ice"], ["correct", "Jack Harlow"], ["genre", "rap"], ["filename", "mp3s/WhatsPoppin.mp3"], ["created_at", "2020-10-23 18:54:55.363257"], ["updated_at", "2020-10-23 18:54:55.363257"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Macklemore"], ["answer2", "Eminem"], ["answer3", "Post Malone"], ["answer4", "Jack Harlow"], ["correct", "Mac Miller"], ["genre", "rap"], ["filename", "mp3s/Ladders.mp3"], ["created_at", "2020-10-23 18:54:55.366398"], ["updated_at", "2020-10-23 18:54:55.366398"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Earl Sweatshirt"], ["answer2", "Outkast"], ["answer3", "Young Thug"], ["answer4", "Kid Cudi"], ["correct", "Kid Cudi"], ["genre", "rap"], ["filename", "mp3s/Pursuit.mp3"], ["created_at", "2020-10-23 18:54:55.369446"], ["updated_at", "2020-10-23 18:54:55.369446"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Nicki Minaj"], ["answer2", "Cardi B"], ["answer3", "Lil Kim"], ["answer4", "Missy Elliot"], ["correct", "Cardi B"], ["genre", "rap"], ["filename", "mp3s/BodakYellow.mp3"], ["created_at", "2020-10-23 18:54:55.372545"], ["updated_at", "2020-10-23 18:54:55.372545"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (16.1ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "99 Problems"], ["answer2", "Big Pimpin"], ["answer3", "Dirt off Your Shoulders"], ["answer4", "Welcome to the Party"], ["correct", "Big Pimpin"], ["genre", "rap"], ["filename", "mp3s/BigPimpin.mp3"], ["created_at", "2020-10-23 18:54:55.376741"], ["updated_at", "2020-10-23 18:54:55.376741"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Still D.R.E."], ["answer2", "Forgot About Dre"], ["answer3", "California Love"], ["answer4", "Nuthin but a G Thang"], ["correct", "Forgot About Dre"], ["genre", "rap"], ["filename", "mp3s/ForgotDre.mp3"], ["created_at", "2020-10-23 18:54:55.396374"], ["updated_at", "2020-10-23 18:54:55.396374"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Ghost"], ["answer2", "Warsaw"], ["answer3", "Thru the Night"], ["answer4", "Whats Poppin"], ["correct", "Whats Poppin"], ["genre", "rap"], ["filename", "mp3s/WhatsPoppin.mp3"], ["created_at", "2020-10-23 18:54:55.399907"], ["updated_at", "2020-10-23 18:54:55.399907"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Come Back to Earth"], ["answer2", "Ladders"], ["answer3", "Hurt Feelings"], ["answer4", "Self Care"], ["correct", "Ladders"], ["genre", "rap"], ["filename", "mp3s/Ladders.mp3"], ["created_at", "2020-10-23 18:54:55.403082"], ["updated_at", "2020-10-23 18:54:55.403082"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Pursuit of Happiness"], ["answer2", "Day N Nite"], ["answer3", "Cudi Zone"], ["answer4", "Moon Man"], ["correct", "Pursuit of Happiness"], ["genre", "rap"], ["filename", "mp3s/Pursuit.mp3"], ["created_at", "2020-10-23 18:54:55.406001"], ["updated_at", "2020-10-23 18:54:55.406001"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "3005"], ["answer2", "Redbone"], ["answer3", "Bonfire"], ["answer4", "Camp"], ["correct", "Redbone"], ["genre", "rap"], ["filename", "mp3s/Redbone.mp3"], ["created_at", "2020-10-23 18:54:55.408867"], ["updated_at", "2020-10-23 18:54:55.408867"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "I Like It"], ["answer2", "Money"], ["answer3", "WAP"], ["answer4", "Bodak Yellow"], ["correct", "Bop"], ["genre", "rap"], ["filename", "mp3s/BodakYellow.mp3"], ["created_at", "2020-10-23 18:54:55.411706"], ["updated_at", "2020-10-23 18:54:55.411706"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "All of the Lights"], ["answer2", "Heartless"], ["answer3", "Famous"], ["answer4", "Runaway"], ["correct", "Runaway"], ["genre", "rap"], ["filename", "mp3s/Runaway.mp3"], ["created_at", "2020-10-23 18:54:55.414588"], ["updated_at", "2020-10-23 18:54:55.414588"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Stan"], ["answer2", "Lose Yourself"], ["answer3", "Love the Way You Lie"], ["answer4", "The Way I Am"], ["correct", "Stan"], ["genre", "rap"], ["filename", "mp3s/Stan.mp3"], ["created_at", "2020-10-23 18:54:55.417627"], ["updated_at", "2020-10-23 18:54:55.417627"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Yosemite"], ["answer2", "Goosbumps"], ["answer3", "Butterfly Effect"], ["answer4", "Sicko Mode"], ["correct", "Butterfly Effect"], ["genre", "rap"], ["filename", "mp3s/Butterfly.mp3"], ["created_at", "2020-10-23 18:54:55.420581"], ["updated_at", "2020-10-23 18:54:55.420581"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Big Poppa"], ["answer2", "Dear Mama"], ["answer3", "Molly"], ["answer4", "Hypnotize"], ["correct", "Hypnotize"], ["genre", "rap"], ["filename", "mp3s/Hypnotize.mp3"], ["created_at", "2020-10-23 18:54:55.424769"], ["updated_at", "2020-10-23 18:54:55.424769"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (16.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.4ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Started From the Bottom"], ["answer2", "6 God"], ["answer3", "Worst Behavior"], ["answer4", "Hotline Bling"], ["correct", "Started From the Bottom"], ["genre", "rap"], ["filename", "mp3s/Bottom.mp3"], ["created_at", "2020-10-23 18:54:55.427724"], ["updated_at", "2020-10-23 18:54:55.427724"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Die Young"], ["answer2", "The Box"], ["answer3", "High Fashion"], ["answer4", "Ballin"], ["correct", "The Box"], ["genre", "rap"], ["filename", "mp3s/Box.mp3"], ["created_at", "2020-10-23 18:54:55.449502"], ["updated_at", "2020-10-23 18:54:55.449502"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Get Your Freak On"], ["answer2", "1 2 Step"], ["answer3", "Work It"], ["answer4", "Lose Control"], ["correct", "Get Your Freak On"], ["genre", "rap"], ["filename", "mp3s/Freak.mp3"], ["created_at", "2020-10-23 18:54:55.453659"], ["updated_at", "2020-10-23 18:54:55.453659"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Pure Water"], ["answer2", "Versace"], ["answer3", "Bad and Boujee"], ["answer4", "Motorsport"], ["correct", "Pure Water"], ["genre", "rap"], ["filename", "mp3s/PureWater.mp3"], ["created_at", "2020-10-23 18:54:55.457772"], ["updated_at", "2020-10-23 18:54:55.457772"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Money Trees"], ["answer2", "MAAD City"], ["answer3", "Good Kid"], ["answer4", "Backseat Freestyle"], ["correct", "Backseat Freestyle"], ["genre", "rap"], ["filename", "mp3s/BackseatFreestyle.mp3"], ["created_at", "2020-10-23 18:54:55.461417"], ["updated_at", "2020-10-23 18:54:55.461417"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "L$D"], ["answer2", "LVL"], ["answer3", "Goldie"], ["answer4", "Praise The Lord"], ["correct", "Goldie"], ["genre", "rap"], ["filename", "mp3s/Goldie.mp3"], ["created_at", "2020-10-23 18:54:55.464885"], ["updated_at", "2020-10-23 18:54:55.464885"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Bop"], ["answer2", "Boop"], ["answer3", "Beep"], ["answer4", "Baba"], ["correct", "Bop"], ["genre", "rap"], ["filename", "mp3s/BOP.mp3"], ["created_at", "2020-10-23 18:54:55.468464"], ["updated_at", "2020-10-23 18:54:55.468464"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Good Charlotte"], ["answer2", "Sum41"], ["answer3", "Blink-182"], ["answer4", "Yellowcard"], ["correct", "Blink-182"], ["genre", "rock"], ["filename", "mp3s/SmallThings.mp3"], ["created_at", "2020-10-23 18:54:55.471737"], ["updated_at", "2020-10-23 18:54:55.471737"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Yellowcard"], ["answer2", "Good Charlotte"], ["answer3", "Blink-182"], ["answer4", "Sum41"], ["correct", "Sum41"], ["genre", "rock"], ["filename", "mp3s/FatLip.mp3"], ["created_at", "2020-10-23 18:54:55.475130"], ["updated_at", "2020-10-23 18:54:55.475130"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (16.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.4ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Of Monsters and Men"], ["answer2", "Grouplove"], ["answer3", "Lumineers"], ["answer4", "Young the Giant"], ["correct", "Of Monsters and Men"], ["genre", "rock"], ["filename", "mp3s/LittleTalks.mp3"], ["created_at", "2020-10-23 18:54:55.478009"], ["updated_at", "2020-10-23 18:54:55.478009"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "No Doubt"], ["answer2", "Of Monsters and Men"], ["answer3", "Gorillaz"], ["answer4", "Foster the People"], ["correct", "No Doubt"], ["genre", "rock"], ["filename", "mp3s/JustAGirl.mp3"], ["created_at", "2020-10-23 18:54:55.499927"], ["updated_at", "2020-10-23 18:54:55.499927"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Mars Volta"], ["answer2", "Red Hot Chilli Peppers"], ["answer3", "The Killers"], ["answer4", "Linkin Park"], ["correct", "The Killers"], ["genre", "rock"], ["filename", "mp3s/Brightside.mp3"], ["created_at", "2020-10-23 18:54:55.504505"], ["updated_at", "2020-10-23 18:54:55.504505"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Foster the People"], ["answer2", "MGMT"], ["answer3", "Blink-182"], ["answer4", "Empire of the Sun"], ["correct", "MGMT"], ["genre", "rock"], ["filename", "mp3s/ElectricFeel.mp3"], ["created_at", "2020-10-23 18:54:55.509316"], ["updated_at", "2020-10-23 18:54:55.509316"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Yellowcard"], ["answer2", "Good Charlotte"], ["answer3", "The Offspring"], ["answer4", "Gorillaz"], ["correct", "Gorillaz"], ["genre", "rock"], ["filename", "mp3s/FeelGood.mp3"], ["created_at", "2020-10-23 18:54:55.512668"], ["updated_at", "2020-10-23 18:54:55.512668"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Florence & The Machine"], ["answer2", "Arctic Monkeys"], ["answer3", "The Black Keys"], ["answer4", "Mumford & Sons"], ["correct", "The Black Keys"], ["genre", "rock"], ["filename", "mp3s/TightenUp.mp3"], ["created_at", "2020-10-23 18:54:55.516274"], ["updated_at", "2020-10-23 18:54:55.516274"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Fleetwood Mac"], ["answer2", "Hall & Oates"], ["answer3", "Steely Dan"], ["answer4", "Doobie Brothers"], ["correct", "Fleetwood Mac"], ["genre", "rock"], ["filename", "mp3s/Dreams.mp3"], ["created_at", "2020-10-23 18:54:55.519663"], ["updated_at", "2020-10-23 18:54:55.519663"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Arctic Monkeys"], ["answer2", "MGMT"], ["answer3", "Foster the People"], ["answer4", "The Black Keys"], ["correct", "Foster the People"], ["genre", "rock"], ["filename", "mp3s/PumpedUpKicks.mp3"], ["created_at", "2020-10-23 18:54:55.522550"], ["updated_at", "2020-10-23 18:54:55.522550"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "System of A Down"], ["answer2", "Korn"], ["answer3", "Staind"], ["answer4", "Limp Bizkit"], ["correct", "System of A Down"], ["genre", "rock"], ["filename", "mp3s/Toxicity.mp3"], ["created_at", "2020-10-23 18:54:55.525439"], ["updated_at", "2020-10-23 18:54:55.525439"]]
+  [1m[35m (17.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Grizzly Bear"], ["answer2", "Two Door Cinema Club"], ["answer3", "Temper Trap"], ["answer4", "Bloc Party"], ["correct", "Two Door Cinema Club"], ["genre", "rock"], ["filename", "mp3s/WhatYouKnow.mp3"], ["created_at", "2020-10-23 18:54:55.546149"], ["updated_at", "2020-10-23 18:54:55.546149"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Yellowcard"], ["answer2", "Good Charlotte"], ["answer3", "Blink-182"], ["answer4", "Arctic Monkeys"], ["correct", "Arctic Monkeys"], ["genre", "rock"], ["filename", "mp3s/WannaKnow.mp3"], ["created_at", "2020-10-23 18:54:55.551304"], ["updated_at", "2020-10-23 18:54:55.551304"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Yellowcard"], ["answer2", "Good Charlotte"], ["answer3", "Blink-182"], ["answer4", "Linkin Park"], ["correct", "Linkin Park"], ["genre", "rock"], ["filename", "mp3s/Numb.mp3"], ["created_at", "2020-10-23 18:54:55.555734"], ["updated_at", "2020-10-23 18:54:55.555734"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "The Offspring"], ["answer2", "Blink-182"], ["answer3", "The Smiths"], ["answer4", "Sum41"], ["correct", "The Offspring"], ["genre", "rock"], ["filename", "mp3s/TheKids.mp3"], ["created_at", "2020-10-23 18:54:55.559363"], ["updated_at", "2020-10-23 18:54:55.559363"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.4ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Californication"], ["answer2", "Under The Bridge"], ["answer3", "Snow"], ["answer4", "Otherside"], ["correct", "Under The Bridge"], ["genre", "rock"], ["filename", "mp3s/Bridge.mp3"], ["created_at", "2020-10-23 18:54:55.562684"], ["updated_at", "2020-10-23 18:54:55.562684"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Dreams"], ["answer2", "Go Your Own Way"], ["answer3", "Landslide"], ["answer4", "The Chain"], ["correct", "Dreams"], ["genre", "rock"], ["filename", "mp3s/Dreams.mp3"], ["created_at", "2020-10-23 18:54:55.565730"], ["updated_at", "2020-10-23 18:54:55.565730"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Dirty Harry"], ["answer2", "DARE"], ["answer3", "Feel Good Inc"], ["answer4", "Clint Eastwood"], ["correct", "Feel Good Inc"], ["genre", "rock"], ["filename", "mp3s/FeelGood.mp3"], ["created_at", "2020-10-23 18:54:55.570352"], ["updated_at", "2020-10-23 18:54:55.570352"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Kids"], ["answer2", "Electric Feel"], ["answer3", "Time to Pretend"], ["answer4", "Electric Eels"], ["correct", "Electric Feel"], ["genre", "rock"], ["filename", "mp3s/ElectricFeel.mp3"], ["created_at", "2020-10-23 18:54:55.574440"], ["updated_at", "2020-10-23 18:54:55.574440"]]
+  [1m[35m (16.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Numb"], ["answer2", "Paranoid"], ["answer3", "Papercut"], ["answer4", "In The End"], ["correct", "Numb"], ["genre", "rock"], ["filename", "mp3s/Numb.mp3"], ["created_at", "2020-10-23 18:54:55.596176"], ["updated_at", "2020-10-23 18:54:55.596176"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "I Will Wait"], ["answer2", "White Blank Page"], ["answer3", "Lionheart"], ["answer4", "Othelia"], ["correct", "I Will Wait"], ["genre", "rock"], ["filename", "mp3s/Wait.mp3"], ["created_at", "2020-10-23 18:54:55.601411"], ["updated_at", "2020-10-23 18:54:55.601411"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Aerials"], ["answer2", "Chop Suey"], ["answer3", "Angels"], ["answer4", "Toxicity"], ["correct", "Toxicity"], ["genre", "rock"], ["filename", "mp3s/Toxicity.mp3"], ["created_at", "2020-10-23 18:54:55.605821"], ["updated_at", "2020-10-23 18:54:55.605821"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Sit Next To Me"], ["answer2", "Pumped Up Kicks"], ["answer3", "Better Run"], ["answer4", "All the Other Kids"], ["correct", "Pumped Up Kicks"], ["genre", "rock"], ["filename", "mp3s/PumpedUpKicks.mp3"], ["created_at", "2020-10-23 18:54:55.609905"], ["updated_at", "2020-10-23 18:54:55.609905"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.4ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Do I Wanna Know?"], ["answer2", "R U Mine?"], ["answer3", "Be My Girl?"], ["answer4", "Whats Up?"], ["correct", "Do I Wanna Know?"], ["genre", "rock"], ["filename", "mp3s/WannaKnow.mp3"], ["created_at", "2020-10-23 18:54:55.614381"], ["updated_at", "2020-10-23 18:54:55.614381"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "All the Small Things"], ["answer2", "What's My Age Again?"], ["answer3", "I Miss You"], ["answer4", "First Date"], ["correct", "All the Small Things"], ["genre", "rock"], ["filename", "mp3s/SmallThings.mp3"], ["created_at", "2020-10-23 18:54:55.618471"], ["updated_at", "2020-10-23 18:54:55.618471"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/games" for ::1 at 2020-10-23 11:57:18 -0700
+  [1m[35m (17.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GamesController#index as HTML
+  [1m[36mGame Load (0.6ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/games_controller.rb:3:in `sort_by'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.11ms)
+Completed 200 OK in 7ms (Views: 2.0ms | ActiveRecord: 1.7ms | Allocations: 2789)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-23 11:57:26 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.69ms)
+Completed 200 OK in 38ms (Views: 2.6ms | ActiveRecord: 5.7ms | Allocations: 8820)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-23 11:58:50 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (1.37ms)
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.3ms | Allocations: 913)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-23 11:59:13 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.33ms)
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.3ms | Allocations: 898)
+
+
+Started POST "/users" for ::1 at 2020-10-23 11:59:19 -0700
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Sean", "user"=>{"name"=>"Sean"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sean"], ["created_at", "2020-10-23 18:59:19.462286"], ["updated_at", "2020-10-23 18:59:19.462286"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.19ms)
+Completed 200 OK in 10ms (Views: 1.1ms | ActiveRecord: 3.9ms | Allocations: 5174)
+
+
+Started POST "/games/" for ::1 at 2020-10-23 11:59:19 -0700
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>1, "game"=>{"score"=>0, "user_id"=>1}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.6ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 1], ["created_at", "2020-10-23 18:59:19.501140"], ["updated_at", "2020-10-23 18:59:19.501140"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.18ms)
+Completed 200 OK in 31ms (Views: 0.7ms | ActiveRecord: 2.9ms | Allocations: 7582)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-23 11:59:41 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.28ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/2" for ::1 at 2020-10-23 11:59:48 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.44ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.3ms | Allocations: 912)
+
+
+Started GET "/questions/3" for ::1 at 2020-10-23 11:59:56 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.34ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/4" for ::1 at 2020-10-23 11:59:59 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.26ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 894)
+
+
+Started GET "/questions/19" for ::1 at 2020-10-23 12:00:12 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"19"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.42ms)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started PATCH "/games/1" for ::1 at 2020-10-23 12:00:42 -0700
+Processing by GamesController#update as JSON
+  Parameters: {"score"=>300, "id"=>"1", "game"=>{"score"=>300}}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:19:in `update'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:20:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:20:in `update'
+  [1m[36mGame Update (0.2ms)[0m  [1m[33mUPDATE "games" SET "score" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["score", 300], ["updated_at", "2020-10-23 19:00:42.879792"], ["id", 1]]
+  ↳ app/controllers/games_controller.rb:20:in `update'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:20:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.15ms)
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 1.1ms | Allocations: 4565)
+
+
+Started GET "/games" for ::1 at 2020-10-23 12:02:51 -0700
+Processing by GamesController#index as HTML
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/games_controller.rb:3:in `sort_by'
+No serializer found for resource: #<Game id: 1, score: 300, user_id: 1, created_at: "2020-10-23 18:59:19", updated_at: "2020-10-23 19:00:42">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.16ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 885)
+
+
+Started GET "/games/" for ::1 at 2020-10-23 12:05:13 -0700
+Processing by GamesController#index as */*
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/games_controller.rb:3:in `sort_by'
+No serializer found for resource: #<Game id: 1, score: 300, user_id: 1, created_at: "2020-10-23 18:59:19", updated_at: "2020-10-23 19:00:42">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.15ms)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 880)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-23 12:05:21 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.29ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 894)
+
+
+Started POST "/users" for ::1 at 2020-10-23 12:05:30 -0700
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Sean", "user"=>{"name"=>"Sean"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sean"], ["created_at", "2020-10-23 19:05:30.055921"], ["updated_at", "2020-10-23 19:05:30.055921"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.16ms)
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 2570)
+
+
+Started POST "/games/" for ::1 at 2020-10-23 12:05:30 -0700
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>2, "game"=>{"score"=>0, "user_id"=>2}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 2], ["created_at", "2020-10-23 19:05:30.068806"], ["updated_at", "2020-10-23 19:05:30.068806"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.15ms)
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 0.9ms | Allocations: 3807)
+
+
+Started GET "/questions/37" for ::1 at 2020-10-23 12:05:34 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"37"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.32ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/38" for ::1 at 2020-10-23 12:05:37 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"38"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.29ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 894)
+
+
+Started GET "/questions/39" for ::1 at 2020-10-23 12:05:45 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"39"}
+  [1m[36mQuestion Load (15.9ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.33ms)
+Completed 200 OK in 18ms (Views: 0.7ms | ActiveRecord: 15.9ms | Allocations: 894)
+
+
+Started GET "/questions/40" for ::1 at 2020-10-23 12:05:49 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"40"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.37ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 894)
+
+
+Started GET "/questions/52" for ::1 at 2020-10-23 12:05:50 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"52"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.31ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/53" for ::1 at 2020-10-23 12:05:53 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"53"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 53], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.29ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 894)
+
+
+Started GET "/questions/54" for ::1 at 2020-10-23 12:05:57 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"54"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 54], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.33ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 894)
+
+
+Started GET "/questions/55" for ::1 at 2020-10-23 12:06:03 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"55"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 55], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.3ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started PATCH "/games/2" for ::1 at 2020-10-23 12:06:05 -0700
+Processing by GamesController#update as JSON
+  Parameters: {"score"=>600, "id"=>"2", "game"=>{"score"=>600}}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:19:in `update'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:20:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:20:in `update'
+  [1m[36mGame Update (0.2ms)[0m  [1m[33mUPDATE "games" SET "score" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["score", 600], ["updated_at", "2020-10-23 19:06:05.910956"], ["id", 2]]
+  ↳ app/controllers/games_controller.rb:20:in `update'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:20:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.15ms)
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 1.2ms | Allocations: 4410)
+
+
+Started GET "/games/" for ::1 at 2020-10-23 12:06:07 -0700
+Processing by GamesController#index as */*
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/games_controller.rb:3:in `sort_by'
+No serializer found for resource: #<Game id: 2, score: 600, user_id: 2, created_at: "2020-10-23 19:05:30", updated_at: "2020-10-23 19:06:05">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.22ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 975)
+
+

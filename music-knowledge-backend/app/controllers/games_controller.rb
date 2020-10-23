@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
   def index
-    games = Game.all
+    games = Game.all.sort_by { |game| game.score }.reverse
     render json: games
   end
 

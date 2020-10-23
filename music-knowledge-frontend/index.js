@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', e => {
   let userId = 0
   let gameId = 0
   let genre = ""
+  let username = ""
 
   const questionUrl = 'http://localhost:3000/questions/'
   const getQuestions = () => {
@@ -344,7 +345,14 @@ document.addEventListener('DOMContentLoaded', e => {
         scoreLi.textContent = `User: ${highscore.user_id} - Score: ${highscore.score}`
         scoreList.append(scoreLi)
       }
-      questionContainer.append(scoreList)
+      const againButton = document.createElement('button')
+      againButton.textContent = "🔁Play Again 🔁"
+      againButton.classList.add('play-again')
+      againButton.addEventListener('click', e => {
+        location.reload();
+      })
+      questionContainer.append(scoreList, againButton)
+
     })
   }
 
