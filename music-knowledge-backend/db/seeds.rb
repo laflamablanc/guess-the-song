@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
+# ---------Hip-Hop----------
 Question.create(
   # game_id: 1,
   ask: "Select the Artist",
@@ -440,4 +440,248 @@ Question.create(
   correct: "Bop",
   genre: "rap",
   filename: "mp3s/BodakYellow.mp3"
+)
+
+# ---------Alt Rock----------
+
+Question.create(
+  # game_id: 1,
+  ask: "Select the Artist",
+  answer1: "Good Charlotte",
+  answer2: "Sum41",
+  answer3: "Blink-182",
+  answer4: "Yellowcard",
+  correct: "Blink-182",
+  genre: "rock",
+  filename: "mp3s/SmallThings.mp3"
+)
+
+Question.create(
+  # game_id: 1,
+  ask: "Select the Artist",
+  answer1: "Yellowcard",
+  answer2: "Good Charlotte",
+  answer3: "Blink-182",
+  answer4: "Sum41",
+  correct: "Sum41",
+  genre: "rock",
+  filename: "mp3s/FatLip.mp3"
+)
+
+Question.create(
+  # game_id: 1,
+  ask: "Select the Artist",
+  answer1: "Of Monsters and Men",
+  answer2: "Grouplove",
+  answer3: "Lumineers",
+  answer4: "Young the Giant",
+  correct: "Of Monsters and Men",
+  genre: "rock",
+  filename: "mp3s/LittleTalks.mp3"
+)
+
+Question.create(
+  # game_id: 1,
+  ask: "Select the Artist",
+  answer1: "No Doubt",
+  answer2: "Of Monsters and Men",
+  answer3: "Gorillaz",
+  answer4: "Foster the People",
+  correct: "No Doubt",
+  genre: "rock",
+  filename: "mp3s/JustAGirl.mp3"
+)
+
+Question.create(
+  # game_id: 1,
+  ask: "Select the Artist",
+  answer1: "Mars Volta",
+  answer2: "Red Hot Chilli Peppers",
+  answer3: "The Killers",
+  answer4: "Linkin Park",
+  correct: "The Killers",
+  genre: "rock",
+  filename: "mp3s/Brightside.mp3"
+)
+
+Question.create(
+  # game_id: 1,
+  ask: "Select the Artist",
+  answer1: "Foster the People",
+  answer2: "MGMT",
+  answer3: "Blink-182",
+  answer4: "Empire of the Sun",
+  correct: "MGMT",
+  genre: "rock",
+  filename: "mp3s/ElectricFeel.mp3"
+)
+
+Question.create(
+  # game_id: 1,
+  ask: "Select the Artist",
+  answer1: "Yellowcard",
+  answer2: "Good Charlotte",
+  answer3: "The Offspring",
+  answer4: "Gorillaz",
+  correct: "Gorillaz",
+  genre: "rock",
+  filename: "mp3s/FeelGood.mp3"
+)
+
+Question.create(
+  # game_id: 1,
+  ask: "Select the Artist",
+  answer1: "Florence & The Machine",
+  answer2: "Arctic Monkeys",
+  answer3: "The Black Keys",
+  answer4: "Mumford & Sons",
+  correct: "The Black Keys",
+  genre: "rock",
+  filename: "mp3s/TightenUp.mp3"
+)
+
+Question.create(
+  # game_id: 1,
+  ask: "Select the Artist",
+  answer1: "Fleetwood Mac",
+  answer2: "Hall & Oates",
+  answer3: "Steely Dan",
+  answer4: "Doobie Brothers",
+  correct: "Fleetwood Mac",
+  genre: "rock",
+  filename: "mp3s/Dreams.mp3"
+)
+
+Question.create(
+  # game_id: 1,
+  ask: "Select the Artist",
+  answer1: "Arctic Monkeys",
+  answer2: "MGMT",
+  answer3: "Foster the People",
+  answer4: "The Black Keys",
+  correct: "Foster the People",
+  genre: "rock",
+  filename: "mp3s/PumpedUpKicks.mp3"
+)
+
+Question.create(
+  # game_id: 1,
+  ask: "Select the Artist",
+  answer1: "System of A Down",
+  answer2: "Korn",
+  answer3: "Staind",
+  answer4: "Limp Bizkit",
+  correct: "System of A Down",
+  genre: "rock",
+  filename: "mp3s/Toxicity.mp3"
+)
+
+Question.create(
+  # game_id: 1,
+  ask: "Select the Artist",
+  answer1: "Grizzly Bear",
+  answer2: "Two Door Cinema Club",
+  answer3: "Temper Trap",
+  answer4: "Bloc Party",
+  correct: "Two Door Cinema Club",
+  genre: "rock",
+  filename: "mp3s/WhatYouKnow.mp3"
+)
+
+Question.create(
+  # game_id: 1,
+  ask: "Select the Artist",
+  answer1: "Yellowcard",
+  answer2: "Good Charlotte",
+  answer3: "Blink-182",
+  answer4: "Arctic Monkeys",
+  correct: "Arctic Monkeys",
+  genre: "rock",
+  filename: "mp3s/WannaKnow.mp3"
+)
+
+Question.create(
+  # game_id: 1,
+  ask: "Select the Artist",
+  answer1: "Yellowcard",
+  answer2: "Good Charlotte",
+  answer3: "Blink-182",
+  answer4: "Linkin Park",
+  correct: "Linkin Park",
+  genre: "rock",
+  filename: "mp3s/Numb.mp3"
+)
+
+Question.create(
+  # game_id: 1,
+  ask: "Select the Artist",
+  answer1: "The Offspring",
+  answer2: "Blink-182",
+  answer3: "The Smiths",
+  answer4: "Sum41",
+  correct: "The Offspring",
+  genre: "rock",
+  filename: "mp3s/TheKids.mp3"
+)
+
+# ---------Alt Rock - Name Song ----------
+
+Question.create(
+  # game_id: 1,
+  ask: "Select the Artist",
+  answer1: "Yellowcard",
+  answer2: "Good Charlotte",
+  answer3: "The Offspring",
+  answer4: "Gorillaz",
+  correct: "Gorillaz",
+  genre: "rock",
+  filename: "mp3s/FeelGood.mp3"
+)
+
+Question.create(
+  # game_id: 1,
+  ask: "Select the Artist",
+  answer1: "Yellowcard",
+  answer2: "Good Charlotte",
+  answer3: "The Offspring",
+  answer4: "Gorillaz",
+  correct: "Gorillaz",
+  genre: "rock",
+  filename: "mp3s/FeelGood.mp3"
+)
+
+Question.create(
+  # game_id: 1,
+  ask: "Select the Artist",
+  answer1: "Yellowcard",
+  answer2: "Good Charlotte",
+  answer3: "The Offspring",
+  answer4: "Gorillaz",
+  correct: "Gorillaz",
+  genre: "rock",
+  filename: "mp3s/FeelGood.mp3"
+)
+
+Question.create(
+  # game_id: 1,
+  ask: "Select the Artist",
+  answer1: "Yellowcard",
+  answer2: "Good Charlotte",
+  answer3: "The Offspring",
+  answer4: "Gorillaz",
+  correct: "Gorillaz",
+  genre: "rock",
+  filename: "mp3s/FeelGood.mp3"
+)
+
+Question.create(
+  # game_id: 1,
+  ask: "Select the Artist",
+  answer1: "Yellowcard",
+  answer2: "Good Charlotte",
+  answer3: "The Offspring",
+  answer4: "Gorillaz",
+  correct: "Gorillaz",
+  genre: "rock",
+  filename: "mp3s/FeelGood.mp3"
 )

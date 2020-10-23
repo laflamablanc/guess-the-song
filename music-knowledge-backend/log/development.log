@@ -25151,3 +25151,527 @@ Processing by QuestionsController#show as */*
 Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms | Allocations: 894)
 
 
+Started GET "/questions/1" for ::1 at 2020-10-22 13:48:43 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.33ms)
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.6ms | Allocations: 1015)
+
+
+Started POST "/users" for ::1 at 2020-10-22 13:49:15 -0700
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Sean L", "user"=>{"name"=>"Sean L"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sean L"], ["created_at", "2020-10-22 20:49:15.632257"], ["updated_at", "2020-10-22 20:49:15.632257"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.19ms)
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 1.1ms | Allocations: 2572)
+
+
+Started POST "/games/" for ::1 at 2020-10-22 13:49:15 -0700
+Processing by GamesController#create as JSON
+  Parameters: {"score"=>0, "user_id"=>27, "game"=>{"score"=>0, "user_id"=>27}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[36mGame Create (0.5ms)[0m  [1m[32mINSERT INTO "games" ("score", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["score", 0], ["user_id", 27], ["created_at", "2020-10-22 20:49:15.646188"], ["updated_at", "2020-10-22 20:49:15.646188"]]
+  ↳ app/controllers/games_controller.rb:8:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.16ms)
+Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 1.0ms | Allocations: 3810)
+
+
+Started GET "/questions/1" for ::1 at 2020-10-22 13:49:16 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.3ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 895)
+
+
+Started GET "/questions/2" for ::1 at 2020-10-22 13:49:23 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.32ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/3" for ::1 at 2020-10-22 13:49:26 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.29ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 895)
+
+
+Started GET "/questions/4" for ::1 at 2020-10-22 13:49:28 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.34ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/5" for ::1 at 2020-10-22 13:49:31 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.35ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/19" for ::1 at 2020-10-22 13:49:38 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"19"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.42ms)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 895)
+
+
+Started GET "/questions/20" for ::1 at 2020-10-22 13:49:42 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"20"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.34ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 894)
+
+
+Started GET "/questions/21" for ::1 at 2020-10-22 13:49:44 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"21"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.29ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/questions/22" for ::1 at 2020-10-22 13:49:48 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"22"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.37ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 895)
+
+
+Started GET "/questions/23" for ::1 at 2020-10-22 13:49:52 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"23"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.49ms)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 894)
+
+
+Started GET "/questions/24" for ::1 at 2020-10-22 13:49:53 -0700
+Processing by QuestionsController#show as */*
+  Parameters: {"id"=>"24"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:8:in `show'
+[active_model_serializers] Rendered QuestionSerializer with ActiveModelSerializers::Adapter::Attributes (0.29ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 894)
+
+
+Started PATCH "/games/27" for ::1 at 2020-10-22 13:49:53 -0700
+Processing by GamesController#update as JSON
+  Parameters: {"score"=>900, "id"=>"27", "game"=>{"score"=>900}}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:19:in `update'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:20:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:20:in `update'
+  [1m[36mGame Update (0.3ms)[0m  [1m[33mUPDATE "games" SET "score" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["score", 900], ["updated_at", "2020-10-22 20:49:53.965555"], ["id", 27]]
+  ↳ app/controllers/games_controller.rb:20:in `update'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:20:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.16ms)
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 1.3ms | Allocations: 4414)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (37.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "music_knowledge_backend_development"[0m
+  [1m[35m (35.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "music_knowledge_backend_test"[0m
+  [1m[35m (52.1ms)[0m  [1m[35mCREATE DATABASE "music_knowledge_backend_development" ENCODING = 'unicode'[0m
+  [1m[35m (52.0ms)[0m  [1m[35mCREATE DATABASE "music_knowledge_backend_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "games" CASCADE[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "games" ("id" bigserial primary key, "score" integer, "user_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "questions" CASCADE[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "questions" ("id" bigserial primary key, "game_id" integer, "ask" character varying, "answer1" character varying, "answer2" character varying, "answer3" character varying, "answer4" character varying, "correct" character varying, "genre" character varying, "filename" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20201020180235)[0m
+  [1m[35m (4.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20201020180058),
+(20201020180144);
+
+[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-10-23 04:11:58.076609"], ["updated_at", "2020-10-23 04:11:58.076609"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "ff5fa9a2dbdd3891d5f6077ddf97c8cc12050ee0"], ["created_at", "2020-10-23 04:11:58.083716"], ["updated_at", "2020-10-23 04:11:58.083716"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "games" CASCADE[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "games" ("id" bigserial primary key, "score" integer, "user_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "questions" CASCADE[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "questions" ("id" bigserial primary key, "game_id" integer, "ask" character varying, "answer1" character varying, "answer2" character varying, "answer3" character varying, "answer4" character varying, "correct" character varying, "genre" character varying, "filename" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20201020180235)[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20201020180058),
+(20201020180144);
+
+[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-10-23 04:11:58.133172"], ["updated_at", "2020-10-23 04:11:58.133172"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-10-23 04:11:58.139261"], ["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "ff5fa9a2dbdd3891d5f6077ddf97c8cc12050ee0"], ["created_at", "2020-10-23 04:11:58.143709"], ["updated_at", "2020-10-23 04:11:58.143709"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.5ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "A$AP Rocky"], ["answer2", "Roddy Rich"], ["answer3", "Young Thug"], ["answer4", "Flava Flav"], ["correct", "A$AP Rocky"], ["genre", "rap"], ["filename", "mp3s/Goldie.mp3"], ["created_at", "2020-10-23 04:11:58.181163"], ["updated_at", "2020-10-23 04:11:58.181163"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Lil Baby"], ["answer2", "Baby"], ["answer3", "DaBaby"], ["answer4", "The Adult"], ["correct", "DaBaby"], ["genre", "rap"], ["filename", "mp3s/BOP.mp3"], ["created_at", "2020-10-23 04:11:58.187618"], ["updated_at", "2020-10-23 04:11:58.187618"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Kanye West"], ["answer2", "Drake"], ["answer3", "Young Thug"], ["answer4", "Eminem"], ["correct", "Drake"], ["genre", "rap"], ["filename", "mp3s/Bottom.mp3"], ["created_at", "2020-10-23 04:11:58.190596"], ["updated_at", "2020-10-23 04:11:58.190596"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "A$AP Ferg"], ["answer2", "Richy Rodd"], ["answer3", "Chance the Rapper"], ["answer4", "Roddy Ricch"], ["correct", "Roddy Ricch"], ["genre", "rap"], ["filename", "mp3s/Box.mp3"], ["created_at", "2020-10-23 04:11:58.193603"], ["updated_at", "2020-10-23 04:11:58.193603"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Missy Elliot"], ["answer2", "Lil Kim"], ["answer3", "Xzibit"], ["answer4", "Timbaland"], ["correct", "Missy Elliot"], ["genre", "rap"], ["filename", "mp3s/Freak.mp3"], ["created_at", "2020-10-23 04:11:58.196483"], ["updated_at", "2020-10-23 04:11:58.196483"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Cam'ron"], ["answer2", "Diddy"], ["answer3", "Kanye West"], ["answer4", "Migos"], ["correct", "Migos"], ["genre", "rap"], ["filename", "mp3s/PureWater.mp3"], ["created_at", "2020-10-23 04:11:58.199491"], ["updated_at", "2020-10-23 04:11:58.199491"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "J. Cole"], ["answer2", "Kendrick Lamar"], ["answer3", "Chamillionaire"], ["answer4", "Ludacris"], ["correct", "Kendrick Lamar"], ["genre", "rap"], ["filename", "mp3s/BackseatFreestyle.mp3"], ["created_at", "2020-10-23 04:11:58.202478"], ["updated_at", "2020-10-23 04:11:58.202478"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Childish Gambino"], ["answer2", "Chance the Rapper"], ["answer3", "Boyz II Men"], ["answer4", "Prince"], ["correct", "Childish Gambino"], ["genre", "rap"], ["filename", "mp3s/Redbone.mp3"], ["created_at", "2020-10-23 04:11:58.205648"], ["updated_at", "2020-10-23 04:11:58.205648"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "A$AP Rocky"], ["answer2", "Roddy Rich"], ["answer3", "Young Thug"], ["answer4", "Kanye West"], ["correct", "Kanye West"], ["genre", "rap"], ["filename", "mp3s/Runaway.mp3"], ["created_at", "2020-10-23 04:11:58.208578"], ["updated_at", "2020-10-23 04:11:58.208578"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Ja Rule"], ["answer2", "50 Cent"], ["answer3", "Eminem"], ["answer4", "Vanilla Ice"], ["correct", "Eminem"], ["genre", "rap"], ["filename", "mp3s/Stan.mp3"], ["created_at", "2020-10-23 04:11:58.211379"], ["updated_at", "2020-10-23 04:11:58.211379"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "A$AP Rocky"], ["answer2", "Eminem"], ["answer3", "Travis Scott"], ["answer4", "Migos"], ["correct", "Travis Scott"], ["genre", "rap"], ["filename", "mp3s/Butterfly.mp3"], ["created_at", "2020-10-23 04:11:58.214152"], ["updated_at", "2020-10-23 04:11:58.214152"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Mase"], ["answer2", "Notorious BIG"], ["answer3", "Diddy"], ["answer4", "Tupac"], ["correct", "Notorious BIG"], ["genre", "rap"], ["filename", "mp3s/Hypnotize.mp3"], ["created_at", "2020-10-23 04:11:58.216954"], ["updated_at", "2020-10-23 04:11:58.216954"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Jay-Z"], ["answer2", "Snoop Dogg"], ["answer3", "Nas"], ["answer4", "Jadakiss"], ["correct", "Jay-Z"], ["genre", "rap"], ["filename", "mp3s/BigPimpin.mp3"], ["created_at", "2020-10-23 04:11:58.219704"], ["updated_at", "2020-10-23 04:11:58.219704"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Ice T"], ["answer2", "Ludacris"], ["answer3", "Ice Cube"], ["answer4", "Dr. Dre"], ["correct", "Dr. Dre"], ["genre", "rap"], ["filename", "mp3s/ForgotDre.mp3"], ["created_at", "2020-10-23 04:11:58.222876"], ["updated_at", "2020-10-23 04:11:58.222876"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Mac Miller"], ["answer2", "Lil Dicky"], ["answer3", "Eminem"], ["answer4", "Vanilla Ice"], ["correct", "Jack Harlow"], ["genre", "rap"], ["filename", "mp3s/WhatsPoppin.mp3"], ["created_at", "2020-10-23 04:11:58.226295"], ["updated_at", "2020-10-23 04:11:58.226295"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Macklemore"], ["answer2", "Eminem"], ["answer3", "Post Malone"], ["answer4", "Jack Harlow"], ["correct", "Mac Miller"], ["genre", "rap"], ["filename", "mp3s/Ladders.mp3"], ["created_at", "2020-10-23 04:11:58.230859"], ["updated_at", "2020-10-23 04:11:58.230859"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Earl Sweatshirt"], ["answer2", "Outkast"], ["answer3", "Young Thug"], ["answer4", "Kid Cudi"], ["correct", "Kid Cudi"], ["genre", "rap"], ["filename", "mp3s/Pursuit.mp3"], ["created_at", "2020-10-23 04:11:58.233749"], ["updated_at", "2020-10-23 04:11:58.233749"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Nicki Minaj"], ["answer2", "Cardi B"], ["answer3", "Lil Kim"], ["answer4", "Missy Elliot"], ["correct", "Cardi B"], ["genre", "rap"], ["filename", "mp3s/BodakYellow.mp3"], ["created_at", "2020-10-23 04:11:58.236538"], ["updated_at", "2020-10-23 04:11:58.236538"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Pursuit of Happiness"], ["answer2", "Day N Nite"], ["answer3", "Cudi Zone"], ["answer4", "Moon Man"], ["correct", "Pursuit of Happiness"], ["genre", "rap"], ["filename", "mp3s/Pursuit.mp3"], ["created_at", "2020-10-23 04:11:58.239344"], ["updated_at", "2020-10-23 04:11:58.239344"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "99 Problems"], ["answer2", "Big Pimpin"], ["answer3", "Dirt off Your Shoulders"], ["answer4", "Welcome to the Party"], ["correct", "Big Pimpin"], ["genre", "rap"], ["filename", "mp3s/BigPimpin.mp3"], ["created_at", "2020-10-23 04:11:58.242151"], ["updated_at", "2020-10-23 04:11:58.242151"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Still D.R.E."], ["answer2", "Forgot About Dre"], ["answer3", "California Love"], ["answer4", "Nuthin but a G Thang"], ["correct", "Forgot About Dre"], ["genre", "rap"], ["filename", "mp3s/ForgotDre.mp3"], ["created_at", "2020-10-23 04:11:58.245049"], ["updated_at", "2020-10-23 04:11:58.245049"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Ghost"], ["answer2", "Warsaw"], ["answer3", "Thru the Night"], ["answer4", "Whats Poppin"], ["correct", "Whats Poppin"], ["genre", "rap"], ["filename", "mp3s/WhatsPoppin.mp3"], ["created_at", "2020-10-23 04:11:58.247666"], ["updated_at", "2020-10-23 04:11:58.247666"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Come Back to Earth"], ["answer2", "Ladders"], ["answer3", "Hurt Feelings"], ["answer4", "Self Care"], ["correct", "Ladders"], ["genre", "rap"], ["filename", "mp3s/Ladders.mp3"], ["created_at", "2020-10-23 04:11:58.250442"], ["updated_at", "2020-10-23 04:11:58.250442"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "3005"], ["answer2", "Redbone"], ["answer3", "Bonfire"], ["answer4", "Camp"], ["correct", "Redbone"], ["genre", "rap"], ["filename", "mp3s/Redbone.mp3"], ["created_at", "2020-10-23 04:11:58.253139"], ["updated_at", "2020-10-23 04:11:58.253139"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "All of the Lights"], ["answer2", "Heartless"], ["answer3", "Famous"], ["answer4", "Runaway"], ["correct", "Runaway"], ["genre", "rap"], ["filename", "mp3s/Runaway.mp3"], ["created_at", "2020-10-23 04:11:58.255857"], ["updated_at", "2020-10-23 04:11:58.255857"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Stan"], ["answer2", "Lose Yourself"], ["answer3", "Love the Way You Lie"], ["answer4", "The Way I Am"], ["correct", "Stan"], ["genre", "rap"], ["filename", "mp3s/Stan.mp3"], ["created_at", "2020-10-23 04:11:58.258470"], ["updated_at", "2020-10-23 04:11:58.258470"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Yosemite"], ["answer2", "Goosbumps"], ["answer3", "Butterfly Effect"], ["answer4", "Sicko Mode"], ["correct", "Butterfly Effect"], ["genre", "rap"], ["filename", "mp3s/Butterfly.mp3"], ["created_at", "2020-10-23 04:11:58.261362"], ["updated_at", "2020-10-23 04:11:58.261362"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Big Poppa"], ["answer2", "Dear Mama"], ["answer3", "Molly"], ["answer4", "Hypnotize"], ["correct", "Hypnotize"], ["genre", "rap"], ["filename", "mp3s/Hypnotize.mp3"], ["created_at", "2020-10-23 04:11:58.264265"], ["updated_at", "2020-10-23 04:11:58.264265"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Started From the Bottom"], ["answer2", "6 God"], ["answer3", "Worst Behavior"], ["answer4", "Hotline Bling"], ["correct", "Started From the Bottom"], ["genre", "rap"], ["filename", "mp3s/Bottom.mp3"], ["created_at", "2020-10-23 04:11:58.268968"], ["updated_at", "2020-10-23 04:11:58.268968"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Die Young"], ["answer2", "The Box"], ["answer3", "High Fashion"], ["answer4", "Ballin"], ["correct", "The Box"], ["genre", "rap"], ["filename", "mp3s/Box.mp3"], ["created_at", "2020-10-23 04:11:58.272069"], ["updated_at", "2020-10-23 04:11:58.272069"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Get Your Freak On"], ["answer2", "1 2 Step"], ["answer3", "Work It"], ["answer4", "Lose Control"], ["correct", "Get Your Freak On"], ["genre", "rap"], ["filename", "mp3s/Freak.mp3"], ["created_at", "2020-10-23 04:11:58.275023"], ["updated_at", "2020-10-23 04:11:58.275023"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Pure Water"], ["answer2", "Versace"], ["answer3", "Bad and Boujee"], ["answer4", "Motorsport"], ["correct", "Pure Water"], ["genre", "rap"], ["filename", "mp3s/PureWater.mp3"], ["created_at", "2020-10-23 04:11:58.277916"], ["updated_at", "2020-10-23 04:11:58.277916"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Money Trees"], ["answer2", "MAAD City"], ["answer3", "Good Kid"], ["answer4", "Backseat Freestyle"], ["correct", "Backseat Freestyle"], ["genre", "rap"], ["filename", "mp3s/BackseatFreestyle.mp3"], ["created_at", "2020-10-23 04:11:58.280760"], ["updated_at", "2020-10-23 04:11:58.280760"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "L$D"], ["answer2", "LVL"], ["answer3", "Goldie"], ["answer4", "Praise The Lord"], ["correct", "Goldie"], ["genre", "rap"], ["filename", "mp3s/Goldie.mp3"], ["created_at", "2020-10-23 04:11:58.283673"], ["updated_at", "2020-10-23 04:11:58.283673"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Bop"], ["answer2", "Boop"], ["answer3", "Beep"], ["answer4", "Baba"], ["correct", "Bop"], ["genre", "rap"], ["filename", "mp3s/BOP.mp3"], ["created_at", "2020-10-23 04:11:58.286593"], ["updated_at", "2020-10-23 04:11:58.286593"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "I Like It"], ["answer2", "Money"], ["answer3", "WAP"], ["answer4", "Bodak Yellow"], ["correct", "Bop"], ["genre", "rap"], ["filename", "mp3s/BodakYellow.mp3"], ["created_at", "2020-10-23 04:11:58.289458"], ["updated_at", "2020-10-23 04:11:58.289458"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Good Charlotte"], ["answer2", "Sum41"], ["answer3", "Blink-182"], ["answer4", "Yellowcard"], ["correct", "Blink-182"], ["genre", "rock"], ["filename", "mp3s/SmallThings.mp3"], ["created_at", "2020-10-23 04:11:58.292270"], ["updated_at", "2020-10-23 04:11:58.292270"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Yellowcard"], ["answer2", "Good Charlotte"], ["answer3", "Blink-182"], ["answer4", "Sum41"], ["correct", "Sum41"], ["genre", "rock"], ["filename", "mp3s/FatLip.mp3"], ["created_at", "2020-10-23 04:11:58.295114"], ["updated_at", "2020-10-23 04:11:58.295114"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Of Monsters and Men"], ["answer2", "Grouplove"], ["answer3", "Lumineers"], ["answer4", "Young the Giant"], ["correct", "Of Monsters and Men"], ["genre", "rock"], ["filename", "mp3s/LittleTalks.mp3"], ["created_at", "2020-10-23 04:11:58.298051"], ["updated_at", "2020-10-23 04:11:58.298051"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "No Doubt"], ["answer2", "Of Monsters and Men"], ["answer3", "Gorillaz"], ["answer4", "Foster the People"], ["correct", "No Doubt"], ["genre", "rock"], ["filename", "mp3s/JustAGirl.mp3"], ["created_at", "2020-10-23 04:11:58.300926"], ["updated_at", "2020-10-23 04:11:58.300926"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Mars Volta"], ["answer2", "Red Hot Chilli Peppers"], ["answer3", "The Killers"], ["answer4", "Linkin Park"], ["correct", "The Killers"], ["genre", "rock"], ["filename", "mp3s/Brightside.mp3"], ["created_at", "2020-10-23 04:11:58.303891"], ["updated_at", "2020-10-23 04:11:58.303891"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Foster the People"], ["answer2", "MGMT"], ["answer3", "Blink-182"], ["answer4", "Empire of the Sun"], ["correct", "MGMT"], ["genre", "rock"], ["filename", "mp3s/ElectricFeel.mp3"], ["created_at", "2020-10-23 04:11:58.306807"], ["updated_at", "2020-10-23 04:11:58.306807"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Yellowcard"], ["answer2", "Good Charlotte"], ["answer3", "The Offspring"], ["answer4", "Gorillaz"], ["correct", "Gorillaz"], ["genre", "rock"], ["filename", "mp3s/FeelGood.mp3"], ["created_at", "2020-10-23 04:11:58.310634"], ["updated_at", "2020-10-23 04:11:58.310634"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Florence & The Machine"], ["answer2", "Arctic Monkeys"], ["answer3", "The Black Keys"], ["answer4", "Mumford & Sons"], ["correct", "The Black Keys"], ["genre", "rock"], ["filename", "mp3s/TightenUp.mp3"], ["created_at", "2020-10-23 04:11:58.313370"], ["updated_at", "2020-10-23 04:11:58.313370"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Fleetwood Mac"], ["answer2", "Hall & Oates"], ["answer3", "Steely Dan"], ["answer4", "Doobie Brothers"], ["correct", "Fleetwood Mac"], ["genre", "rock"], ["filename", "mp3s/Dreams.mp3"], ["created_at", "2020-10-23 04:11:58.315907"], ["updated_at", "2020-10-23 04:11:58.315907"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Arctic Monkeys"], ["answer2", "MGMT"], ["answer3", "Foster the People"], ["answer4", "The Black Keys"], ["correct", "Foster the People"], ["genre", "rock"], ["filename", "mp3s/PumpedUpKicks.mp3"], ["created_at", "2020-10-23 04:11:58.318476"], ["updated_at", "2020-10-23 04:11:58.318476"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "System of A Down"], ["answer2", "Korn"], ["answer3", "Staind"], ["answer4", "Limp Bizkit"], ["correct", "System of A Down"], ["genre", "rock"], ["filename", "mp3s/Toxicity.mp3"], ["created_at", "2020-10-23 04:11:58.321066"], ["updated_at", "2020-10-23 04:11:58.321066"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Grizzly Bear"], ["answer2", "Two Door Cinema Club"], ["answer3", "Temper Trap"], ["answer4", "Bloc Party"], ["correct", "Two Door Cinema Club"], ["genre", "rock"], ["filename", "mp3s/WhatYouKnow.mp3"], ["created_at", "2020-10-23 04:11:58.323773"], ["updated_at", "2020-10-23 04:11:58.323773"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Yellowcard"], ["answer2", "Good Charlotte"], ["answer3", "Blink-182"], ["answer4", "Arctic Monkeys"], ["correct", "Arctic Monkeys"], ["genre", "rock"], ["filename", "mp3s/WannaKnow.mp3"], ["created_at", "2020-10-23 04:11:58.326621"], ["updated_at", "2020-10-23 04:11:58.326621"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Yellowcard"], ["answer2", "Good Charlotte"], ["answer3", "Blink-182"], ["answer4", "Linkin Park"], ["correct", "Linkin Park"], ["genre", "rock"], ["filename", "mp3s/FatLip.mp3"], ["created_at", "2020-10-23 04:11:58.329486"], ["updated_at", "2020-10-23 04:11:58.329486"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "The Offspring"], ["answer2", "Blink-182"], ["answer3", "The Smiths"], ["answer4", "Sum41"], ["correct", "The Offspring"], ["genre", "rock"], ["filename", "mp3s/TheKids.mp3"], ["created_at", "2020-10-23 04:11:58.332343"], ["updated_at", "2020-10-23 04:11:58.332343"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.6ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "A$AP Rocky"], ["answer2", "Roddy Rich"], ["answer3", "Young Thug"], ["answer4", "Flava Flav"], ["correct", "A$AP Rocky"], ["genre", "rap"], ["filename", "mp3s/Goldie.mp3"], ["created_at", "2020-10-23 04:12:04.355716"], ["updated_at", "2020-10-23 04:12:04.355716"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Lil Baby"], ["answer2", "Baby"], ["answer3", "DaBaby"], ["answer4", "The Adult"], ["correct", "DaBaby"], ["genre", "rap"], ["filename", "mp3s/BOP.mp3"], ["created_at", "2020-10-23 04:12:04.360351"], ["updated_at", "2020-10-23 04:12:04.360351"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Kanye West"], ["answer2", "Drake"], ["answer3", "Young Thug"], ["answer4", "Eminem"], ["correct", "Drake"], ["genre", "rap"], ["filename", "mp3s/Bottom.mp3"], ["created_at", "2020-10-23 04:12:04.363704"], ["updated_at", "2020-10-23 04:12:04.363704"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "A$AP Ferg"], ["answer2", "Richy Rodd"], ["answer3", "Chance the Rapper"], ["answer4", "Roddy Ricch"], ["correct", "Roddy Ricch"], ["genre", "rap"], ["filename", "mp3s/Box.mp3"], ["created_at", "2020-10-23 04:12:04.366610"], ["updated_at", "2020-10-23 04:12:04.366610"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Missy Elliot"], ["answer2", "Lil Kim"], ["answer3", "Xzibit"], ["answer4", "Timbaland"], ["correct", "Missy Elliot"], ["genre", "rap"], ["filename", "mp3s/Freak.mp3"], ["created_at", "2020-10-23 04:12:04.369795"], ["updated_at", "2020-10-23 04:12:04.369795"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Cam'ron"], ["answer2", "Diddy"], ["answer3", "Kanye West"], ["answer4", "Migos"], ["correct", "Migos"], ["genre", "rap"], ["filename", "mp3s/PureWater.mp3"], ["created_at", "2020-10-23 04:12:04.372979"], ["updated_at", "2020-10-23 04:12:04.372979"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "J. Cole"], ["answer2", "Kendrick Lamar"], ["answer3", "Chamillionaire"], ["answer4", "Ludacris"], ["correct", "Kendrick Lamar"], ["genre", "rap"], ["filename", "mp3s/BackseatFreestyle.mp3"], ["created_at", "2020-10-23 04:12:04.376118"], ["updated_at", "2020-10-23 04:12:04.376118"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Childish Gambino"], ["answer2", "Chance the Rapper"], ["answer3", "Boyz II Men"], ["answer4", "Prince"], ["correct", "Childish Gambino"], ["genre", "rap"], ["filename", "mp3s/Redbone.mp3"], ["created_at", "2020-10-23 04:12:04.383373"], ["updated_at", "2020-10-23 04:12:04.383373"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "A$AP Rocky"], ["answer2", "Roddy Rich"], ["answer3", "Young Thug"], ["answer4", "Kanye West"], ["correct", "Kanye West"], ["genre", "rap"], ["filename", "mp3s/Runaway.mp3"], ["created_at", "2020-10-23 04:12:04.386353"], ["updated_at", "2020-10-23 04:12:04.386353"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Ja Rule"], ["answer2", "50 Cent"], ["answer3", "Eminem"], ["answer4", "Vanilla Ice"], ["correct", "Eminem"], ["genre", "rap"], ["filename", "mp3s/Stan.mp3"], ["created_at", "2020-10-23 04:12:04.389384"], ["updated_at", "2020-10-23 04:12:04.389384"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "A$AP Rocky"], ["answer2", "Eminem"], ["answer3", "Travis Scott"], ["answer4", "Migos"], ["correct", "Travis Scott"], ["genre", "rap"], ["filename", "mp3s/Butterfly.mp3"], ["created_at", "2020-10-23 04:12:04.392220"], ["updated_at", "2020-10-23 04:12:04.392220"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Mase"], ["answer2", "Notorious BIG"], ["answer3", "Diddy"], ["answer4", "Tupac"], ["correct", "Notorious BIG"], ["genre", "rap"], ["filename", "mp3s/Hypnotize.mp3"], ["created_at", "2020-10-23 04:12:04.395097"], ["updated_at", "2020-10-23 04:12:04.395097"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Jay-Z"], ["answer2", "Snoop Dogg"], ["answer3", "Nas"], ["answer4", "Jadakiss"], ["correct", "Jay-Z"], ["genre", "rap"], ["filename", "mp3s/BigPimpin.mp3"], ["created_at", "2020-10-23 04:12:04.397970"], ["updated_at", "2020-10-23 04:12:04.397970"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Ice T"], ["answer2", "Ludacris"], ["answer3", "Ice Cube"], ["answer4", "Dr. Dre"], ["correct", "Dr. Dre"], ["genre", "rap"], ["filename", "mp3s/ForgotDre.mp3"], ["created_at", "2020-10-23 04:12:04.400774"], ["updated_at", "2020-10-23 04:12:04.400774"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Mac Miller"], ["answer2", "Lil Dicky"], ["answer3", "Eminem"], ["answer4", "Vanilla Ice"], ["correct", "Jack Harlow"], ["genre", "rap"], ["filename", "mp3s/WhatsPoppin.mp3"], ["created_at", "2020-10-23 04:12:04.403804"], ["updated_at", "2020-10-23 04:12:04.403804"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Macklemore"], ["answer2", "Eminem"], ["answer3", "Post Malone"], ["answer4", "Jack Harlow"], ["correct", "Mac Miller"], ["genre", "rap"], ["filename", "mp3s/Ladders.mp3"], ["created_at", "2020-10-23 04:12:04.406857"], ["updated_at", "2020-10-23 04:12:04.406857"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Earl Sweatshirt"], ["answer2", "Outkast"], ["answer3", "Young Thug"], ["answer4", "Kid Cudi"], ["correct", "Kid Cudi"], ["genre", "rap"], ["filename", "mp3s/Pursuit.mp3"], ["created_at", "2020-10-23 04:12:04.409718"], ["updated_at", "2020-10-23 04:12:04.409718"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Nicki Minaj"], ["answer2", "Cardi B"], ["answer3", "Lil Kim"], ["answer4", "Missy Elliot"], ["correct", "Cardi B"], ["genre", "rap"], ["filename", "mp3s/BodakYellow.mp3"], ["created_at", "2020-10-23 04:12:04.412646"], ["updated_at", "2020-10-23 04:12:04.412646"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Pursuit of Happiness"], ["answer2", "Day N Nite"], ["answer3", "Cudi Zone"], ["answer4", "Moon Man"], ["correct", "Pursuit of Happiness"], ["genre", "rap"], ["filename", "mp3s/Pursuit.mp3"], ["created_at", "2020-10-23 04:12:04.415425"], ["updated_at", "2020-10-23 04:12:04.415425"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "99 Problems"], ["answer2", "Big Pimpin"], ["answer3", "Dirt off Your Shoulders"], ["answer4", "Welcome to the Party"], ["correct", "Big Pimpin"], ["genre", "rap"], ["filename", "mp3s/BigPimpin.mp3"], ["created_at", "2020-10-23 04:12:04.418318"], ["updated_at", "2020-10-23 04:12:04.418318"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Still D.R.E."], ["answer2", "Forgot About Dre"], ["answer3", "California Love"], ["answer4", "Nuthin but a G Thang"], ["correct", "Forgot About Dre"], ["genre", "rap"], ["filename", "mp3s/ForgotDre.mp3"], ["created_at", "2020-10-23 04:12:04.421184"], ["updated_at", "2020-10-23 04:12:04.421184"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Ghost"], ["answer2", "Warsaw"], ["answer3", "Thru the Night"], ["answer4", "Whats Poppin"], ["correct", "Whats Poppin"], ["genre", "rap"], ["filename", "mp3s/WhatsPoppin.mp3"], ["created_at", "2020-10-23 04:12:04.424019"], ["updated_at", "2020-10-23 04:12:04.424019"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Come Back to Earth"], ["answer2", "Ladders"], ["answer3", "Hurt Feelings"], ["answer4", "Self Care"], ["correct", "Ladders"], ["genre", "rap"], ["filename", "mp3s/Ladders.mp3"], ["created_at", "2020-10-23 04:12:04.429369"], ["updated_at", "2020-10-23 04:12:04.429369"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "3005"], ["answer2", "Redbone"], ["answer3", "Bonfire"], ["answer4", "Camp"], ["correct", "Redbone"], ["genre", "rap"], ["filename", "mp3s/Redbone.mp3"], ["created_at", "2020-10-23 04:12:04.432162"], ["updated_at", "2020-10-23 04:12:04.432162"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "All of the Lights"], ["answer2", "Heartless"], ["answer3", "Famous"], ["answer4", "Runaway"], ["correct", "Runaway"], ["genre", "rap"], ["filename", "mp3s/Runaway.mp3"], ["created_at", "2020-10-23 04:12:04.434874"], ["updated_at", "2020-10-23 04:12:04.434874"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Stan"], ["answer2", "Lose Yourself"], ["answer3", "Love the Way You Lie"], ["answer4", "The Way I Am"], ["correct", "Stan"], ["genre", "rap"], ["filename", "mp3s/Stan.mp3"], ["created_at", "2020-10-23 04:12:04.437619"], ["updated_at", "2020-10-23 04:12:04.437619"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Yosemite"], ["answer2", "Goosbumps"], ["answer3", "Butterfly Effect"], ["answer4", "Sicko Mode"], ["correct", "Butterfly Effect"], ["genre", "rap"], ["filename", "mp3s/Butterfly.mp3"], ["created_at", "2020-10-23 04:12:04.440345"], ["updated_at", "2020-10-23 04:12:04.440345"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Big Poppa"], ["answer2", "Dear Mama"], ["answer3", "Molly"], ["answer4", "Hypnotize"], ["correct", "Hypnotize"], ["genre", "rap"], ["filename", "mp3s/Hypnotize.mp3"], ["created_at", "2020-10-23 04:12:04.443067"], ["updated_at", "2020-10-23 04:12:04.443067"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Started From the Bottom"], ["answer2", "6 God"], ["answer3", "Worst Behavior"], ["answer4", "Hotline Bling"], ["correct", "Started From the Bottom"], ["genre", "rap"], ["filename", "mp3s/Bottom.mp3"], ["created_at", "2020-10-23 04:12:04.445778"], ["updated_at", "2020-10-23 04:12:04.445778"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Die Young"], ["answer2", "The Box"], ["answer3", "High Fashion"], ["answer4", "Ballin"], ["correct", "The Box"], ["genre", "rap"], ["filename", "mp3s/Box.mp3"], ["created_at", "2020-10-23 04:12:04.448344"], ["updated_at", "2020-10-23 04:12:04.448344"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Get Your Freak On"], ["answer2", "1 2 Step"], ["answer3", "Work It"], ["answer4", "Lose Control"], ["correct", "Get Your Freak On"], ["genre", "rap"], ["filename", "mp3s/Freak.mp3"], ["created_at", "2020-10-23 04:12:04.450917"], ["updated_at", "2020-10-23 04:12:04.450917"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Pure Water"], ["answer2", "Versace"], ["answer3", "Bad and Boujee"], ["answer4", "Motorsport"], ["correct", "Pure Water"], ["genre", "rap"], ["filename", "mp3s/PureWater.mp3"], ["created_at", "2020-10-23 04:12:04.453440"], ["updated_at", "2020-10-23 04:12:04.453440"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Money Trees"], ["answer2", "MAAD City"], ["answer3", "Good Kid"], ["answer4", "Backseat Freestyle"], ["correct", "Backseat Freestyle"], ["genre", "rap"], ["filename", "mp3s/BackseatFreestyle.mp3"], ["created_at", "2020-10-23 04:12:04.455868"], ["updated_at", "2020-10-23 04:12:04.455868"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "L$D"], ["answer2", "LVL"], ["answer3", "Goldie"], ["answer4", "Praise The Lord"], ["correct", "Goldie"], ["genre", "rap"], ["filename", "mp3s/Goldie.mp3"], ["created_at", "2020-10-23 04:12:04.458406"], ["updated_at", "2020-10-23 04:12:04.458406"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "Bop"], ["answer2", "Boop"], ["answer3", "Beep"], ["answer4", "Baba"], ["correct", "Bop"], ["genre", "rap"], ["filename", "mp3s/BOP.mp3"], ["created_at", "2020-10-23 04:12:04.460996"], ["updated_at", "2020-10-23 04:12:04.460996"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Name the Song"], ["answer1", "I Like It"], ["answer2", "Money"], ["answer3", "WAP"], ["answer4", "Bodak Yellow"], ["correct", "Bop"], ["genre", "rap"], ["filename", "mp3s/BodakYellow.mp3"], ["created_at", "2020-10-23 04:12:04.463481"], ["updated_at", "2020-10-23 04:12:04.463481"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Good Charlotte"], ["answer2", "Sum41"], ["answer3", "Blink-182"], ["answer4", "Yellowcard"], ["correct", "Blink-182"], ["genre", "rock"], ["filename", "mp3s/SmallThings.mp3"], ["created_at", "2020-10-23 04:12:04.467478"], ["updated_at", "2020-10-23 04:12:04.467478"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Yellowcard"], ["answer2", "Good Charlotte"], ["answer3", "Blink-182"], ["answer4", "Sum41"], ["correct", "Sum41"], ["genre", "rock"], ["filename", "mp3s/FatLip.mp3"], ["created_at", "2020-10-23 04:12:04.470010"], ["updated_at", "2020-10-23 04:12:04.470010"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Of Monsters and Men"], ["answer2", "Grouplove"], ["answer3", "Lumineers"], ["answer4", "Young the Giant"], ["correct", "Of Monsters and Men"], ["genre", "rock"], ["filename", "mp3s/LittleTalks.mp3"], ["created_at", "2020-10-23 04:12:04.472418"], ["updated_at", "2020-10-23 04:12:04.472418"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "No Doubt"], ["answer2", "Of Monsters and Men"], ["answer3", "Gorillaz"], ["answer4", "Foster the People"], ["correct", "No Doubt"], ["genre", "rock"], ["filename", "mp3s/JustAGirl.mp3"], ["created_at", "2020-10-23 04:12:04.475230"], ["updated_at", "2020-10-23 04:12:04.475230"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Mars Volta"], ["answer2", "Red Hot Chilli Peppers"], ["answer3", "The Killers"], ["answer4", "Linkin Park"], ["correct", "The Killers"], ["genre", "rock"], ["filename", "mp3s/Brightside.mp3"], ["created_at", "2020-10-23 04:12:04.478126"], ["updated_at", "2020-10-23 04:12:04.478126"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Foster the People"], ["answer2", "MGMT"], ["answer3", "Blink-182"], ["answer4", "Empire of the Sun"], ["correct", "MGMT"], ["genre", "rock"], ["filename", "mp3s/ElectricFeel.mp3"], ["created_at", "2020-10-23 04:12:04.480749"], ["updated_at", "2020-10-23 04:12:04.480749"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Yellowcard"], ["answer2", "Good Charlotte"], ["answer3", "The Offspring"], ["answer4", "Gorillaz"], ["correct", "Gorillaz"], ["genre", "rock"], ["filename", "mp3s/FeelGood.mp3"], ["created_at", "2020-10-23 04:12:04.483556"], ["updated_at", "2020-10-23 04:12:04.483556"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Florence & The Machine"], ["answer2", "Arctic Monkeys"], ["answer3", "The Black Keys"], ["answer4", "Mumford & Sons"], ["correct", "The Black Keys"], ["genre", "rock"], ["filename", "mp3s/TightenUp.mp3"], ["created_at", "2020-10-23 04:12:04.486367"], ["updated_at", "2020-10-23 04:12:04.486367"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Fleetwood Mac"], ["answer2", "Hall & Oates"], ["answer3", "Steely Dan"], ["answer4", "Doobie Brothers"], ["correct", "Fleetwood Mac"], ["genre", "rock"], ["filename", "mp3s/Dreams.mp3"], ["created_at", "2020-10-23 04:12:04.489220"], ["updated_at", "2020-10-23 04:12:04.489220"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Arctic Monkeys"], ["answer2", "MGMT"], ["answer3", "Foster the People"], ["answer4", "The Black Keys"], ["correct", "Foster the People"], ["genre", "rock"], ["filename", "mp3s/PumpedUpKicks.mp3"], ["created_at", "2020-10-23 04:12:04.492076"], ["updated_at", "2020-10-23 04:12:04.492076"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "System of A Down"], ["answer2", "Korn"], ["answer3", "Staind"], ["answer4", "Limp Bizkit"], ["correct", "System of A Down"], ["genre", "rock"], ["filename", "mp3s/Toxicity.mp3"], ["created_at", "2020-10-23 04:12:04.494928"], ["updated_at", "2020-10-23 04:12:04.494928"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Grizzly Bear"], ["answer2", "Two Door Cinema Club"], ["answer3", "Temper Trap"], ["answer4", "Bloc Party"], ["correct", "Two Door Cinema Club"], ["genre", "rock"], ["filename", "mp3s/WhatYouKnow.mp3"], ["created_at", "2020-10-23 04:12:04.497682"], ["updated_at", "2020-10-23 04:12:04.497682"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Yellowcard"], ["answer2", "Good Charlotte"], ["answer3", "Blink-182"], ["answer4", "Arctic Monkeys"], ["correct", "Arctic Monkeys"], ["genre", "rock"], ["filename", "mp3s/WannaKnow.mp3"], ["created_at", "2020-10-23 04:12:04.500610"], ["updated_at", "2020-10-23 04:12:04.500610"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "Yellowcard"], ["answer2", "Good Charlotte"], ["answer3", "Blink-182"], ["answer4", "Linkin Park"], ["correct", "Linkin Park"], ["genre", "rock"], ["filename", "mp3s/FatLip.mp3"], ["created_at", "2020-10-23 04:12:04.503561"], ["updated_at", "2020-10-23 04:12:04.503561"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("ask", "answer1", "answer2", "answer3", "answer4", "correct", "genre", "filename", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["ask", "Select the Artist"], ["answer1", "The Offspring"], ["answer2", "Blink-182"], ["answer3", "The Smiths"], ["answer4", "Sum41"], ["correct", "The Offspring"], ["genre", "rock"], ["filename", "mp3s/TheKids.mp3"], ["created_at", "2020-10-23 04:12:04.506456"], ["updated_at", "2020-10-23 04:12:04.506456"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
