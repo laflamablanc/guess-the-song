@@ -101,19 +101,48 @@ document.addEventListener('DOMContentLoaded', e => {
     genreSelector.id = "genre-selector"
     genreSelector.innerHTML =`
     <h2>Select a Genre:</h2>
-    <button id="rap" class= "play-buttons" data-choice = " " type="button">🎤 Rap 🎤</button>
-    <button id="rock" class= "play-buttons" data-choice = " " type="button">🎸 Rock 🎸</button>
+    <button id="rap" class= "play-buttons" data-genre = "rap" type="button">🎤 Rap 🎤</button>
+    <button id="rock" class= "play-buttons" data-genre = "rock" type="button">🎸 Rock 🎸</button>
     `
     mainDiv.append(genreSelector)
     genreSelector.addEventListener('click', e => {
       if (e.target.matches('#rap')) {
         questionId = 1
         genre = "rap"
-        displayRound()
+        chooseDifficulty()
       } else if (e.target.matches('#rock')) {
         questionId = 37
         genre = "rock"
+        chooseDifficulty()
+      }
+    })
+  }
+
+  const chooseDifficulty = () => {
+    const mainDiv = document.getElementById('page-header')
+    mainDiv.innerHTML = ''
+    const difficultySelector = document.createElement('div')
+    difficultySelector.id = "difficulty-selector"
+    difficultySelector.innerHTML =`
+    <h2>Select a Difficulty:</h2>
+    <button id="easy" class= "play-buttons" data-difficulty = "easy" type="button">💚Easy💚</button>
+    <button id="medium" class= "play-buttons" data-difficulty = "medium" type="button">🧡Medium🧡</button>
+    <button id="hard" class= "play-buttons" data-difficulty = "hard" type="button">🚨Hard🚨</button>
+    `
+    mainDiv.append(difficultySelector)
+    difficultySelector.addEventListener('click', e => {
+      if (e.target.matches('#easy')) {
+        gameDuration = 60
+        resetDuration = 60
         displayRound()
+      } else if (e.target.matches('#medium')) {
+          gameDuration = 30
+          resetDuration = 30
+          displayRound()
+      } else if (e.target.matches('#hard')) {
+          gameDuration = 15
+          resetDuration = 15
+          displayRound()
       }
     })
   }
@@ -206,7 +235,8 @@ document.addEventListener('DOMContentLoaded', e => {
 
 
   // ----timer code-----
-  let gameDuration = 15
+  let gameDuration = 60
+  let resetDuration = 0
   let gameSecElapsed = 0
   var gameInterval;
 
@@ -242,7 +272,7 @@ document.addEventListener('DOMContentLoaded', e => {
       console.log(genre)
       if (round === 1 && genre === "rap") {
         clearInterval(gameInterval)
-        gameDuration = 15
+        gameDuration = resetDuration
         gameSecElapsed = 0
         questionId = 19
         round++
@@ -253,7 +283,7 @@ document.addEventListener('DOMContentLoaded', e => {
       }
       else if (round === 1 && genre === "rock"){
         clearInterval(gameInterval)
-        gameDuration = 15
+        gameDuration = resetDuration
         gameSecElapsed = 0
         questionId = 52
         console.log(questionId)
@@ -303,15 +333,36 @@ document.addEventListener('DOMContentLoaded', e => {
 
   }
 
+  function highScores(){
+    fetch('http://localhost:3000/games/')
+    .then(response => response.json())
+    .then(data => {
+      const questionContainer = document.getElementById('question-container')
+      scoreList = document.createElement('ol')
+      for (const highscore of data) {
+        scoreLi = document.createElement('li')
+        scoreLi.textContent = `User: ${highscore.user_id} - Score: ${highscore.score}`
+        scoreList.append(scoreLi)
+      }
+      questionContainer.append(scoreList)
+    })
+  }
+
   function displayScore(score){
     const questionContainer = document.getElementById('question-container')
     questionContainer.innerHTML = `
     <h2>Your Score: ${score}</h2>
-    <button class= "play-again">🔁</button>
+    <button class= "play-again">🔁Play Again 🔁</button>
+    <button class= "view-scores">🎶View Scores🎶</button>
     `
     const playAgain = questionContainer.querySelector('.play-again')
     playAgain.addEventListener('click', e => {
       location.reload();
+    })
+    const viewScores = questionContainer.querySelector('.view-scores')
+    viewScores.addEventListener('click', e => {
+      questionContainer.innerHTML = ""
+      highScores()
     })
   }
 
