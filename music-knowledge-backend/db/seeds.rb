@@ -8,7 +8,6 @@
 
 # ---------Hip-Hop----------
 Question.create(
-  # game_id: 1,
   ask: "Select the Artist",
   answer1: "A$AP Rocky",
   answer2: "Roddy Rich",
@@ -20,7 +19,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Select the Artist",
   answer1: "Lil Baby",
   answer2: "Baby",
@@ -32,7 +30,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Select the Artist",
   answer1: "Kanye West",
   answer2: "Drake",
@@ -44,7 +41,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Select the Artist",
   answer1: "A$AP Ferg",
   answer2: "Richy Rodd",
@@ -56,7 +52,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Select the Artist",
   answer1: "Missy Elliot",
   answer2: "Lil Kim",
@@ -68,7 +63,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Select the Artist",
   answer1: "Cam'ron",
   answer2: "Diddy",
@@ -80,7 +74,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Select the Artist",
   answer1: "J. Cole",
   answer2: "Kendrick Lamar",
@@ -92,7 +85,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Select the Artist",
   answer1: "Childish Gambino",
   answer2: "Chance the Rapper",
@@ -104,7 +96,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Select the Artist",
   answer1: "A$AP Rocky",
   answer2: "Roddy Rich",
@@ -116,7 +107,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Select the Artist",
   answer1: "Ja Rule",
   answer2: "50 Cent",
@@ -128,7 +118,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Select the Artist",
   answer1: "A$AP Rocky",
   answer2: "Eminem",
@@ -140,7 +129,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Select the Artist",
   answer1: "Mase",
   answer2: "Notorious BIG",
@@ -152,7 +140,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Select the Artist",
   answer1: "Jay-Z",
   answer2: "Snoop Dogg",
@@ -164,7 +151,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Select the Artist",
   answer1: "Ice T",
   answer2: "Ludacris",
@@ -176,7 +162,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Select the Artist",
   answer1: "Mac Miller",
   answer2: "Lil Dicky",
@@ -188,7 +173,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Select the Artist",
   answer1: "Macklemore",
   answer2: "Eminem",
@@ -200,7 +184,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Select the Artist",
   answer1: "Earl Sweatshirt",
   answer2: "Outkast",
@@ -212,7 +195,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Select the Artist",
   answer1: "Nicki Minaj",
   answer2: "Cardi B",
@@ -227,7 +209,6 @@ Question.create(
 # ---------NAME THE SONG----------
 
 Question.create(
-  # game_id: 1,
   ask: "Name the Song",
   answer1: "Pursuit of Happiness",
   answer2: "Day N Nite",
@@ -239,7 +220,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Name the Song",
   answer1: "99 Problems",
   answer2: "Big Pimpin",
@@ -251,7 +231,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Name the Song",
   answer1: "Still D.R.E.",
   answer2: "Forgot About Dre",
@@ -263,7 +242,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Name the Song",
   answer1: "Ghost",
   answer2: "Warsaw",
@@ -275,7 +253,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Name the Song",
   answer1: "Come Back to Earth",
   answer2: "Ladders",
@@ -287,7 +264,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Name the Song",
   answer1: "3005",
   answer2: "Redbone",
@@ -299,7 +275,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Name the Song",
   answer1: "All of the Lights",
   answer2: "Heartless",
@@ -311,7 +286,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Name the Song",
   answer1: "Stan",
   answer2: "Lose Yourself",
@@ -323,7 +297,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Name the Song",
   answer1: "Yosemite",
   answer2: "Goosbumps",
@@ -335,7 +308,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Name the Song",
   answer1: "Big Poppa",
   answer2: "Dear Mama",
@@ -347,7 +319,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Name the Song",
   answer1: "Started From the Bottom",
   answer2: "6 God",
@@ -359,7 +330,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Name the Song",
   answer1: "Die Young",
   answer2: "The Box",
@@ -371,7 +341,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Name the Song",
   answer1: "Get Your Freak On",
   answer2: "1 2 Step",
@@ -383,7 +352,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Name the Song",
   answer1: "Pure Water",
   answer2: "Versace",
@@ -395,7 +363,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Name the Song",
   answer1: "Money Trees",
   answer2: "MAAD City",
@@ -407,7 +374,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Name the Song",
   answer1: "L$D",
   answer2: "LVL",
@@ -419,7 +385,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Name the Song",
   answer1: "Bop",
   answer2: "Boop",
@@ -431,7 +396,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Name the Song",
   answer1: "I Like It",
   answer2: "Money",
@@ -445,7 +409,6 @@ Question.create(
 # ---------Alt Rock----------
 
 Question.create(
-  # game_id: 1,
   ask: "Select the Artist",
   answer1: "Good Charlotte",
   answer2: "Sum41",
@@ -457,7 +420,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Select the Artist",
   answer1: "Yellowcard",
   answer2: "Good Charlotte",
@@ -469,7 +431,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Select the Artist",
   answer1: "Of Monsters and Men",
   answer2: "Grouplove",
@@ -481,7 +442,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Select the Artist",
   answer1: "No Doubt",
   answer2: "Of Monsters and Men",
@@ -493,7 +453,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Select the Artist",
   answer1: "Mars Volta",
   answer2: "Red Hot Chilli Peppers",
@@ -505,7 +464,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Select the Artist",
   answer1: "Foster the People",
   answer2: "MGMT",
@@ -517,7 +475,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Select the Artist",
   answer1: "Yellowcard",
   answer2: "Good Charlotte",
@@ -529,7 +486,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Select the Artist",
   answer1: "Florence & The Machine",
   answer2: "Arctic Monkeys",
@@ -541,7 +497,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Select the Artist",
   answer1: "Fleetwood Mac",
   answer2: "Hall & Oates",
@@ -553,7 +508,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Select the Artist",
   answer1: "Arctic Monkeys",
   answer2: "MGMT",
@@ -565,7 +519,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Select the Artist",
   answer1: "System of A Down",
   answer2: "Korn",
@@ -577,7 +530,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Select the Artist",
   answer1: "Grizzly Bear",
   answer2: "Two Door Cinema Club",
@@ -589,7 +541,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Select the Artist",
   answer1: "Yellowcard",
   answer2: "Good Charlotte",
@@ -601,7 +552,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Select the Artist",
   answer1: "Yellowcard",
   answer2: "Good Charlotte",
@@ -613,7 +563,6 @@ Question.create(
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Select the Artist",
   answer1: "The Offspring",
   answer2: "Blink-182",
@@ -627,61 +576,100 @@ Question.create(
 # ---------Alt Rock - Name Song ----------
 
 Question.create(
-  # game_id: 1,
   ask: "Select the Artist",
-  answer1: "Yellowcard",
-  answer2: "Good Charlotte",
-  answer3: "The Offspring",
-  answer4: "Gorillaz",
-  correct: "Gorillaz",
+  answer1: "Californication",
+  answer2: "Under The Bridge",
+  answer3: "Snow",
+  answer4: "Othershide",
+  correct: "Under The Bridge",
+  genre: "rock",
+  filename: "mp3s/Bridge.mp3"
+)
+
+Question.create(
+  ask: "Select the Artist",
+  answer1: "Dirty Harry",
+  answer2: "DARE",
+  answer3: "Feel Good Inc",
+  answer4: "Clint Eastwood",
+  correct: "Feel Good Inc",
   genre: "rock",
   filename: "mp3s/FeelGood.mp3"
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Select the Artist",
-  answer1: "Yellowcard",
-  answer2: "Good Charlotte",
-  answer3: "The Offspring",
-  answer4: "Gorillaz",
-  correct: "Gorillaz",
+  answer1: "Kids",
+  answer2: "Electric Feel",
+  answer3: "Time to Pretend",
+  answer4: "Electric Eels",
+  correct: "Electric Feel",
   genre: "rock",
-  filename: "mp3s/FeelGood.mp3"
+  filename: "mp3s/ElectricFeel.mp3"
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Select the Artist",
-  answer1: "Yellowcard",
-  answer2: "Good Charlotte",
-  answer3: "The Offspring",
-  answer4: "Gorillaz",
-  correct: "Gorillaz",
+  answer1: "Numb",
+  answer2: "Paranoid",
+  answer3: "Papercut",
+  answer4: "In The End",
+  correct: "Numb",
   genre: "rock",
-  filename: "mp3s/FeelGood.mp3"
+  filename: "mp3s/Numb.mp3"
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Select the Artist",
-  answer1: "Yellowcard",
-  answer2: "Good Charlotte",
-  answer3: "The Offspring",
-  answer4: "Gorillaz",
-  correct: "Gorillaz",
+  answer1: "All the Small Things",
+  answer2: "What'y My Age Again?",
+  answer3: "I Miss You",
+  answer4: "First Date",
+  correct: "All the Small Things",
   genre: "rock",
-  filename: "mp3s/FeelGood.mp3"
+  filename: "mp3s/SmallThings.mp3"
 )
 
 Question.create(
-  # game_id: 1,
   ask: "Select the Artist",
-  answer1: "Yellowcard",
-  answer2: "Good Charlotte",
-  answer3: "The Offspring",
-  answer4: "Gorillaz",
-  correct: "Gorillaz",
+  answer1: "Aerials",
+  answer2: "Chop Suey",
+  answer3: "Angels",
+  answer4: "Toxicity",
+  correct: "Toxicity",
   genre: "rock",
-  filename: "mp3s/FeelGood.mp3"
+  filename: "mp3s/Toxicity.mp3"
+)
+
+Question.create(
+  ask: "Select the Artist",
+  answer1: "Sit Next To Me",
+  answer2: "Pumped Up Kicks",
+  answer3: "Better Run",
+  answer4: "All the Other Kids",
+  correct: "Pumped Up Kicks",
+  genre: "rock",
+  filename: "mp3s/PumpedUpKicks.mp3"
+)
+
+Question.create(
+  ask: "Select the Artist",
+  answer1: "Do I Wanna Know?",
+  answer2: "R U Mine?",
+  answer3: "Be My Girl?",
+  answer4: "Whats Up?",
+  correct: "Do I Wanna Know?",
+  genre: "rock",
+  filename: "mp3s/WannaKnow.mp3"
+)
+
+Question.create(
+  ask: "Select the Artist",
+  answer1: "I Will Wait",
+  answer2: "White Blank Page",
+  answer3: "Lionheart",
+  answer4: "Othelia",
+  correct: "I Will Wait",
+  genre: "rock",
+  filename: "mp3s/Wait.mp3"
 )
