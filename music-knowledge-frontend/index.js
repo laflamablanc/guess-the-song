@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', e => {
   let userId = 0
   let gameId = 0
   let genre = ""
-  let username = ""
+  let userName = ""
 
   const questionUrl = 'http://localhost:3000/questions/'
   const getQuestions = () => {
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', e => {
     header.append(title, form)
     form.addEventListener('submit', e => {
       e.preventDefault()
-      const username = e.target.username.value
+      userName = e.target.username.value
       createUser(username)
       const timerTable = document.getElementById('timers')
 
@@ -62,11 +62,12 @@ document.addEventListener('DOMContentLoaded', e => {
     .then(response => response.json())
     .then(data => {
       userId = data.id
-      createGame(0, userId)
+      name = data.name
+      createGame(0, userId, name)
     })
   }
 
-  const createGame = (score, userId) => {
+  const createGame = (score, userId, username) => {
     const gameOptions = {
       method: "POST" ,
       headers:{
@@ -76,7 +77,8 @@ document.addEventListener('DOMContentLoaded', e => {
       body: JSON.stringify(
         {
           score: score,
-          user_id: userId
+          user_id: userId,
+          username: username
         })
     }
     fetch('http://localhost:3000/games/', gameOptions)
@@ -342,7 +344,7 @@ document.addEventListener('DOMContentLoaded', e => {
       scoreList = document.createElement('ol')
       for (const highscore of data) {
         scoreLi = document.createElement('li')
-        scoreLi.textContent = `User: ${highscore.user_id} - Score: ${highscore.score}`
+        scoreLi.textContent = `User: ${highscore.username} - Score: ${highscore.score}`
         scoreList.append(scoreLi)
       }
       const againButton = document.createElement('button')

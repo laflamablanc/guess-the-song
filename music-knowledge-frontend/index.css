@@ -19,10 +19,9 @@ h2{
 body{
     background-image: url(https://images.unsplash.com/photo-1582730147924-d92f4da00252?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2251&q=80);
     height: 700px; /* You must set a specified height */
- background-position: center; /* Center the image */
- background-repeat: no-repeat; /* Do not repeat the image */
- background-size: cover;
-
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
     font-family: 'Alfa Slab One';font-size: 22px;
 
 }
