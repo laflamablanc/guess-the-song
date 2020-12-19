@@ -9,17 +9,27 @@ document.addEventListener('DOMContentLoaded', e => {
   let gameId = 0
   let genre = ""
   let userName = ""
+  let token = ""
+  const geniusUrl = "https://api.genius.com/oauth/authorize?client_id=wmSZuWgWUy7geX5BYC0b50PbeBXk88l_IZAEBh1dpuBGEgidTjRRSsxk9yy1ajKJ&
+  redirect_uri="
 
   const questionUrl = 'http://localhost:3000/questions/'
-  const getQuestions = () => {
-    fetch('http://localhost:3000/questions/1')
-    .then(response => response.json())
-    .then(data => {
 
-    })
+  const getToken = () => {
+    fetch("https://api.genius.com/oauth/authorize?client_id=wmSZuWgWUy7geX5BYC0b50PbeBXk88l_IZAEBh1dpuBGEgidTjRRSsxk9yy1ajKJ&
+    redirect_uri=")
   }
 
+  // const getLyrics = () => {
+  //   fetch('https://api.spotify.com/v1/me',{
+  //       headers: {'Authorization': 'Bearer' + accessToken }
+  //     })
+  //     .then(r => r.json())
+  //     .then(data => console.log("Get Lyrics: ", data))
+  // }
 
+  // clientId = wmSZuWgWUy7geX5BYC0b50PbeBXk88l_IZAEBh1dpuBGEgidTjRRSsxk9yy1ajKJ
+  // clientSecret = 1VUs7ECMkzUafl5kI9SLmle-qRUgh6Wt29Ig_100L6uSmiEc64oxTSY3S3x0Q-oW6_xQCK4k87-NfbHSo-OIrw
 
   const renderNewGame = () => {
     gameDuration = 15
