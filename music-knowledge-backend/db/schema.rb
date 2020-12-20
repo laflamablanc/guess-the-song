@@ -18,12 +18,12 @@ ActiveRecord::Schema.define(version: 2020_10_20_180235) do
   create_table "games", force: :cascade do |t|
     t.integer "score"
     t.integer "user_id"
+    t.integer "username"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "questions", force: :cascade do |t|
-    t.integer "game_id"
     t.string "ask"
     t.string "answer1"
     t.string "answer2"
