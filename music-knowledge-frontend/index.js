@@ -10,28 +10,29 @@ document.addEventListener('DOMContentLoaded', e => {
   let genre = ""
   let userName = ""
   let token = ""
-  const geniusUrl = "https://api.genius.com/oauth/authorize?client_id=wmSZuWgWUy7geX5BYC0b50PbeBXk88l_IZAEBh1dpuBGEgidTjRRSsxk9yy1ajKJ&
-  redirect_uri="
+
 
   const questionUrl = 'http://localhost:3000/questions/'
 
-  const getToken = () => {
-    fetch("https://api.genius.com/oauth/authorize?client_id=wmSZuWgWUy7geX5BYC0b50PbeBXk88l_IZAEBh1dpuBGEgidTjRRSsxk9yy1ajKJ&
-    redirect_uri=")
+  const getLyrics = () => {
+    id = 16775
+    api = "api.genius.com/"
+    artists = "artists/"
+    search = "search?q=Goldie%20Rocky"
+    access = "?access_token="
+    token = "dX0DWeoMn4ACW3yr2sZWmi7mPCtMh5YG3O-W9W-gW7R8BY1qw5-y93wRNBIlrGD7"
+    fetch('https://cors-anywhere.herokuapp.com/'+ api + search + access + token)
+    fetch('https://cors-anywhere.herokuapp.com/https://api.genius.com/%20search?q=Goldie%20Rocky?access_token=dX0DWeoMn4ACW3yr2sZWmi7mPCtMh5YG3O-W9W-gW7R8BY1qw5-y93wRNBIlrGD7')
+    .then(r => r.json())
+    .then(console.log)
+
   }
 
-  // const getLyrics = () => {
-  //   fetch('https://api.spotify.com/v1/me',{
-  //       headers: {'Authorization': 'Bearer' + accessToken }
-  //     })
-  //     .then(r => r.json())
-  //     .then(data => console.log("Get Lyrics: ", data))
-  // }
+  getLyrics()
 
-  // clientId = wmSZuWgWUy7geX5BYC0b50PbeBXk88l_IZAEBh1dpuBGEgidTjRRSsxk9yy1ajKJ
-  // clientSecret = 1VUs7ECMkzUafl5kI9SLmle-qRUgh6Wt29Ig_100L6uSmiEc64oxTSY3S3x0Q-oW6_xQCK4k87-NfbHSo-OIrw
 
   const renderNewGame = () => {
+    console.log("NEW GAME")
     gameDuration = 15
     const header = document.getElementById('page-header')
     const title = document.createElement('h2')
@@ -258,7 +259,7 @@ document.addEventListener('DOMContentLoaded', e => {
   var test = false;
 
   clickHandler()
-  getQuestions()
+  // getQuestions()
   renderNewGame()
 
   function startGameTimer () {
