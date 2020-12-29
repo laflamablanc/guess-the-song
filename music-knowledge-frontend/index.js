@@ -14,25 +14,8 @@ document.addEventListener('DOMContentLoaded', e => {
 
   const questionUrl = 'http://localhost:3000/questions/'
 
-  const getLyrics = () => {
-    id = 16775
-    api = "api.genius.com/"
-    artists = "artists/"
-    search = "search?q=Goldie%20Rocky"
-    access = "?access_token="
-    token = "dX0DWeoMn4ACW3yr2sZWmi7mPCtMh5YG3O-W9W-gW7R8BY1qw5-y93wRNBIlrGD7"
-    fetch('https://cors-anywhere.herokuapp.com/'+ api + search + access + token)
-    fetch('https://cors-anywhere.herokuapp.com/https://api.genius.com/%20search?q=Goldie%20Rocky?access_token=dX0DWeoMn4ACW3yr2sZWmi7mPCtMh5YG3O-W9W-gW7R8BY1qw5-y93wRNBIlrGD7')
-    .then(r => r.json())
-    .then(console.log)
-
-  }
-
-  getLyrics()
-
 
   const renderNewGame = () => {
-    console.log("NEW GAME")
     gameDuration = 15
     const header = document.getElementById('page-header')
     const title = document.createElement('h2')
@@ -49,12 +32,37 @@ document.addEventListener('DOMContentLoaded', e => {
       createUser(username)
       const timerTable = document.getElementById('timers')
 
-      // renderQuestion()
       chooseGenre()
       timerTable.style.display = 'inline'
 
     })
 
+  }
+
+  const loginGenius = () => {
+    url = `https://api.genius.com/oauth/authorize?client_id=wmSZuWgWUy7geX5BYC0b50PbeBXk88l_IZAEBh1dpuBGEgidTjRRSsxk9yy1ajKJ&redirect_uri=file:///Users/sean.laflam/Development/code/mod3/project/music-knowledge/music-knowledge-frontend/index.html&scope=me&response_type=code&response_mode=query&nonce=oe14563fhoo`
+    console.log("Login to Genius")
+    const mainDiv = document.getElementById('page-header')
+    mainDiv.innerHTML = ''
+    const loginCard = document.createElement('div')
+    loginCard.id = "login-card"
+    loginCard.innerHTML =`
+    <h2>Connect Your Genius Account:</h2>
+    <button id="genius" class= "play-buttons" data-genre = "genius" type="button">Login</button>
+    `
+    mainDiv.append(loginCard)
+    loginCard.addEventListener('click', e => {
+      if (e.target.matches('#genius')) {
+        console.log("genius")
+        window.location.replace(url)
+        // chooseDifficulty()
+      } else if (e.target.matches('#rock')) {
+        questionId = 37
+        genre = "rock"
+        chooseDifficulty()
+      }
+    })
+    // chooseGenre()
   }
 
   const createUser = (username) => {
