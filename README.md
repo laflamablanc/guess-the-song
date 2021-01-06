@@ -1,2 +1,2 @@
 # guess-the-song
-Song Guessing Game using JS and Spotify API
+Song Guessing Game built usign JavaScript, Ruby on Rails
